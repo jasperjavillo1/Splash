@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3976544267235853365}
   - component: {fileID: 3976544267235853362}
   - component: {fileID: 3976544267235853363}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ContactHazard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -122,5 +122,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a0e5145927ed0f4fa18dc76131a166e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dmgDealt: 1
+  dmgDealt: 100
   dmgBufferPeriod: 0.75
+  activationTimes: []

@@ -36,7 +36,7 @@ public class PlayerMovementPlaceholderForTestingHealth : MonoBehaviour
 
     private void Jump()
     {
-        if (_rigidbody.IsTouchingLayers(LayerMask.GetMask("Ground")))
+        if (_rigidbody.IsTouchingLayers(LayerMask.GetMask("Ground")) && Input.GetAxis("Jump") > Mathf.Epsilon)
         {
             float jump = Input.GetAxis("Jump") * Time.deltaTime * _jumpPower;
             _rigidbody.velocity = new Vector2(_rigidbody.velocity.x, jump);

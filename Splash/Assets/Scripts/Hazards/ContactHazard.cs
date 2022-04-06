@@ -4,11 +4,9 @@ using UnityEngine;
 
 public class ContactHazard : Hazard {
     //  whether or not the player is colliding with the hazard
-    public bool contacting { get; private set; } = false;
+    public bool contacting = false;
     //  min seconds that pass between dealing player damage.
     public float dmgBufferPeriod = .5f;
-    //  coroutine that deals the damage to the player if the player is colliding with the hazard
-    Coroutine damager = null;
 
     /*  list of times that control the activation of the hazard
         x - time activated, y - time unactivated until next activation
@@ -26,31 +24,17 @@ public class ContactHazard : Hazard {
 
 
     private void OnCollisionEnter2D(Collision2D col) {
-        if(col.gameObject.tag == "Player") {
+        if(!contacting && col.gameObject.tag == "Player") {
             contacting = true;
-            if(damager != null)
-                StopCoroutine(damager);
-            damager = StartCoroutine(dealDamageWaiter());
+            startTakingDamage();
         }
     }
 
     private void OnCollisionExit2D(Collision2D col) {
-        if(col.gameObject.tag == "Player") {
+        if(contacting && col.gameObject.tag == "Player") {
             contacting = false;
-            if(damager != null)
-                StopCoroutine(damager);
-            damager = null;
+            stopTakingDamage();
         }
-    }
-
-    //  deals damage to player, then waits for the invincibility period to end to damage it again
-    IEnumerator dealDamageWaiter() {
-        if(canDealDamageToPlayer && contacting)
-            dealDamageToPlayer();
-
-        yield return new WaitForSeconds(dmgBufferPeriod);
-
-        damager = StartCoroutine(dealDamageWaiter());
     }
 
     IEnumerator activationTimer(bool firstCycle = false) {
@@ -58,9 +42,7 @@ public class ContactHazard : Hazard {
             if(i.z > 0.0f || (i.z <= 0.0f && firstCycle)) {
                 setCanDamagePlayer(true);   //  turns hazard on
                 if(contacting) {    //  checks if is contacting with the player
-                    if(damager != null)
-                        StopCoroutine(damager);
-                    damager = StartCoroutine(dealDamageWaiter());
+                    startTakingDamage();
                 }
                 yield return new WaitForSeconds(i.x);
                 setCanDamagePlayer(false);  //  turns hazard off
