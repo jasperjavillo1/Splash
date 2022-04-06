@@ -20,8 +20,7 @@ public class Hazard : MonoBehaviour {
     //  called when player interacts with the hazard
     //  deals dmg to player 
     public void dealDamageToPlayer() {
-        //  playerHealth -= dmgDealt
-        Debug.Log("Dealt: " + dmgDealt + " dmg");
+        FindObjectOfType<PlayerHealth>().DecreaseHealth(dmgDealt);
 
         //  hurt animations
     }
