@@ -1,18 +1,13 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public class PlayerMovementBaseState : MonoBehaviour
+public abstract class PlayerMovementBaseState 
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public abstract void EnterState();
+    public abstract void UpdateState();
+    public abstract void ExitState();
+    public abstract void CheckSwitchState();
+    public abstract void InitizeSubState();
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    protected void UpdateStates() { }
+    protected void SwitchState() { }
+    protected void SetSuperState() { }
+    protected void SetSubState() { }
 }
