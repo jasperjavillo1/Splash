@@ -29,7 +29,7 @@ public class PlayerHealth :  MonoBehaviour
     public delegate void HealthZeroEventHandler();
     public event HealthZeroEventHandler OnHealthZero;
 
-    private void Start() 
+    private void Awake() 
     {
         ResetHealth();    
     }
