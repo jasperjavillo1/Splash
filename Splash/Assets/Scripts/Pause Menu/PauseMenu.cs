@@ -16,13 +16,13 @@ public class PauseMenu : MonoBehaviour
 
     public void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape) && paused == false)
+        if (Input.GetButtonDown("Cancel") && paused == false)
         {
             Pause();
             paused = true;
         }
 
-        else if(Input.GetKeyDown(KeyCode.Escape) && paused)
+        else if(Input.GetButtonDown("Cancel") && paused)
         {
             Resume();
             paused = false;
