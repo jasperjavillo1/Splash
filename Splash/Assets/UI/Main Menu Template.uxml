@@ -4,7 +4,8 @@
         <ui:VisualElement style="width: 1196px; height: 1237px; background-color: rgb(33, 31, 34); border-top-left-radius: 15px; border-bottom-left-radius: 15px; border-top-right-radius: 15px; border-bottom-right-radius: 15px; align-items: center; justify-content: center;">
             <ui:Label text="Main Menu" display-tooltip-when-elided="true" name="txtMainMenu" style="position: absolute; -unity-text-align: upper-left; color: rgb(0, 175, 255); -unity-font-style: bold-and-italic; font-size: 136px; left: auto; top: 65px;" />
             <ui:Button text="Start" display-tooltip-when-elided="true" name="startButton" class="button-style" style="width: 575px; font-size: 125px; padding-bottom: 10px; padding-top: 10px; margin-bottom: 55px; margin-top: 45px; height: 200px;" />
-            <ui:Button text="Quit" display-tooltip-when-elided="true" name="quitButton" class="button-style" style="width: 575px; font-size: 125px; height: 200px;" />
+            <ui:Button text="Quit" display-tooltip-when-elided="true" name="quitButton" class="button-style" style="width: 575px; font-size: 125px; height: 200px; margin-bottom: 93px;" />
+            <ui:Button text="Credits" display-tooltip-when-elided="true" name="creditsButton" class="button-style" style="width: 321px; font-size: 75px; height: 91px;" />
         </ui:VisualElement>
     </ui:VisualElement>
 </ui:UXML>
