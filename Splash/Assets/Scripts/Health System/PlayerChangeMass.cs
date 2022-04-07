@@ -3,35 +3,26 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerLooseMass : MonoBehaviour
+public class PlayerChangeMass : MonoBehaviour
 {
     //paremeters
     [SerializeField] private PlayerHealth _health;
 
-    [SerializeField] [Tooltip("The lower the value, the slower the object scales down with health")] float _scaleTimeFactor;
-
 
     private void OnEnable()
     {
-        _health.OnHealthDecrease += DecreasePlayerMass;
-        _health.OnHealthIncrease += IncreasePlayerMass;
-        _health.OnHealthReset += IncreasePlayerMass;
+        _health.OnHealthChange += UpdatePlayerMass;
     }
     private void OnDisable()
     {
-        _health.OnHealthDecrease -= DecreasePlayerMass;
-        _health.OnHealthIncrease -= IncreasePlayerMass;
-        _health.OnHealthReset -= IncreasePlayerMass;
+        _health.OnHealthChange += UpdatePlayerMass;
     }
     
 
-    private void DecreasePlayerMass()
+    private void UpdatePlayerMass()
     {
-        transform.localScale = Vector3.Lerp(transform.localScale, transform.localScale * Mathf.Abs(_health.GetCurrentHealth()/_health.GetInitialHealth()), Time.deltaTime * _scaleTimeFactor);
+        Vector3 newScale = Mathf.Abs(_health.GetCurrentHealth()/_health.GetInitialHealth()) * new Vector3(1f,1f,1f);
+        transform.localScale = newScale;
     }
 
-    private void IncreasePlayerMass()
-    {
-        transform.localScale = Vector3.Lerp(transform.localScale, new Vector3(1f,1f,1f), Time.deltaTime * _scaleTimeFactor);
-    }
 }

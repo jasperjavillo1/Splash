@@ -136,7 +136,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3976544267235853363, guid: 80c283ae3c64613489ed24b0f3dd3d90, type: 3}
       propertyPath: dmgDealt
-      value: 1
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 3976544267235853363, guid: 80c283ae3c64613489ed24b0f3dd3d90, type: 3}
       propertyPath: activationTimes.Array.size
@@ -275,7 +275,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3976544267235853363, guid: 80c283ae3c64613489ed24b0f3dd3d90, type: 3}
       propertyPath: dmgDealt
-      value: 1
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 3976544267235853363, guid: 80c283ae3c64613489ed24b0f3dd3d90, type: 3}
       propertyPath: activationTimes.Array.size
@@ -638,7 +638,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3976544267235853363, guid: 80c283ae3c64613489ed24b0f3dd3d90, type: 3}
       propertyPath: dmgDealt
-      value: 1
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 3976544267235853363, guid: 80c283ae3c64613489ed24b0f3dd3d90, type: 3}
       propertyPath: activationTimes.Array.size
@@ -740,7 +740,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3976544267235853363, guid: 80c283ae3c64613489ed24b0f3dd3d90, type: 3}
       propertyPath: dmgDealt
-      value: 1
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 3976544267235853363, guid: 80c283ae3c64613489ed24b0f3dd3d90, type: 3}
       propertyPath: activationTimes.Array.size
@@ -991,35 +991,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3976544267235853363, guid: 80c283ae3c64613489ed24b0f3dd3d90, type: 3}
       propertyPath: dmgDealt
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3976544267235853363, guid: 80c283ae3c64613489ed24b0f3dd3d90, type: 3}
-      propertyPath: activationTimes.Array.size
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3976544267235853363, guid: 80c283ae3c64613489ed24b0f3dd3d90, type: 3}
-      propertyPath: activationTimes.Array.data[0].x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3976544267235853363, guid: 80c283ae3c64613489ed24b0f3dd3d90, type: 3}
-      propertyPath: activationTimes.Array.data[0].y
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 3976544267235853363, guid: 80c283ae3c64613489ed24b0f3dd3d90, type: 3}
-      propertyPath: activationTimes.Array.data[0].z
-      value: 1
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 3976544267235853364, guid: 80c283ae3c64613489ed24b0f3dd3d90, type: 3}
       propertyPath: m_RootOrder
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3976544267235853364, guid: 80c283ae3c64613489ed24b0f3dd3d90, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3976544267235853364, guid: 80c283ae3c64613489ed24b0f3dd3d90, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 3976544267235853364, guid: 80c283ae3c64613489ed24b0f3dd3d90, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1203,7 +1179,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3976544267235853363, guid: 80c283ae3c64613489ed24b0f3dd3d90, type: 3}
       propertyPath: dmgDealt
-      value: 1
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 3976544267235853363, guid: 80c283ae3c64613489ed24b0f3dd3d90, type: 3}
       propertyPath: activationTimes.Array.size
@@ -2426,7 +2402,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3976544267235853363, guid: 80c283ae3c64613489ed24b0f3dd3d90, type: 3}
       propertyPath: dmgDealt
-      value: 1
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 3976544267235853363, guid: 80c283ae3c64613489ed24b0f3dd3d90, type: 3}
       propertyPath: activationTimes.Array.size
