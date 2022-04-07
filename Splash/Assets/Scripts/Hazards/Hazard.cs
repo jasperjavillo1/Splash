@@ -19,7 +19,8 @@ public class Hazard : MonoBehaviour {
         canDealDamageToPlayer = b;
 
         //  animations / flair / color change / whatever when the hazard gets turned off or on
-        GetComponent<SpriteRenderer>().color = b ? Color.red : Color.gray;
+        if(b) turnOnAnimation();
+        else  turnOffAnimation();
     }
 
 
@@ -29,6 +30,7 @@ public class Hazard : MonoBehaviour {
         FindObjectOfType<PlayerHealth>().DecreaseHealth(dmgDealt);
 
         //  hurt animations
+        playerHurtAnimation();
     }
 
 
@@ -43,11 +45,28 @@ public class Hazard : MonoBehaviour {
     }
     //  deals damage to player, then waits for the invincibility period to end to damage it again
     IEnumerator dealDamageWaiter() {
-        if(canDealDamageToPlayer)
+        if(canDealDamageToPlayer) {
             dealDamageToPlayer();
 
-        yield return new WaitForSeconds(dmgBufferPeriod);
+            yield return new WaitForSeconds(dmgBufferPeriod);
+        }
+        yield return new WaitForEndOfFrame();
 
         damager = takingDamage ? StartCoroutine(dealDamageWaiter()) : null;
+    }
+
+
+
+    //      Animaitons
+
+    void playerHurtAnimation() {
+        //  do stuff
+    }
+
+    void turnOnAnimation() {
+        GetComponent<SpriteRenderer>().color = Color.red;
+    }
+    void turnOffAnimation() {
+        GetComponent<SpriteRenderer>().color = Color.gray;
     }
 }
