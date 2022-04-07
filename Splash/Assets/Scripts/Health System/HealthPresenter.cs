@@ -28,7 +28,7 @@ public class HealthPresenter : MonoBehaviour
 
     private void UpdateHealthUI()
     {
-        _healthText.text = _playerHealth.GetHealth().ToString();
+        _healthText.text = _playerHealth.GetCurrentHealth().ToString();
     }
 }
 

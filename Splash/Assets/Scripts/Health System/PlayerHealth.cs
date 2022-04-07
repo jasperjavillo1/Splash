@@ -29,6 +29,9 @@ public class PlayerHealth :  MonoBehaviour
     public delegate void HealthZeroEventHandler();
     public event HealthZeroEventHandler OnHealthZero;
 
+    public delegate void HealthResetEventHandler();
+    public event HealthResetEventHandler OnHealthReset;
+
     private void Awake() 
     {
         ResetHealth();    
@@ -37,9 +40,15 @@ public class PlayerHealth :  MonoBehaviour
     public void ResetHealth()
     {
         _currentHealth = _initialHealth;
+        if(OnHealthReset != null) OnHealthReset();
     }
 
-    public float GetHealth()
+    public float GetInitialHealth()
+    {
+        return _initialHealth;
+    }
+    
+    public float GetCurrentHealth()
     {
         return _currentHealth;
     }
