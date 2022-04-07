@@ -17,11 +17,6 @@ public class PlayerHealth :  MonoBehaviour
     //cache
 
     //events
-    public delegate void HealthDecreaseEventHandler();
-    public event HealthDecreaseEventHandler OnHealthDecrease;
-
-    public delegate void HealthIncreaseEventHandler();
-    public event HealthIncreaseEventHandler OnHealthIncrease;
 
     public delegate void HealthChangeEventHandler();
     public event HealthChangeEventHandler OnHealthChange;
@@ -29,8 +24,6 @@ public class PlayerHealth :  MonoBehaviour
     public delegate void HealthZeroEventHandler();
     public event HealthZeroEventHandler OnHealthZero;
 
-    public delegate void HealthResetEventHandler();
-    public event HealthResetEventHandler OnHealthReset;
 
     private void Awake() 
     {
@@ -40,7 +33,7 @@ public class PlayerHealth :  MonoBehaviour
     public void ResetHealth()
     {
         _currentHealth = _initialHealth;
-        if(OnHealthReset != null) OnHealthReset();
+        if(OnHealthChange!=null) OnHealthChange();
     }
 
     public float GetInitialHealth()
@@ -56,20 +49,17 @@ public class PlayerHealth :  MonoBehaviour
     public void DecreaseHealth(float amount)
     {
         _currentHealth -= Mathf.Abs(amount);
-        if(OnHealthDecrease != null) OnHealthDecrease();
+        if(OnHealthChange!=null) OnHealthChange();
 
         if(_currentHealth <= 0)
         {
             if(OnHealthZero!=null) OnHealthZero();
         }
-
-        if(OnHealthChange!=null) OnHealthChange();
     }
 
     public void IncreaseHealth(float amount)
     {
         _currentHealth += Mathf.Abs(amount);
-        if(OnHealthIncrease != null) OnHealthIncrease();
         if(OnHealthChange != null) OnHealthChange();
     }
 }
