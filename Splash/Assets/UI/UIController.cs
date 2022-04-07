@@ -8,6 +8,7 @@ public class UIController : MonoBehaviour
 {
     public Button btnStart;
     public Button btnQuit;
+    public Button btnCredits;
 
     // Start is called before the first frame update
     void Start()
@@ -16,8 +17,10 @@ public class UIController : MonoBehaviour
 
         btnStart = root.Q<Button>("startButton");
         btnQuit = root.Q<Button>("quitButton");
-
+        btnCredits = root.Q<Button>("creditsButton");
         btnStart.clicked += StartButtonPressed;
+        btnQuit.clicked += QuitButtonPressed;
+        btnCredits.clicked += CreditsButtonPressed;
     }
 
     void StartButtonPressed() {
@@ -26,5 +29,9 @@ public class UIController : MonoBehaviour
 
     void QuitButtonPressed() {
         Application.Quit();
+    }
+
+    void CreditsButtonPressed() {
+        SceneManager.LoadScene("Credits");
     }
 }
