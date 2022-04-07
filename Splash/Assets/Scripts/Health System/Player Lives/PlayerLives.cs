@@ -19,6 +19,10 @@ public class PlayerLives : MonoBehaviour
     }
     private void Update()
     {
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            LoseLives();
+        }
         LivesCount.text = _CurrentLives.ToString();
     }
     public void LoseLives()
@@ -26,7 +30,7 @@ public class PlayerLives : MonoBehaviour
         _CurrentLives--;
 
         //Game Over "if" statement.
-        if (_CurrentLives > 1 && _CurrentLives == 0)
+        if (_CurrentLives < 1 && _CurrentLives == 0)
         {
             gameOver.SetActive(true);
         }

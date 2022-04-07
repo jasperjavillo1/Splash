@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 
 public class PlayerHealth :  MonoBehaviour
 {
+    
+
     //paramters
     [SerializeField] float _initialHealth;
 
@@ -53,7 +55,8 @@ public class PlayerHealth :  MonoBehaviour
 
         if(_currentHealth <= 0)
         {
-            if(OnHealthZero!=null) OnHealthZero();
+            
+            if (OnHealthZero!=null) OnHealthZero();
         }
     }
 
