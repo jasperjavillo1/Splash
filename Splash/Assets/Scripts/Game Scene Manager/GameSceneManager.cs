@@ -7,19 +7,24 @@ public class GameSceneManager : MonoBehaviour
 {
     //parameters
     [SerializeField] PlayerHealth _playerHealth;
-
+    [SerializeField] PlayerLives _playerLives;
     private void OnEnable() 
     {
+        
         _playerHealth.OnHealthZero += ReloadLevel;    
     }
 
     private void OnDisable()
     {
+        
         _playerHealth.OnHealthZero -= ReloadLevel;
     }
 
     private void ReloadLevel()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);        
+        if(_playerHealth._currentHealth <= 0f && _playerLives._CurrentLives >= 1f)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
     }
 }

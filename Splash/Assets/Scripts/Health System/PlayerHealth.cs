@@ -6,13 +6,13 @@ using UnityEngine.SceneManagement;
 
 public class PlayerHealth :  MonoBehaviour
 {
+    public PlayerLives PL;
     
-
     //paramters
     [SerializeField] float _initialHealth;
 
     //state
-    private float _currentHealth;
+    public float _currentHealth;
 
     public float RemainingHealthFraction{get {return _currentHealth/_initialHealth;}}
 
@@ -25,7 +25,7 @@ public class PlayerHealth :  MonoBehaviour
 
     public delegate void HealthZeroEventHandler();
     public event HealthZeroEventHandler OnHealthZero;
-
+ 
 
     private void Awake() 
     {
@@ -55,7 +55,7 @@ public class PlayerHealth :  MonoBehaviour
 
         if(_currentHealth <= 0)
         {
-            
+            PL.LoseLives();
             if (OnHealthZero!=null) OnHealthZero();
         }
     }

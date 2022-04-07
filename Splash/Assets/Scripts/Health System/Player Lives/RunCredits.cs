@@ -12,5 +12,7 @@ public class RunCredits : MonoBehaviour
     private void CreditsOn()
     {
         Credits.SetActive(true);
+       
+        PlayerPrefs.SetFloat("CurrentLives", 3f);
     }
 }
