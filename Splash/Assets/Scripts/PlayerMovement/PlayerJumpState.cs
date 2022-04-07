@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerJumpState : PlayerMovementBaseState
 {
+    public PlayerJumpState(PlayerMovementStateMachine context, PlayerStateFactory factory) : base(context, factory) { }
     public override void EnterState() { }
     public override void UpdateState() { }
     public override void ExitState() { }
