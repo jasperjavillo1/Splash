@@ -336,6 +336,7 @@ GameObject:
   - component: {fileID: 519420032}
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
+  - component: {fileID: 519420030}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -351,6 +352,20 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_Enabled: 1
+--- !u!114 &519420030
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e42bb22e1d1ce07459701bdf6f280155, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerTransform: {fileID: 791980471}
+  displacedCamera: 0
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
@@ -519,6 +534,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 80c283ae3c64613489ed24b0f3dd3d90, type: 3}
+--- !u!4 &791980471 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3300649008393559314, guid: a3b6e8960f4900c45957ce5f7aa70047, type: 3}
+  m_PrefabInstance: {fileID: 3300649009713631265}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &819015916 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3976544267235853364, guid: 80c283ae3c64613489ed24b0f3dd3d90, type: 3}
@@ -637,7 +657,7 @@ Transform:
   m_GameObject: {fileID: 877489931}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 5, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 826612104}
   m_RootOrder: 0
@@ -1508,20 +1528,20 @@ CompositeCollider2D:
   m_ColliderPaths:
   - m_Collider: {fileID: 877489935}
     m_ColliderPaths:
-    - - X: -90333336
+    - - X: -451666688
         Y: -9666667
-      - X: -90333336
+      - X: -451666688
         Y: -50333332
-      - X: 90333336
+      - X: 451666688
         Y: -50333332
-      - X: 90333336
+      - X: 451666688
         Y: -9666667
   m_CompositePaths:
     m_Paths:
-    - - {x: 9.033304, y: -5.0333333}
-      - {x: 9.033304, y: -0.9666667}
-      - {x: -9.033334, y: -0.966696}
-      - {x: -9.033304, y: -5.0333333}
+    - - {x: 45.16664, y: -5.0333333}
+      - {x: 45.16664, y: -0.9666667}
+      - {x: -45.166668, y: -0.966696}
+      - {x: -45.16664, y: -5.0333333}
   m_VertexDistance: 0.0005
   m_OffsetDistance: 0.00005
 --- !u!50 &877489937
@@ -2497,8 +2517,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18ec0ca60c5cfa54791a026d7f22830c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PL: {fileID: 1777104189}
   _playerHealth: {fileID: 1907543350}
+  _playerLives: {fileID: 0}
 --- !u!4 &2018019783
 Transform:
   m_ObjectHideFlags: 0
