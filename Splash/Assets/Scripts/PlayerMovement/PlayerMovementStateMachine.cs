@@ -19,11 +19,14 @@ public class PlayerMovementStateMachine : MonoBehaviour
     private bool _isMovementPressed;
     private bool _isRunPressed;
 
+    //jump variables
+    private bool _isJumpPressed;
+    private bool _isJumping = false;
+
     //constants
     private float _runMultiplier = 3.0f;
     private int _zero = 0;
-    private float _gravity = -9.8f;
-    private float _groundedGravity = -0.5f;
+    private Vector2 _jumpVector = Vector2.up * 5.0f;
 
     //state machine variables
     private PlayerMovementBaseState _currentState;
@@ -42,11 +45,15 @@ public class PlayerMovementStateMachine : MonoBehaviour
     public bool IsMovementPressed { get { return _isMovementPressed; } set { _isMovementPressed = value; } }
     public bool IsRunPressed { get { return _isRunPressed; } set { _isRunPressed = value; } }
 
+    //jump getters and setters
+    public bool IsJumpPressed { get { return _isJumpPressed; } set { _isJumpPressed = value; } }
+    public bool IsJumping { get { return _isJumping; } }
+
     //constants getters and setters
-    private float RunMultiplier { get { return _runMultiplier; } }
-    private int Zero { get { return _zero; } }
-    private float Gravity { get { return _gravity; } }
-    private float GroundedGravity { get { return _groundedGravity; } }
+    public float RunMultiplier { get { return _runMultiplier; } }
+    public int Zero { get { return _zero; } }
+    public Vector2 JumpVector { get { return _jumpVector; } }
+
 
     //state machine getters and setters
     public PlayerMovementBaseState CurrentState { get { return _currentState; } set { _currentState = value; } }
@@ -71,12 +78,15 @@ public class PlayerMovementStateMachine : MonoBehaviour
         _playerInput.CharacterControls.Move.canceled += _onMovementInput;
         _playerInput.CharacterControls.Run.started += _onRun;
         _playerInput.CharacterControls.Run.canceled += _onRun;
+        _playerInput.CharacterControls.Jump.started += _onJump;
+        _playerInput.CharacterControls.Jump.canceled += _onJump;
 
     }
 
     // Update is called once per frame
     void Update()
     {
+        _handleJump();
         if (_isRunPressed)
         {
             _rigidbody2D.transform.Translate(_currentRunMovement * Time.deltaTime);
@@ -107,5 +117,30 @@ public class PlayerMovementStateMachine : MonoBehaviour
     private void _onRun(InputAction.CallbackContext context)
     {
         _isRunPressed = context.ReadValueAsButton();
+    }
+    private void _onJump(InputAction.CallbackContext context)
+    {
+        _isJumpPressed = context.ReadValueAsButton();
+    }
+
+    public bool IsGrounded()
+    {
+        //Method for determining if player is grounded.
+        return Physics2D.Raycast((_rigidbody2D.transform.position - new Vector3(0,0.6f,0)), Vector2.down, 0.1f);
+    }
+
+    private void _handleJump()
+    {
+        if (IsGrounded() && _isJumpPressed && !_isJumping)
+        {
+            //_rigidbody2D.AddForce(_jumpVector);
+            //_rigidbody2D.transform.Translate(_jumpVector * Time.deltaTime);
+            _rigidbody2D.velocity = _jumpVector;
+            _isJumping = true;
+        }
+        else if (IsGrounded() && !_isJumpPressed && _isJumping)
+        {
+            _isJumping = false;
+        }
     }
 }
