@@ -86,7 +86,8 @@ public class PlayerMovementStateMachine : MonoBehaviour
     void Update()
     {
         _currentState.UpdateStates();
-        _rigidbody2D.transform.Translate(_appliedMovement);
+        //_rigidbody2D.
+        transform.Translate(_appliedMovement);
     }
 
     private void OnEnable()

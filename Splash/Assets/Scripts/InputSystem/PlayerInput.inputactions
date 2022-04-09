@@ -151,6 +151,34 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "Test",
+            "id": "ff397492-404e-4d0a-9573-fc2394aad6d5",
+            "actions": [
+                {
+                    "name": "LoseLife",
+                    "type": "Button",
+                    "id": "e9a586e3-f810-49f5-98fd-a7762d415202",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "242bccdf-8491-491d-93a3-757bd3c0e325",
+                    "path": "<Keyboard>/l",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "LoseLife",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": []
