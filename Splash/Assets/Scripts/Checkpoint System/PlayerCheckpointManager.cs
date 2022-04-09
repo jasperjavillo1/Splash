@@ -15,16 +15,16 @@ public class PlayerCheckpointManager : MonoBehaviour
         PlayerPrefs.SetInt("Current Checkpoint", 1);
     }
 
-    private void OnEnable() 
+    private void OnEnable()
     {
-        transform.position = _checkpoints[PlayerPrefs.GetInt("Current Checkpoint") - 1;
+        transform.position = _checkpoints[PlayerPrefs.GetInt("Current Checkpoint") - 1].transform.position;
     }
 
     private void OnTriggerEnter2D(Collider2D other) 
     {
         if(other.tag == "PlayerCheckpoint")
         {
-            int checkpointNumber = Convert.ToInt32(other.name.ToCharArray().Where(Char.IsDigit));
+            int checkpointNumber = Convert.ToInt32(new String(other.name.Where(Char.IsDigit).ToArray()));
             PlayerPrefs.SetInt("Current Checkpoint", checkpointNumber);
         }    
     }
