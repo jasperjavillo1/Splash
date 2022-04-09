@@ -4,7 +4,11 @@ using UnityEngine;
 
 public class PlayerJumpState : PlayerMovementBaseState
 {
-    public PlayerJumpState(PlayerMovementStateMachine context, PlayerStateFactory factory) : base(context, factory) { }
+    public PlayerJumpState(PlayerMovementStateMachine context, PlayerStateFactory factory) : base(context, factory)
+    {
+        IsRootState = true;
+        InitizeSubState();
+    }
     public override void EnterState()
     {
         _handleJump();    
@@ -16,16 +20,29 @@ public class PlayerJumpState : PlayerMovementBaseState
     public override void ExitState() { }
     public override void CheckSwitchState()
     {
-        if(_ctx.IsGrounded())
+        if(Ctx.IsGrounded())
         {
-            SwitchState(_factory.Grounded());
+            SwitchState(Factory.Grounded());
         }
     }
-    public override void InitizeSubState() { }
+    public override void InitizeSubState()
+    {
+        if (!Ctx.IsMovementPressed && !Ctx.IsRunPressed)
+        {
+            SetSubState(Factory.Idle());
+        }
+        else if (Ctx.IsMovementPressed && !Ctx.IsRunPressed)
+        {
+            SetSubState(Factory.Walk());
+        }
+        else if (Ctx.IsMovementPressed && Ctx.IsRunPressed)
+        {
+            SetSubState(Factory.Run());
+        }
+    }
 
     private void _handleJump()
     {
-        _ctx.Rigidbody2D.velocity = _ctx.JumpVector;
-        _ctx.IsJumping = true;
+        Ctx.Rigidbody2D.velocity = Ctx.JumpVector;
     }
 }

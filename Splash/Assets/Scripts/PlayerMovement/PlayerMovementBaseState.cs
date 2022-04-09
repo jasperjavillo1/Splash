@@ -1,7 +1,15 @@
 public abstract class PlayerMovementBaseState 
 {
-    protected PlayerMovementStateMachine _ctx;
-    protected PlayerStateFactory _factory;
+    private bool _isRootState = false;
+    private PlayerMovementStateMachine _ctx;
+    private PlayerStateFactory _factory;
+    private PlayerMovementBaseState _currentSuperState;
+    private PlayerMovementBaseState _currentSubState;
+
+    protected bool IsRootState { get { return _isRootState; } set { _isRootState = value; } }
+    protected PlayerMovementStateMachine Ctx { get { return _ctx; } }
+    protected PlayerStateFactory Factory { get { return _factory; } set { _factory = value; } }
+
     public PlayerMovementBaseState(PlayerMovementStateMachine context, PlayerStateFactory factory)
     {
         _ctx = context;
@@ -14,7 +22,14 @@ public abstract class PlayerMovementBaseState
     public abstract void CheckSwitchState();
     public abstract void InitizeSubState();
 
-    protected void UpdateStates() { }
+    public void UpdateStates()
+    {
+        UpdateState();
+        if(_currentSubState != null)
+        {
+            _currentSubState.UpdateStates();
+        }
+    }
     protected void SwitchState(PlayerMovementBaseState newState)
     {
         //current state's ExitState()
@@ -22,9 +37,23 @@ public abstract class PlayerMovementBaseState
         //new state's EnterState()
         newState.EnterState();
         //change current state to newState
-        _ctx.CurrentState = newState;
+        if (_isRootState)
+        {
+            _ctx.CurrentState = newState;
+        }
+        else if(_currentSuperState != null)
+        {
+            _currentSuperState.SetSubState(newState);
+        }
 
     }
-    protected void SetSuperState() { }
-    protected void SetSubState() { }
+    protected void SetSuperState(PlayerMovementBaseState newSuperState)
+    {
+        _currentSuperState = newSuperState;
+    }
+    protected void SetSubState(PlayerMovementBaseState newSubState)
+    {
+        _currentSubState = newSubState;
+        newSubState.SetSuperState(this);
+    }
 }

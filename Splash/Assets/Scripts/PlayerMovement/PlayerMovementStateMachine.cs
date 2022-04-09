@@ -68,11 +68,6 @@ public class PlayerMovementStateMachine : MonoBehaviour
         _rigidbody2D = GetComponent<Rigidbody2D>();
         _capsuleCollider2D = GetComponent<CapsuleCollider2D>();
 
-        //set up state
-        _states = new PlayerStateFactory(this);
-        _currentState = _states.Grounded();
-        _currentState.EnterState();
-
         //set player input callbacks
         _playerInput.CharacterControls.Move.started += _onMovementInput;
         _playerInput.CharacterControls.Move.canceled += _onMovementInput;
@@ -81,14 +76,17 @@ public class PlayerMovementStateMachine : MonoBehaviour
         _playerInput.CharacterControls.Jump.started += _onJump;
         _playerInput.CharacterControls.Jump.canceled += _onJump;
 
+        //set up state
+        _states = new PlayerStateFactory(this);
+        _currentState = _states.Grounded();
+        _currentState.EnterState();
     }
 
     // Update is called once per frame
     void Update()
     {
-        _handleMovement();
+        _currentState.UpdateStates();
         _rigidbody2D.transform.Translate(_appliedMovement);
-        _currentState.UpdateState();
     }
 
     private void OnEnable()
@@ -121,18 +119,5 @@ public class PlayerMovementStateMachine : MonoBehaviour
     {
         //Method for determining if player is grounded.
         return Physics2D.Raycast((_rigidbody2D.transform.position - new Vector3(0,0.6f,0)), Vector2.down, 0.1f);
-    }
-    
-    private void _handleMovement()
-    {
-        _currentState.UpdateState();
-        if (_isRunPressed)
-        {
-            _appliedMovement = _currentRunMovement * Time.deltaTime;
-        }
-        else
-        {
-            _appliedMovement = _currentMovement * Time.deltaTime;
-        }
     }
 }
