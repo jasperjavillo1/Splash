@@ -7,7 +7,6 @@ using UnityEngine.UI;
 public class PlayerLives : MonoBehaviour
 {
     public float _CurrentLives =3f;
-    public float _LivesReset = 3f;
     public GameObject gameOver;
     public UnityEngine.UI.Text LivesCount;
     public bool livesreset;
