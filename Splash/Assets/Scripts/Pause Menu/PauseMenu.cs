@@ -16,13 +16,13 @@ public class PauseMenu : MonoBehaviour
 
     public void Update()
     {
-        if (Input.GetButtonDown("Cancel") && paused == false)
+        if (paused == false)
         {
             Pause();
             paused = true;
         }
 
-        else if(Input.GetButtonDown("Cancel") && paused)
+        else if(paused)
         {
             Resume();
             paused = false;
