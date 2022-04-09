@@ -14,6 +14,12 @@ public class PlayerCheckpointManager : MonoBehaviour
         transform.position = _checkpoints[PlayerPrefs.GetInt("Current Checkpoint") - 1].transform.position;
     }
 
+
+    public void SetCheckpointToFirst()
+    {
+	PlayerPrefs.SetInt("Current Checkpoint", 1);
+    }
+    
     private void OnTriggerEnter2D(Collider2D other) 
     {
         if(other.tag == "PlayerCheckpoint")
