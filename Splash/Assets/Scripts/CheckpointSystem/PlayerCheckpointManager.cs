@@ -17,7 +17,7 @@ public class PlayerCheckpointManager : MonoBehaviour
 
     public void SetCheckpointToFirst()
     {
-	PlayerPrefs.SetInt("Current Checkpoint", 1);
+    	PlayerPrefs.SetInt("Current Checkpoint", 1);
     }
     
     private void OnTriggerEnter2D(Collider2D other) 
