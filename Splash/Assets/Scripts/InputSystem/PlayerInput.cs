@@ -173,6 +173,34 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""Test"",
+            ""id"": ""ff397492-404e-4d0a-9573-fc2394aad6d5"",
+            ""actions"": [
+                {
+                    ""name"": ""LoseLife"",
+                    ""type"": ""Button"",
+                    ""id"": ""e9a586e3-f810-49f5-98fd-a7762d415202"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""242bccdf-8491-491d-93a3-757bd3c0e325"",
+                    ""path"": ""<Keyboard>/l"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""LoseLife"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": []
@@ -185,6 +213,9 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
         // PauseMenu
         m_PauseMenu = asset.FindActionMap("PauseMenu", throwIfNotFound: true);
         m_PauseMenu_Pause = m_PauseMenu.FindAction("Pause", throwIfNotFound: true);
+        // Test
+        m_Test = asset.FindActionMap("Test", throwIfNotFound: true);
+        m_Test_LoseLife = m_Test.FindAction("LoseLife", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -322,6 +353,39 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
         }
     }
     public PauseMenuActions @PauseMenu => new PauseMenuActions(this);
+
+    // Test
+    private readonly InputActionMap m_Test;
+    private ITestActions m_TestActionsCallbackInterface;
+    private readonly InputAction m_Test_LoseLife;
+    public struct TestActions
+    {
+        private @PlayerInput m_Wrapper;
+        public TestActions(@PlayerInput wrapper) { m_Wrapper = wrapper; }
+        public InputAction @LoseLife => m_Wrapper.m_Test_LoseLife;
+        public InputActionMap Get() { return m_Wrapper.m_Test; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(TestActions set) { return set.Get(); }
+        public void SetCallbacks(ITestActions instance)
+        {
+            if (m_Wrapper.m_TestActionsCallbackInterface != null)
+            {
+                @LoseLife.started -= m_Wrapper.m_TestActionsCallbackInterface.OnLoseLife;
+                @LoseLife.performed -= m_Wrapper.m_TestActionsCallbackInterface.OnLoseLife;
+                @LoseLife.canceled -= m_Wrapper.m_TestActionsCallbackInterface.OnLoseLife;
+            }
+            m_Wrapper.m_TestActionsCallbackInterface = instance;
+            if (instance != null)
+            {
+                @LoseLife.started += instance.OnLoseLife;
+                @LoseLife.performed += instance.OnLoseLife;
+                @LoseLife.canceled += instance.OnLoseLife;
+            }
+        }
+    }
+    public TestActions @Test => new TestActions(this);
     public interface ICharacterControlsActions
     {
         void OnMove(InputAction.CallbackContext context);
@@ -331,5 +395,9 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
     public interface IPauseMenuActions
     {
         void OnPause(InputAction.CallbackContext context);
+    }
+    public interface ITestActions
+    {
+        void OnLoseLife(InputAction.CallbackContext context);
     }
 }

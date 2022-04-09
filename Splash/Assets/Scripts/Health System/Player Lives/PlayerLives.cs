@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using UnityEngine.InputSystem;
 
 public class PlayerLives : MonoBehaviour
 {
@@ -10,7 +11,17 @@ public class PlayerLives : MonoBehaviour
     public GameObject gameOver;
     public UnityEngine.UI.Text LivesCount;
     public bool livesreset;
-    
+
+    private PlayerInput _playerInput;
+    private bool _isLivesSystemTestPressed;
+
+
+    private void Awake()
+    {
+        _playerInput = new PlayerInput();
+        _playerInput.Test.LoseLife.started += _onLoseLifeTest;
+        _playerInput.Test.LoseLife.canceled += _onLoseLifeTest;
+    }
     // Start is called before the first frame update
     void Start()
     {  
@@ -18,16 +29,10 @@ public class PlayerLives : MonoBehaviour
         gameOver.SetActive(false);
         
         _CurrentLives = PlayerPrefs.GetFloat("CurrentLives");
-        
-        
-        
-
     }
     private void Update()
     {
-        
-
-        if (Input.GetKeyDown(KeyCode.P))
+        if (_isLivesSystemTestPressed)
         {
             LoseLives();
         }
@@ -47,6 +52,11 @@ public class PlayerLives : MonoBehaviour
             gameOver.SetActive(true);
             
         }
+    }
+
+    private void _onLoseLifeTest(InputAction.CallbackContext context)
+    {
+        _isLivesSystemTestPressed = context.ReadValueAsButton();
     }
    
 }
