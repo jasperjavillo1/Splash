@@ -24,7 +24,7 @@ public class UIController : MonoBehaviour
     }
 
     void StartButtonPressed() {
-        SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene("Level_1");
     }
 
     void QuitButtonPressed() {
