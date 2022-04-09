@@ -5,17 +5,18 @@ TagManager:
   serializedVersion: 2
   tags:
   - Ground
+  - HealthRegen
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - Ground
+  - Background
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
+  - Ground
+  - Player
+  - HealthRegen
+  - Hazard
   - 
   - 
   - 
@@ -39,6 +40,15 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Background
+    uniqueID: 1178399041
+    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: HealthRegen
+    uniqueID: 2413462289
+    locked: 0
+  - name: Player
+    uniqueID: 4188536767
     locked: 0
