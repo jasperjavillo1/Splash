@@ -12,7 +12,7 @@ public class PlayerRunState : PlayerMovementBaseState
     public override void UpdateState()
     {
         CheckSwitchState();
-        //Ctx.PlayerHealth.DecreaseHealth(5f);
+        Ctx.PlayerHealth.DecreaseHealth(5f);
     }
     public override void ExitState() { }
     public override void CheckSwitchState()
