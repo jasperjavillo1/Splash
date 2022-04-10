@@ -10,6 +10,8 @@ public class Hazard : MonoBehaviour {
     const float dmgBufferPeriod = .75f;
     Coroutine damager = null;
     bool takingDamage = false;
+    //  sound that plays when the play takes damage from this hazard
+    [SerializeField] AudioClip hurtSound;
 
     //  if the hazard can deal damage to the player, defaulted to true
     public bool canDealDamageToPlayer { get; private set; } = true;
@@ -26,11 +28,14 @@ public class Hazard : MonoBehaviour {
 
     //  called when player interacts with the hazard
     //  deals dmg to player 
-    protected void dealDamageToPlayer() {
+    //  needs to be public because bullets
+    public void dealDamageToPlayer() {
         FindObjectOfType<PlayerHealth>().DecreaseHealth(dmgDealt);
 
         //  hurt animations
         playerHurtAnimation();
+        //  play sound
+        FindObjectOfType<AudioManager>().playSound(hurtSound);
     }
 
 

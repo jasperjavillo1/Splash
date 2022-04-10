@@ -122,3 +122,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 309d753a52aa7184aac4f63b286d4fbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  regenSound: {fileID: 8300000, guid: 77c934a2fb05de441aaa55a9205fb515, type: 3}

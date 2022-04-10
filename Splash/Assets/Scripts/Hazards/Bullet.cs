@@ -5,20 +5,21 @@ using UnityEngine;
 public class Bullet : MonoBehaviour {
     Vector2 target;
     float speed;
-    float dmg;
     bool moving = false;
+    Hazard parent;
 
     private void OnCollisionEnter2D(Collision2D col) {
-        if(col.gameObject.tag == "Player")
-            FindObjectOfType<PlayerHealth>().DecreaseHealth(dmg);
+        if(col.gameObject.tag == "Player") {
+            parent.dealDamageToPlayer();
+        }
 
         Destroy(gameObject);
     }
 
-    public void moveToTarget(Vector2 t, float s, float d) {
+    public void moveToTarget(Hazard p, Vector2 t, float s) {
+        parent = p;
         target = t;
         speed = s;
-        dmg = d;
         moving = true;
         Destroy(gameObject, 5f);
     }

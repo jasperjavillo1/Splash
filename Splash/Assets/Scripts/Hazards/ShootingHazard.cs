@@ -62,7 +62,7 @@ public class ShootingHazard : Hazard {
 
     void shoot() {
         var obj = Instantiate(bullet, transform.position, Quaternion.identity, transform.parent);
-        obj.GetComponent<Bullet>().moveToTarget(getFarPoint(), 10.0f, dmgDealt);
+        obj.GetComponent<Bullet>().moveToTarget(this, getFarPoint(), 10.0f);
     }
 
     Vector2 getFarPoint() {
