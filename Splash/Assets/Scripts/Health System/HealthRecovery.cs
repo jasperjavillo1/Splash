@@ -5,12 +5,13 @@ using UnityEngine;
 public class HealthRecovery : MonoBehaviour
 {
     [SerializeField] AudioClip regenSound;
+    [SerializeField] float healthIncrementAmount;
     private void OnTriggerStay2D(Collider2D other)
     {
         if(other.tag == "Player")
         {
             PlayerHealth PH = other.GetComponent<PlayerHealth>();
-            PH.ResetHealth();
+            PH.IncreaseHealth(healthIncrementAmount);
         }
     }
 

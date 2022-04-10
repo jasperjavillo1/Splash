@@ -32,7 +32,7 @@ public class PlayerHealth :  MonoBehaviour
         ResetHealth();    
     }
 
-    public void ResetHealth()
+    private void ResetHealth()
     {
         _currentHealth = _initialHealth;
         if(OnHealthChange!=null) OnHealthChange();
@@ -62,6 +62,8 @@ public class PlayerHealth :  MonoBehaviour
 
     public void IncreaseHealth(float amount)
     {
+        if(_currentHealth + Mathf.Abs(amount) > _initialHealth) return;
+
         _currentHealth += Mathf.Abs(amount);
         if(OnHealthChange != null) OnHealthChange();
     }
