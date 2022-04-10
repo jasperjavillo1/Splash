@@ -70,7 +70,7 @@ public class PlayerMovementStateMachine : MonoBehaviour
         _playerInput = new PlayerInput();
         _rigidbody2D = GetComponent<Rigidbody2D>();
         _capsuleCollider2D = GetComponent<CapsuleCollider2D>();
-
+        _playerHealth = GetComponent<PlayerHealth>();
         //set player input callbacks
         _playerInput.CharacterControls.Move.started += _onMovementInput;
         _playerInput.CharacterControls.Move.canceled += _onMovementInput;

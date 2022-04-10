@@ -123,3 +123,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   regenSound: {fileID: 8300000, guid: 77c934a2fb05de441aaa55a9205fb515, type: 3}
+  healthIncrementAmount: 200

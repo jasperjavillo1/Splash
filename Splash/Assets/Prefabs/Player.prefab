@@ -552,7 +552,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PL: {fileID: 2192033525742068018}
-  _initialHealth: 1000
+  _initialHealth: 2000
   _currentHealth: 0
 --- !u!212 &3300649008393559317
 SpriteRenderer:
@@ -655,6 +655,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   regenSound: {fileID: 0}
+  healthIncrementAmount: 100
 --- !u!114 &1132786328
 MonoBehaviour:
   m_ObjectHideFlags: 0
