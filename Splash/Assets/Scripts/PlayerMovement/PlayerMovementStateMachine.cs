@@ -121,6 +121,7 @@ public class PlayerMovementStateMachine : MonoBehaviour
     public bool IsGrounded()
     {
         //Method for determining if player is grounded.
-        return Physics2D.Raycast((_rigidbody2D.transform.position - new Vector3(0,0.6f,0)), Vector2.down, 0.1f);
+        Vector3 raycastOrigin = _rigidbody2D.transform.position - new Vector3(0, (_rigidbody2D.transform.localScale.y / 2 + 0.1f), 0);
+        return Physics2D.Raycast(raycastOrigin, Vector2.down, 0.1f);
     }
 }
