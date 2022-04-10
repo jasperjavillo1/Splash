@@ -44,6 +44,6 @@ public class PlayerJumpState : PlayerMovementBaseState
     private void _handleJump()
     {
         Ctx.Rigidbody2D.velocity = Ctx.JumpVector;
-        Ctx.PlayerHealth.DecreaseHealth(50f);
+        //Ctx.PlayerHealth.DecreaseHealth(50f);
     }
 }
