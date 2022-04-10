@@ -13,6 +13,10 @@ public class PlayerMovementStateMachine : MonoBehaviour
     private CapsuleCollider2D _capsuleCollider2D;
     private PlayerHealth _playerHealth;
 
+    [SerializeField] AudioClip jumpSound;
+    [SerializeField] AudioClip impactSound;
+    bool grounded;
+
     //player input value variables
     private Vector2 _currentMovementInput;
     private Vector2 _currentMovement;
@@ -56,12 +60,9 @@ public class PlayerMovementStateMachine : MonoBehaviour
     public int Zero { get { return _zero; } }
     public Vector2 JumpVector { get { return _jumpVector; } }
 
-
     //state machine getters and setters
     public PlayerMovementBaseState CurrentState { get { return _currentState; } set { _currentState = value; } }
     public PlayerStateFactory States { get { return _states; } }
-
-
 
     void Awake()
     {
@@ -116,6 +117,13 @@ public class PlayerMovementStateMachine : MonoBehaviour
     private void _onJump(InputAction.CallbackContext context)
     {
         _isJumpPressed = context.ReadValueAsButton();
+
+        if (grounded)
+        {
+            // Play jump sound
+            FindObjectOfType<AudioManager>().playSound(jumpSound);
+            grounded = false;
+        }
     }
 
     public bool IsGrounded()
@@ -124,4 +132,16 @@ public class PlayerMovementStateMachine : MonoBehaviour
         Vector3 raycastOrigin = _rigidbody2D.transform.position - new Vector3(0, (_rigidbody2D.transform.localScale.y / 2 + 0.1f), 0);
         return Physics2D.Raycast(raycastOrigin, Vector2.down, 0.1f);
     }
+
+
+    private void OnCollisionEnter2D(Collision2D col)
+    {
+        // Play impact sound
+        if (col.gameObject.tag == "Ground" || col.gameObject.tag == "Untagged")
+        {
+            grounded = true;
+            FindObjectOfType<AudioManager>().playSound(impactSound);
+        }
+    }
+
 }

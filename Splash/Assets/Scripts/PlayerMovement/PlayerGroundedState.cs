@@ -4,12 +4,15 @@ using UnityEngine;
 
 public class PlayerGroundedState : PlayerMovementBaseState
 {
+
+
     public PlayerGroundedState(PlayerMovementStateMachine context, PlayerStateFactory factory) : base(context, factory)
     {
         IsRootState = true;
         InitizeSubState();
+
     }
-    public override void EnterState() { }
+    public override void EnterState() {}
     public override void UpdateState()
     {
         CheckSwitchState();

@@ -2598,6 +2598,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 7128093929225799347, guid: a3b6e8960f4900c45957ce5f7aa70047, type: 3}
+      propertyPath: impactSound
+      value: 
+      objectReference: {fileID: 8300000, guid: fc73554d20e71a7439ec665ae8cde551, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a3b6e8960f4900c45957ce5f7aa70047, type: 3}
 --- !u!1 &3300649009713631266 stripped

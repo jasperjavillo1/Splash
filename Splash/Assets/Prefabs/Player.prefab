@@ -654,6 +654,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 309d753a52aa7184aac4f63b286d4fbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  regenSound: {fileID: 0}
 --- !u!114 &1132786328
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -695,6 +696,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bda91e7cbebaa7f4f973d4f6e96dc57a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  jumpSound: {fileID: 8300000, guid: 6aa44c902b73bc4409e451cd4cfb7a58, type: 3}
+  impactSound: {fileID: 8300000, guid: fc73554d20e71a7439ec665ae8cde551, type: 3}
 --- !u!1 &4822720583697805628
 GameObject:
   m_ObjectHideFlags: 0
