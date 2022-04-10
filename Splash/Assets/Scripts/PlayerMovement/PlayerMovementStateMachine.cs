@@ -11,6 +11,7 @@ public class PlayerMovementStateMachine : MonoBehaviour
     private PlayerInput _playerInput;
     private Rigidbody2D _rigidbody2D;
     private CapsuleCollider2D _capsuleCollider2D;
+    private PlayerHealth _playerHealth;
 
     //player input value variables
     private Vector2 _currentMovementInput;
@@ -37,6 +38,7 @@ public class PlayerMovementStateMachine : MonoBehaviour
     public PlayerInput PlayerInput { get { return _playerInput; } set { _playerInput = value; } }
     public Rigidbody2D Rigidbody2D { get { return _rigidbody2D; } }
     public CapsuleCollider2D CapsuleCollider2D { get { return _capsuleCollider2D; } }
+    public PlayerHealth PlayerHealth { get { return _playerHealth; } }
 
     //player input value getters and setters
     public Vector2 CurrentMovementInput { get { return _currentMovementInput; } set { _currentMovementInput = value; } }
