@@ -11,9 +11,6 @@ public class ShootingHazard : Hazard {
     public float timeBtwShots = .75f;
     public float targetSpeed = 10.0f;
     public float bulletSpeed = 10.0f;
-    public float panningDegree; //  degree (in degrees) at which the turret pans back and forth
-
-    bool panningRight = true;
 
     public GameObject bullet;
 
@@ -52,9 +49,6 @@ public class ShootingHazard : Hazard {
                 target.transform.position = Vector2.MoveTowards(target.transform.position, FindObjectOfType<PlayerHealth>().transform.position, targetSpeed * Time.deltaTime);
                 break;
         }
-
-        GetComponent<LineRenderer>().SetPosition(0, transform.position);
-        GetComponent<LineRenderer>().SetPosition(1, getFirstHitPoint());
     }
 
     void rotateBarrel() {
