@@ -15,6 +15,8 @@ public class PlayerMovementStateMachine : MonoBehaviour
 
     [SerializeField] AudioClip jumpSound;
     [SerializeField] AudioClip impactSound;
+    [SerializeField] AudioClip Checkpoint;
+
     bool grounded;
 
     //player input value variables
@@ -141,6 +143,9 @@ public class PlayerMovementStateMachine : MonoBehaviour
         {
             grounded = true;
             FindObjectOfType<AudioManager>().playSound(impactSound);
+
+            FindObjectOfType<AudioManager>().playSound(Checkpoint);
+
         }
     }
 
