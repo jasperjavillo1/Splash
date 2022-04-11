@@ -32,11 +32,10 @@ public class PlayerCheckpointManager : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other) 
     {
-        if(other.tag == "PlayerCheckpoint")
+        if(other.gameObject.tag == "PlayerCheckpoint")
         {
             int checkpointNumber = Convert.ToInt32(new String(other.name.Where(Char.IsDigit).ToArray()));
             PlayerPrefs.SetInt("Current Checkpoint", checkpointNumber);
-            FindObjectOfType<AudioManager>().playSound(Checkpoint);
 
         }
     }
