@@ -21,8 +21,8 @@ public class PlayerChangeMass : MonoBehaviour
 
     private void UpdatePlayerMass()
     {
-        Vector3 newScale = Mathf.Abs(_health.GetCurrentHealth()/_health.GetInitialHealth()) * new Vector3(1f,1f,1f);
-        transform.localScale = newScale;
+        // Vector3 newScale = Mathf.Abs(_health.GetCurrentHealth()/_health.GetInitialHealth()) * new Vector3(1f,1f,1f);
+        // transform.localScale = newScale;
     }
 
 }
