@@ -8,6 +8,7 @@ public class PassToNextLevel : MonoBehaviour
 
    public void PassToNext()
     {
+
         if (SceneManager.GetActiveScene().buildIndex == 5)
         {
             SceneManager.LoadScene(1);

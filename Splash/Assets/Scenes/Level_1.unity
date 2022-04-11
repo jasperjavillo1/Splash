@@ -1036,6 +1036,17 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &409197309 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 37311668, guid: a3b6e8960f4900c45957ce5f7aa70047, type: 3}
+  m_PrefabInstance: {fileID: 3300649009713631265}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb81e886cdc31924abde3a43d2dadea6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &430880969 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3655127739991958567, guid: b86d817da4d750042a668b8ace9da82c, type: 3}
@@ -7134,6 +7145,10 @@ PrefabInstance:
       propertyPath: StageClear
       value: 
       objectReference: {fileID: 8300000, guid: 8c9ee888b1d5b814194966fe3c4912ed, type: 3}
+    - target: {fileID: 7419122751148653267, guid: a81d77d3b5a8ed540bcd0db83752a76d, type: 3}
+      propertyPath: playerCheckpointManager
+      value: 
+      objectReference: {fileID: 409197309}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a81d77d3b5a8ed540bcd0db83752a76d, type: 3}
 --- !u!1001 &1735564835

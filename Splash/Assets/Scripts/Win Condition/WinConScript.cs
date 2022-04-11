@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 public class WinConScript : MonoBehaviour
 {
     public GameObject winCon;
-
+    public PlayerCheckpointManager playerCheckpointManager;
     [SerializeField] AudioClip StageClear;
 
     // Start is called before the first frame update
@@ -20,8 +20,9 @@ public class WinConScript : MonoBehaviour
         if(collision.tag == "Player")
         {
             winCon.SetActive(true);
-
             FindObjectOfType<AudioManager>().playSound(StageClear);
+
+            playerCheckpointManager.ResetToFirstCheckpoint();
 
         }
     }
