@@ -2714,7 +2714,7 @@ GameObject:
   - component: {fileID: 877950330}
   - component: {fileID: 877950329}
   - component: {fileID: 877950328}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Checkpoint (3)
   m_TagString: PlayerCheckpoint
   m_Icon: {fileID: 0}
@@ -6416,7 +6416,7 @@ GameObject:
   - component: {fileID: 1575954313}
   - component: {fileID: 1575954312}
   - component: {fileID: 1575954311}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Checkpoint (2)
   m_TagString: PlayerCheckpoint
   m_Icon: {fileID: 0}
@@ -6749,6 +6749,10 @@ PrefabInstance:
       propertyPath: winCon
       value: 
       objectReference: {fileID: 3300649009713631266}
+    - target: {fileID: 7419122751148653267, guid: a81d77d3b5a8ed540bcd0db83752a76d, type: 3}
+      propertyPath: StageClear
+      value: 
+      objectReference: {fileID: 8300000, guid: 8c9ee888b1d5b814194966fe3c4912ed, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a81d77d3b5a8ed540bcd0db83752a76d, type: 3}
 --- !u!1001 &1735564835
@@ -6829,7 +6833,7 @@ GameObject:
   - component: {fileID: 1767687237}
   - component: {fileID: 1767687236}
   - component: {fileID: 1767687235}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Checkpoint (1)
   m_TagString: PlayerCheckpoint
   m_Icon: {fileID: 0}

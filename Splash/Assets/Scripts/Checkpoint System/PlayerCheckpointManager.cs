@@ -8,7 +8,6 @@ public class PlayerCheckpointManager : MonoBehaviour
 {
     //parameters
     [SerializeField] GameObject[] _checkpoints;
-    [SerializeField] AudioClip Checkpoint;
 
 
     public void ResetToFirstCheckpoint()

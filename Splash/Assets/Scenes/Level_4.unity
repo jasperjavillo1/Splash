@@ -578,6 +578,10 @@ PrefabInstance:
       propertyPath: winCon
       value: 
       objectReference: {fileID: 3300649009713631266}
+    - target: {fileID: 7419122751148653267, guid: a81d77d3b5a8ed540bcd0db83752a76d, type: 3}
+      propertyPath: StageClear
+      value: 
+      objectReference: {fileID: 8300000, guid: 8c9ee888b1d5b814194966fe3c4912ed, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a81d77d3b5a8ed540bcd0db83752a76d, type: 3}
 --- !u!4 &819015916 stripped
@@ -2659,6 +2663,10 @@ PrefabInstance:
       propertyPath: PLives
       value: 
       objectReference: {fileID: 1777104189}
+    - target: {fileID: 7128093929225799347, guid: a3b6e8960f4900c45957ce5f7aa70047, type: 3}
+      propertyPath: Checkpoint
+      value: 
+      objectReference: {fileID: 8300000, guid: f4adba02bda7dc84bb8167559717a077, type: 3}
     - target: {fileID: 7147497341448694779, guid: a3b6e8960f4900c45957ce5f7aa70047, type: 3}
       propertyPath: Credits
       value: 
