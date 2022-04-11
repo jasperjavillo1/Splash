@@ -8,7 +8,7 @@ public class PlayerCheckpointManager : MonoBehaviour
 {
     //parameters
     [SerializeField] GameObject[] _checkpoints;
-
+    public PlayerLives playerLives;
 
     public void ResetToFirstCheckpoint()
     {
@@ -36,6 +36,14 @@ public class PlayerCheckpointManager : MonoBehaviour
             int checkpointNumber = Convert.ToInt32(new String(other.name.Where(Char.IsDigit).ToArray()));
             PlayerPrefs.SetInt("Current Checkpoint", checkpointNumber);
 
+        }
+    }
+
+    public void Update()
+    {
+        if (playerLives._CurrentLives == 0f)
+        {
+            ResetToFirstCheckpoint();
         }
     }
 }

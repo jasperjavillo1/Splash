@@ -15,7 +15,6 @@ public class PlayerLives : MonoBehaviour
     private PlayerInput _playerInput;
     private bool _isLivesSystemTestPressed;
 
-
     private void Awake()
     {
         _playerInput = new PlayerInput();
@@ -48,6 +47,7 @@ public class PlayerLives : MonoBehaviour
         //Game Over "if" statement.
         if (_CurrentLives <=0f)
         {
+
             livesreset = true;
             gameOver.SetActive(true);
             
