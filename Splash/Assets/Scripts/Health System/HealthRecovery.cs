@@ -11,7 +11,8 @@ public class HealthRecovery : MonoBehaviour
         if(other.tag == "Player")
         {
             PlayerHealth PH = other.GetComponent<PlayerHealth>();
-            PH.IncreaseHealth(healthIncrementAmount);
+
+            PH.ResetHealth();
         }
     }
 
