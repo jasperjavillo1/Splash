@@ -17,7 +17,16 @@ public class PlayerCheckpointManager : MonoBehaviour
 
     private void OnEnable()
     {
-        transform.position = _checkpoints[PlayerPrefs.GetInt("Current Checkpoint") - 1].transform.position;
+        PlayerPrefs.HasKey("Current Checkpoint");
+        if(PlayerPrefs.HasKey("Current Checkpoint") == true)
+        {
+            transform.position = _checkpoints[PlayerPrefs.GetInt("Current Checkpoint") - 1].transform.position;
+        }
+        //transform.position = _checkpoints[PlayerPrefs.GetInt("Current Checkpoint") - 1].transform.position;
+    }
+    public void Awake()
+    {
+        //ResetToFirstCheckpoint();
     }
 
     private void OnTriggerEnter2D(Collider2D other) 

@@ -1,5 +1,5 @@
 {
-    "name": "NewAssembly",
+    "name": "NEWUIAssembly",
     "rootNamespace": "",
     "references": [
         "UnityEngine.UIElementsModule"
