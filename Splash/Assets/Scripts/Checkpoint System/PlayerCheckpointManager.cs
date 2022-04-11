@@ -10,6 +10,7 @@ public class PlayerCheckpointManager : MonoBehaviour
     [SerializeField] GameObject[] _checkpoints;
     [SerializeField] AudioClip Checkpoint;
 
+
     public void ResetToFirstCheckpoint()
     {
         PlayerPrefs.SetInt("Current Checkpoint", 1);
@@ -35,8 +36,8 @@ public class PlayerCheckpointManager : MonoBehaviour
         {
             int checkpointNumber = Convert.ToInt32(new String(other.name.Where(Char.IsDigit).ToArray()));
             PlayerPrefs.SetInt("Current Checkpoint", checkpointNumber);
-
             FindObjectOfType<AudioManager>().playSound(Checkpoint);
-        }    
+
+        }
     }
 }

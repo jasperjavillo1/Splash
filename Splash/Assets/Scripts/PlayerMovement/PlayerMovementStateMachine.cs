@@ -144,9 +144,16 @@ public class PlayerMovementStateMachine : MonoBehaviour
             grounded = true;
             FindObjectOfType<AudioManager>().playSound(impactSound);
 
-            FindObjectOfType<AudioManager>().playSound(Checkpoint);
+            //FindObjectOfType<AudioManager>().playSound(Checkpoint);
 
         }
     }
 
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.tag == "PlayerCheckpoint")
+        {
+            FindObjectOfType<AudioManager>().playSound(Checkpoint);
+        }
+    }
 }
