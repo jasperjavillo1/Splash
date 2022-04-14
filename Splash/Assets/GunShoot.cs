@@ -30,7 +30,7 @@ public class GunShoot : MonoBehaviour
 
     private void Update() 
     {
-        if(Input.GetButtonDown("Fire1"))
+        if(Time.time > 1f && Input.GetButtonDown("Fire1"))
         {
             Shoot();
         }
