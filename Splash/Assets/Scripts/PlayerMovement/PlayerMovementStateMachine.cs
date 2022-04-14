@@ -18,6 +18,7 @@ public class PlayerMovementStateMachine : MonoBehaviour
     [SerializeField] AudioClip Checkpoint;
 
     bool grounded;
+    public int keyCount = 0;
 
     //player input value variables
     private Vector2 _currentMovementInput;
@@ -143,9 +144,6 @@ public class PlayerMovementStateMachine : MonoBehaviour
         {
             grounded = true;
             FindObjectOfType<AudioManager>().playSound(impactSound);
-
-            //FindObjectOfType<AudioManager>().playSound(Checkpoint);
-
         }
     }
 
@@ -154,6 +152,12 @@ public class PlayerMovementStateMachine : MonoBehaviour
         if (other.gameObject.tag == "PlayerCheckpoint")
         {
             FindObjectOfType<AudioManager>().playSound(Checkpoint);
+        }
+
+        if (other.tag == "Key")
+        {
+            keyCount++;
+            other.gameObject.SetActive(false);
         }
     }
 }

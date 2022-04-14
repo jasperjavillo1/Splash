@@ -7,6 +7,7 @@ TagManager:
   - Ground
   - HealthRegen
   - PlayerCheckpoint
+  - Key
   layers:
   - Default
   - TransparentFX
