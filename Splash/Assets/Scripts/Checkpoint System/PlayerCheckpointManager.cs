@@ -10,6 +10,7 @@ public class PlayerCheckpointManager : MonoBehaviour
     [SerializeField] GameObject[] _checkpoints;
     public PlayerLives playerLives;
 
+
     public void ResetToFirstCheckpoint()
     {
         PlayerPrefs.SetInt("Current Checkpoint", 1);
