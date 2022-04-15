@@ -702,6 +702,7 @@ MonoBehaviour:
   jumpSound: {fileID: 8300000, guid: 6aa44c902b73bc4409e451cd4cfb7a58, type: 3}
   impactSound: {fileID: 8300000, guid: fc73554d20e71a7439ec665ae8cde551, type: 3}
   Checkpoint: {fileID: 8300000, guid: f4adba02bda7dc84bb8167559717a077, type: 3}
+  keyCount: 0
 --- !u!114 &37311668
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1149,17 +1150,25 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3300649008393559314}
     m_Modifications:
+    - target: {fileID: 2322992647162834403, guid: 36b9978f799bf6942a2b3d548a9583de, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2322992647162834403, guid: 36b9978f799bf6942a2b3d548a9583de, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2322992648070815110, guid: 36b9978f799bf6942a2b3d548a9583de, type: 3}
       propertyPath: m_RootOrder
       value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 2322992648070815110, guid: 36b9978f799bf6942a2b3d548a9583de, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.517
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2322992648070815110, guid: 36b9978f799bf6942a2b3d548a9583de, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.343
+      value: -0.265
       objectReference: {fileID: 0}
     - target: {fileID: 2322992648070815110, guid: 36b9978f799bf6942a2b3d548a9583de, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1193,10 +1202,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2322992648070815113, guid: 36b9978f799bf6942a2b3d548a9583de, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2322992648070815113, guid: 36b9978f799bf6942a2b3d548a9583de, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2322992648070815114, guid: 36b9978f799bf6942a2b3d548a9583de, type: 3}
       propertyPath: m_Name
       value: Water Gun
       objectReference: {fileID: 0}
+    - target: {fileID: 4668002469692391123, guid: 36b9978f799bf6942a2b3d548a9583de, type: 3}
+      propertyPath: _isPlayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4668002469692391123, guid: 36b9978f799bf6942a2b3d548a9583de, type: 3}
+      propertyPath: _projectilePrefab
+      value: 
+      objectReference: {fileID: 1340686467537081242, guid: b1e5c9759899e8f4da5cb527c21e094a, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 36b9978f799bf6942a2b3d548a9583de, type: 3}
 --- !u!4 &1005058392327691377 stripped
