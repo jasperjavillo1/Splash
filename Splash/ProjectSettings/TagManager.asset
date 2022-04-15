@@ -9,6 +9,8 @@ TagManager:
   - PlayerCheckpoint
   - Key
   - Enemy
+  - EnemyProjectile
+  - GunProjectile
   layers:
   - Default
   - TransparentFX
@@ -21,9 +23,9 @@ TagManager:
   - HealthRegen
   - Hazard
   - PlayerCheckpoint
-  - 
-  - 
-  - 
+  - GunProjectile
+  - Enemy
+  - EnemyProjectile
   - 
   - 
   - 

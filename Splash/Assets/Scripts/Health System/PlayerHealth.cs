@@ -65,4 +65,13 @@ public class PlayerHealth :  MonoBehaviour
         _currentHealth += Mathf.Abs(amount);
         if(OnHealthChange != null) OnHealthChange();
     }
+
+    private void OnCollisionEnter2D(Collision2D other) 
+    {
+        if(other.gameObject.tag == "EnemyProjectile")
+        {
+            DecreaseHealth(other.gameObject.GetComponent<EnemyProjectile>().Damage);
+            Destroy(other.gameObject);
+        }    
+    }
 }
