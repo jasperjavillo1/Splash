@@ -8,6 +8,7 @@ TagManager:
   - HealthRegen
   - PlayerCheckpoint
   - Key
+  - Enemy
   layers:
   - Default
   - TransparentFX
