@@ -9,7 +9,7 @@ public class PassToNextLevel : MonoBehaviour
    public void PassToNext()
     {
 
-        SceneManager.LoadScene("Level_Select_Screen")
+        SceneManager.LoadScene("Level_Select_Screen");
     }
 
 
