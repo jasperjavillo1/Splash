@@ -15,6 +15,7 @@ public class LSS_Master : MonoBehaviour
     public GameObject LVL2;
     public GameObject LVL3;
     public GameObject LVL4;
+    public GameObject LVL5;
 
 
 
@@ -41,7 +42,7 @@ public class LSS_Master : MonoBehaviour
         }
         if (Lvl_5 == 1)
         {
-            LVL4.SetActive(false);
+            LVL5.SetActive(false);
         }
 
     }
