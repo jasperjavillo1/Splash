@@ -52,6 +52,9 @@ TagManager:
   - name: HealthRegen
     uniqueID: 2413462289
     locked: 0
+  - name: Enemy
+    uniqueID: 2581236715
+    locked: 0
   - name: Player
     uniqueID: 4188536767
     locked: 0
