@@ -16,7 +16,7 @@ public class LSS_Master : MonoBehaviour
     public GameObject LVL3;
     public GameObject LVL4;
     public GameObject LVL5;
-
+    public GameObject Credits;
 
 
     // Start is called before the first frame update
@@ -43,6 +43,10 @@ public class LSS_Master : MonoBehaviour
         if (Lvl_5 == 1)
         {
             LVL5.SetActive(false);
+        }
+        if (Lvl_1 == 1 && Lvl_2 == 1 && Lvl_3 == 1 && Lvl_4 == 1 && Lvl_5 == 1)
+        {
+            Credits.SetActive(true);
         }
 
     }
@@ -99,6 +103,8 @@ public class LSS_Master : MonoBehaviour
         Lvl_4 = 1;
         PlayerPrefs.SetInt("Lvl_5", Lvl_5 = 1);
     }
+
+
 
 
 }
