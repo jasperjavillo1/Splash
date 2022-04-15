@@ -4,34 +4,39 @@ using UnityEngine;
 
 public class SimpleEnemy : MonoBehaviour
 {
-    public float speed;
-    public float xMin, xMax, yMin, yMax;
-    //public float yMin, yMax;
+    public float xSpeed, ySpeed;
+    public float xMin, xMax, yMin, yMax, xDirection, yDirection;
 
-    private float xDistance, yDistance, xDirection = -.1f, yDirection = 0;
-
-
-    // Start is called before the first frame update
-    void Start()
-    {
-    
-    }
+    private float xDistance, yDistance;
 
     // Update is called once per frame
     void Update()
     {
-        gameObject.transform.position = new Vector2(transform.position.x + (speed * xDirection), transform.position.y + (speed * yDirection));
+        // Sets enemy movement speed and direction loop
+        gameObject.transform.position = new Vector2(transform.position.x + (xSpeed * xDirection), transform.position.y + (ySpeed * yDirection));
         xDistance = gameObject.transform.position.x;
+        yDistance = gameObject.transform.position.y;
 
         if (xDistance <= xMin)
         {
+            // Move Right
             xDirection = .1f;
-            //yDirection = -.1f;
         }
         if (xDistance >= xMax)
         {
+            // Move Left
             xDirection = -.1f;
-            //yDirection = .1f;
+        }
+
+        if (yDistance <= yMin)
+        {
+            // Move Up
+            yDirection = .1f;
+        }
+        if (yDistance >= yMax)
+        {
+            // Move Down
+            yDirection = -.1f;
         }
     }
 }
