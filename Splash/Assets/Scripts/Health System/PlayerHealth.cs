@@ -70,7 +70,16 @@ public class PlayerHealth :  MonoBehaviour
     {
         if(other.gameObject.tag == "EnemyProjectile")
         {
-            DecreaseHealth(other.gameObject.GetComponent<EnemyProjectile>().Damage);
+            if(other.gameObject.GetComponent<EnemyProjectile>())
+            {
+                DecreaseHealth(other.gameObject.GetComponent<EnemyProjectile>().Damage);
+            }
+            
+            else if(other.gameObject.GetComponent<BoomerangProjectile>())
+            {
+                DecreaseHealth(other.gameObject.GetComponent<BoomerangProjectile>().Damage);
+            }
+
             Destroy(other.gameObject);
         }    
     }

@@ -719,7 +719,6 @@ MonoBehaviour:
   _checkpoints:
   - {fileID: 0}
   - {fileID: 0}
-  - {fileID: 0}
   playerLives: {fileID: 2192033525742068018}
 --- !u!95 &3799654869864051784
 Animator:
