@@ -495,6 +495,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a057d9797dbeb24faaa45137b2641cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lss: {fileID: 0}
 --- !u!1 &3300649008393559315
 GameObject:
   m_ObjectHideFlags: 0
@@ -513,6 +514,7 @@ GameObject:
   - component: {fileID: 2192033525742068018}
   - component: {fileID: 7128093929225799347}
   - component: {fileID: 37311668}
+  - component: {fileID: 731750071578683689}
   m_Layer: 7
   m_Name: Player
   m_TagString: Player
@@ -594,7 +596,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -106430529
-  m_SortingLayer: 2
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 9a7ede28357ec2e42ad3c705ecb2d7fa, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -720,6 +722,24 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   playerLives: {fileID: 2192033525742068018}
+--- !u!114 &731750071578683689
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3300649008393559315}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb8c7a70e9c64ff4eab112927f3f2cc4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LVL1: {fileID: 0}
+  LVL2: {fileID: 0}
+  LVL3: {fileID: 0}
+  LVL4: {fileID: 0}
+  LVL5: {fileID: 0}
+  Credits: {fileID: 0}
 --- !u!1 &4822720583697805628
 GameObject:
   m_ObjectHideFlags: 0

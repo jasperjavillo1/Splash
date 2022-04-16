@@ -23,7 +23,6 @@ public class WinConScript : MonoBehaviour
             FindObjectOfType<AudioManager>().playSound(StageClear);
 
             playerCheckpointManager.ResetToFirstCheckpoint();
-
         }
     }
     
