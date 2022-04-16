@@ -26,10 +26,11 @@ public class LockedHealthRecovery : MonoBehaviour
     private void OnTriggerStay2D(Collider2D other)
     {
         // If player has a key and makes contact with the fountain
-        if (other.tag == "Player" && key == true)
+        if (other.CompareTag("Player") && key == true)
         {
             // Changes health regen color to green 
-            gameObject.GetComponent<Renderer>().material.color = Color.green;
+            //gameObject.GetComponent<Renderer>().material.color = Color.green;
+            gameObject.GetComponent<Animator>().runtimeAnimatorController.Equals("HealingFountain");
 
             // Enables and plays initial regen sound
             if (sound == false)
@@ -47,7 +48,7 @@ public class LockedHealthRecovery : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D col)
     {
         // Plays health regen sound
-        if (col.gameObject.tag == "Player" && sound == true)
+        if (col.gameObject.CompareTag("Player") && sound == true)
         {
             FindObjectOfType<AudioManager>().playSound(regenSound);
         }
