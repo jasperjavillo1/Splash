@@ -12,7 +12,10 @@ public class PlayerGroundedState : PlayerMovementBaseState
         InitizeSubState();
 
     }
-    public override void EnterState() {}
+    public override void EnterState()
+    {
+        Ctx.Animator.SetBool(Ctx.IsJumpingHash, false);
+    }
     public override void UpdateState()
     {
         CheckSwitchState();

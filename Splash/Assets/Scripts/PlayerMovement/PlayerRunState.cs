@@ -8,6 +8,7 @@ public class PlayerRunState : PlayerMovementBaseState
     public override void EnterState()
     {
         Ctx.AppliedMovement = Ctx.CurrentRunMovement * Time.deltaTime;
+        Ctx.Animator.SetBool(Ctx.IsMovingHash, true);
     }
     public override void UpdateState()
     {
