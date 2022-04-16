@@ -22,6 +22,7 @@ public class GunProjectile : MonoBehaviour
     private void Start() 
     {
         _projectileDirection = (Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position).normalized;
+        Destroy(gameObject, 5f);
     }
 
     private void FixedUpdate() 
