@@ -11,7 +11,8 @@ public class PlayerJumpState : PlayerMovementBaseState
     }
     public override void EnterState()
     {
-        _handleJump();    
+        _handleJump();
+        Ctx.Animator.SetBool(Ctx.IsJumpingHash, true);
     }
     public override void UpdateState()
     {

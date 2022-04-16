@@ -12,6 +12,10 @@ public class PlayerMovementStateMachine : MonoBehaviour
     private Rigidbody2D _rigidbody2D;
     private CapsuleCollider2D _capsuleCollider2D;
     private PlayerHealth _playerHealth;
+    private Animator _animator;
+
+    private int _isMovingHash;
+    private int _isJumpingHash;
 
     [SerializeField] AudioClip jumpSound;
     [SerializeField] AudioClip impactSound;
@@ -46,6 +50,10 @@ public class PlayerMovementStateMachine : MonoBehaviour
     public Rigidbody2D Rigidbody2D { get { return _rigidbody2D; } }
     public CapsuleCollider2D CapsuleCollider2D { get { return _capsuleCollider2D; } }
     public PlayerHealth PlayerHealth { get { return _playerHealth; } }
+    public Animator Animator { get { return _animator; } }
+
+    public int IsMovingHash { get { return _isMovingHash; } }
+    public int IsJumpingHash { get { return _isJumpingHash; } }
 
     //player input value getters and setters
     public Vector2 CurrentMovementInput { get { return _currentMovementInput; } set { _currentMovementInput = value; } }
@@ -74,6 +82,11 @@ public class PlayerMovementStateMachine : MonoBehaviour
         _rigidbody2D = GetComponent<Rigidbody2D>();
         _capsuleCollider2D = GetComponent<CapsuleCollider2D>();
         _playerHealth = GetComponent<PlayerHealth>();
+        _animator = GetComponent<Animator>();
+
+        _isMovingHash = Animator.StringToHash("isMoving");
+        _isJumpingHash = Animator.StringToHash("isJumping");
+
         //set player input callbacks
         _playerInput.CharacterControls.Move.started += _onMovementInput;
         _playerInput.CharacterControls.Move.canceled += _onMovementInput;
