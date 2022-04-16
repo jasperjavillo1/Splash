@@ -18,6 +18,8 @@ public class CameraController : MonoBehaviour
         Vector3 temp = transform.position;
         temp.x = playerTransform.position.x;
         temp.x += displacedCamera;
+        temp.y = playerTransform.position.y;
+        temp.y += displacedCamera;
 
         transform.position = temp;
        
