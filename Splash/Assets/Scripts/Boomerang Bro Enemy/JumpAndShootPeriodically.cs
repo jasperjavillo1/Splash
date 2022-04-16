@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -27,6 +28,23 @@ public class JumpAndShootPeriodically : MonoBehaviour
             Instantiate(_enemyProjectile, transform.position, Quaternion.identity);
             _rigidbody.velocity = new Vector2(_rigidbody.velocity.x, _jumpPower * Time.deltaTime);
             yield return new WaitForSeconds(_jumpInterval);
+        }
+    }
+
+    private void Update() 
+    {
+        FacePlayer();    
+    }
+
+    private void FacePlayer()
+    {
+        if(GameObject.FindWithTag("Player").transform.position.x > transform.position.x)
+        {
+            transform.localScale = new Vector3(-1f, transform.localScale.y, transform.localScale.y);
+        }
+        else
+        {
+            transform.localScale = new Vector3(1f, transform.localScale.y, transform.localScale.y);
         }
     }
 }
