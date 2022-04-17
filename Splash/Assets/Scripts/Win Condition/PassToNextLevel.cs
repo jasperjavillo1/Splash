@@ -7,10 +7,6 @@ public class PassToNextLevel : MonoBehaviour
 {
     public LSS_Master lss;
 
-    private void Start() {
-        lss = FindObjectOfType<LSS_Master>();
-    }
-
     public void PassToNext()
     {
         if (SceneManager.GetActiveScene().buildIndex == 3) 
