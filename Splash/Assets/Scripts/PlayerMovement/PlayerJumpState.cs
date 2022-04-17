@@ -12,13 +12,16 @@ public class PlayerJumpState : PlayerMovementBaseState
     public override void EnterState()
     {
         _handleJump();
-        Ctx.Animator.SetBool(Ctx.IsJumpingHash, true);
+        Ctx._ChangeAnimationState("Player_jump");
     }
     public override void UpdateState()
     {
         CheckSwitchState();
     }
-    public override void ExitState() { }
+    public override void ExitState()
+    {
+        Ctx._ChangeAnimationState("Player_land");
+    }
     public override void CheckSwitchState()
     {
         if(Ctx.IsGrounded())

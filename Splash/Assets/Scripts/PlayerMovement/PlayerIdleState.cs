@@ -8,7 +8,6 @@ public class PlayerIdleState : PlayerMovementBaseState
     public override void EnterState()
     {
         Ctx.AppliedMovement = new Vector2(0, 0);
-        Ctx.Animator.SetBool(Ctx.IsMovingHash, false);
     }
     public override void UpdateState()
     {
