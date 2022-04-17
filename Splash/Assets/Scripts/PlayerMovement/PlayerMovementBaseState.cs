@@ -9,6 +9,7 @@ public abstract class PlayerMovementBaseState
     protected bool IsRootState { get { return _isRootState; } set { _isRootState = value; } }
     protected PlayerMovementStateMachine Ctx { get { return _ctx; } }
     protected PlayerStateFactory Factory { get { return _factory; } set { _factory = value; } }
+    protected PlayerMovementBaseState CurrentSuperState { get { return _currentSuperState; } }
 
     public PlayerMovementBaseState(PlayerMovementStateMachine context, PlayerStateFactory factory)
     {

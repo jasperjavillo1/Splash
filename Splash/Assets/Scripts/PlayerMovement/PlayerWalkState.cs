@@ -8,12 +8,10 @@ public class PlayerWalkState : PlayerMovementBaseState
     public override void EnterState()
     {
         Ctx.AppliedMovement = Ctx.CurrentMovement * Time.deltaTime;
-        Ctx.Animator.SetBool(Ctx.IsMovingHash, true);
     }
     public override void UpdateState()
     {
         CheckSwitchState();
-        Ctx.PlayerHealth.DecreaseHealth(1f);
     }
     public override void ExitState() { }
     public override void CheckSwitchState()

@@ -13,9 +13,7 @@ public class PlayerMovementStateMachine : MonoBehaviour
     private CapsuleCollider2D _capsuleCollider2D;
     private PlayerHealth _playerHealth;
     private Animator _animator;
-
-    private int _isMovingHash;
-    private int _isJumpingHash;
+    private string _currentAnimatorState;
 
     [SerializeField] AudioClip jumpSound;
     [SerializeField] AudioClip impactSound;
@@ -52,9 +50,6 @@ public class PlayerMovementStateMachine : MonoBehaviour
     public PlayerHealth PlayerHealth { get { return _playerHealth; } }
     public Animator Animator { get { return _animator; } }
 
-    public int IsMovingHash { get { return _isMovingHash; } }
-    public int IsJumpingHash { get { return _isJumpingHash; } }
-
     //player input value getters and setters
     public Vector2 CurrentMovementInput { get { return _currentMovementInput; } set { _currentMovementInput = value; } }
     public Vector2 CurrentMovement { get { return _currentMovement; } set { _currentMovement = value; } }
@@ -83,9 +78,7 @@ public class PlayerMovementStateMachine : MonoBehaviour
         _capsuleCollider2D = GetComponent<CapsuleCollider2D>();
         _playerHealth = GetComponent<PlayerHealth>();
         _animator = GetComponent<Animator>();
-
-        _isMovingHash = Animator.StringToHash("isMoving");
-        _isJumpingHash = Animator.StringToHash("isJumping");
+        _currentAnimatorState = "Player_Idle";
 
         //set player input callbacks
         _playerInput.CharacterControls.Move.started += _onMovementInput;
@@ -107,6 +100,7 @@ public class PlayerMovementStateMachine : MonoBehaviour
         _currentState.UpdateStates();
         //_rigidbody2D.
         transform.Translate(_appliedMovement);
+        _MovementAnimation();
     }
 
     private void OnEnable()
@@ -171,6 +165,27 @@ public class PlayerMovementStateMachine : MonoBehaviour
         {
             keyCount++;
             other.gameObject.SetActive(false);
+        }
+    }
+    public void _ChangeAnimationState(string newState)
+    {
+        if (_currentAnimatorState == newState) return;
+        _animator.Play(newState);
+        _currentAnimatorState = newState;
+    }
+
+    private void _MovementAnimation()
+    {
+        if(_currentState.GetType().Equals(typeof(PlayerGroundedState)))
+        {
+            if(_appliedMovement.x != _zero)
+            {
+                _ChangeAnimationState("Player_moving");
+            }
+            else
+            {
+                _ChangeAnimationState("Player_idle");
+            }
         }
     }
 }
