@@ -30,7 +30,7 @@ public class LockedHealthRecovery : MonoBehaviour
         {
             // Changes health regen color to green 
             //gameObject.GetComponent<Renderer>().material.color = Color.green;
-            gameObject.GetComponent<Animator>().runtimeAnimatorController.Equals("HealingFountain");
+            gameObject.GetComponent<Animator>().Play("CleansedFountain");
 
             // Enables and plays initial regen sound
             if (sound == false)
