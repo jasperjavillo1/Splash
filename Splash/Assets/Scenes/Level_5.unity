@@ -684,7 +684,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8909597500628395302, guid: 443ff0577e63c954d95d8534a65216bb, type: 3}
       propertyPath: _health
-      value: 40
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 8909597500628395303, guid: 443ff0577e63c954d95d8534a65216bb, type: 3}
       propertyPath: _jumpPower
@@ -758,7 +758,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8909597500628395302, guid: 443ff0577e63c954d95d8534a65216bb, type: 3}
       propertyPath: _health
-      value: 30
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 8909597500628395303, guid: 443ff0577e63c954d95d8534a65216bb, type: 3}
       propertyPath: _jumpPower
@@ -1001,7 +1001,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8909597500628395302, guid: 443ff0577e63c954d95d8534a65216bb, type: 3}
       propertyPath: _health
-      value: 40
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 8909597500628395303, guid: 443ff0577e63c954d95d8534a65216bb, type: 3}
       propertyPath: _jumpPower
@@ -7159,7 +7159,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8909597500628395302, guid: 443ff0577e63c954d95d8534a65216bb, type: 3}
       propertyPath: _health
-      value: 30
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 8909597500628395303, guid: 443ff0577e63c954d95d8534a65216bb, type: 3}
       propertyPath: _jumpPower
@@ -8977,7 +8977,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8909597500628395302, guid: 443ff0577e63c954d95d8534a65216bb, type: 3}
       propertyPath: _health
-      value: 30
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 8909597500628395303, guid: 443ff0577e63c954d95d8534a65216bb, type: 3}
       propertyPath: _jumpPower
@@ -9133,7 +9133,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8909597500628395302, guid: 443ff0577e63c954d95d8534a65216bb, type: 3}
       propertyPath: _health
-      value: 40
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 8909597500628395303, guid: 443ff0577e63c954d95d8534a65216bb, type: 3}
       propertyPath: _jumpPower
@@ -9460,7 +9460,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3300649008393559319, guid: a3b6e8960f4900c45957ce5f7aa70047, type: 3}
       propertyPath: _initialHealth
-      value: 10000
+      value: 2000
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a3b6e8960f4900c45957ce5f7aa70047, type: 3}
@@ -9546,7 +9546,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8909597500628395302, guid: 443ff0577e63c954d95d8534a65216bb, type: 3}
       propertyPath: _health
-      value: 60
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 8909597500628395303, guid: 443ff0577e63c954d95d8534a65216bb, type: 3}
       propertyPath: _jumpPower
