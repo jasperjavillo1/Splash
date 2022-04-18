@@ -1021,6 +1021,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ChasingEnemy (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 5951754572756927802, guid: e1116b2516855f34bb4562d71963c9d1, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 255525960}
     - target: {fileID: 8708009069484738313, guid: e1116b2516855f34bb4562d71963c9d1, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -1721,6 +1725,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ChasingEnemy (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 5951754572756927802, guid: e1116b2516855f34bb4562d71963c9d1, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 255525960}
     - target: {fileID: 8708009069484738313, guid: e1116b2516855f34bb4562d71963c9d1, type: 3}
       propertyPath: m_RootOrder
       value: 1
