@@ -147,27 +147,21 @@ public class PlayerMovementStateMachine : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D col)
     {
         // Play impact sound
-        if (col.gameObject.CompareTag("Ground") || col.gameObject.CompareTag("Untagged"))
+        if (col.gameObject.tag == "Ground" || col.gameObject.tag == "Untagged")
         {
             grounded = true;
             FindObjectOfType<AudioManager>().playSound(impactSound);
-        }
-
-        if (col.gameObject.CompareTag("Squish"))
-        {
-            
-            col.transform.parent.gameObject.SetActive(false);
         }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("PlayerCheckpoint"))
+        if (other.gameObject.tag == "PlayerCheckpoint")
         {
             FindObjectOfType<AudioManager>().playSound(Checkpoint);
         }
 
-        if (other.CompareTag("Key"))
+        if (other.tag == "Key")
         {
             keyCount++;
             other.gameObject.SetActive(false);
