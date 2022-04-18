@@ -24,6 +24,7 @@ public class EnemyProjectile : MonoBehaviour
     {
         Vector3 rawProjectileDirection = (GameObject.FindWithTag("Player").transform.position - transform.position).normalized;
         _projectileDirection = new Vector3(rawProjectileDirection.x, 0f, 0f);
+        Destroy(gameObject, 5f);
     }
 
     private void FixedUpdate() 

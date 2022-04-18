@@ -12,6 +12,8 @@ public class PlayerMovementStateMachine : MonoBehaviour
     private Rigidbody2D _rigidbody2D;
     private CapsuleCollider2D _capsuleCollider2D;
     private PlayerHealth _playerHealth;
+    private Animator _animator;
+    private string _currentAnimatorState;
 
     [SerializeField] AudioClip jumpSound;
     [SerializeField] AudioClip impactSound;
@@ -46,6 +48,7 @@ public class PlayerMovementStateMachine : MonoBehaviour
     public Rigidbody2D Rigidbody2D { get { return _rigidbody2D; } }
     public CapsuleCollider2D CapsuleCollider2D { get { return _capsuleCollider2D; } }
     public PlayerHealth PlayerHealth { get { return _playerHealth; } }
+    public Animator Animator { get { return _animator; } }
 
     //player input value getters and setters
     public Vector2 CurrentMovementInput { get { return _currentMovementInput; } set { _currentMovementInput = value; } }
@@ -74,6 +77,9 @@ public class PlayerMovementStateMachine : MonoBehaviour
         _rigidbody2D = GetComponent<Rigidbody2D>();
         _capsuleCollider2D = GetComponent<CapsuleCollider2D>();
         _playerHealth = GetComponent<PlayerHealth>();
+        _animator = GetComponent<Animator>();
+        _currentAnimatorState = "Player_Idle";
+
         //set player input callbacks
         _playerInput.CharacterControls.Move.started += _onMovementInput;
         _playerInput.CharacterControls.Move.canceled += _onMovementInput;
@@ -94,6 +100,7 @@ public class PlayerMovementStateMachine : MonoBehaviour
         _currentState.UpdateStates();
         //_rigidbody2D.
         transform.Translate(_appliedMovement);
+        _MovementAnimation();
     }
 
     private void OnEnable()
@@ -140,24 +147,52 @@ public class PlayerMovementStateMachine : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D col)
     {
         // Play impact sound
-        if (col.gameObject.tag == "Ground" || col.gameObject.tag == "Untagged")
+        if (col.gameObject.CompareTag("Ground") || col.gameObject.CompareTag("Untagged"))
         {
             grounded = true;
             FindObjectOfType<AudioManager>().playSound(impactSound);
         }
+
+        // If destructor portion of enemy hit, destroy enemy
+        if (col.gameObject.CompareTag("Squish"))
+        {
+            col.transform.parent.gameObject.SetActive(false);
+        }
+
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.tag == "PlayerCheckpoint")
+        if (other.gameObject.CompareTag("PlayerCheckpoint"))
         {
             FindObjectOfType<AudioManager>().playSound(Checkpoint);
         }
 
-        if (other.tag == "Key")
+        if (other.CompareTag("Key"))
         {
             keyCount++;
             other.gameObject.SetActive(false);
+        }
+    }
+    public void _ChangeAnimationState(string newState)
+    {
+        if (_currentAnimatorState == newState) return;
+        _animator.Play(newState);
+        _currentAnimatorState = newState;
+    }
+
+    private void _MovementAnimation()
+    {
+        if(_currentState.GetType().Equals(typeof(PlayerGroundedState)))
+        {
+            if(_appliedMovement.x != _zero)
+            {
+                _ChangeAnimationState("Player_moving");
+            }
+            else
+            {
+                _ChangeAnimationState("Player_idle");
+            }
         }
     }
 }

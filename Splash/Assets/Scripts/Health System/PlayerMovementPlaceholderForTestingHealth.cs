@@ -15,12 +15,16 @@ public class PlayerMovementPlaceholderForTestingHealth : MonoBehaviour
 
     //cache
     Rigidbody2D _rigidbody;
+    CapsuleCollider2D _capsuleCollider;
+    CircleCollider2D _circleCollider;
 
 
     // Start is called before the first frame update
     void Start()
     {
         _rigidbody = GetComponent<Rigidbody2D>();    
+        _capsuleCollider = GetComponent<CapsuleCollider2D>();
+        _circleCollider = GetComponent<CircleCollider2D>();
     }
 
     void Update()
@@ -36,7 +40,7 @@ public class PlayerMovementPlaceholderForTestingHealth : MonoBehaviour
 
     private void Jump()
     {
-        if (_rigidbody.IsTouchingLayers(LayerMask.GetMask("Ground")) && Input.GetAxis("Jump") > Mathf.Epsilon)
+        if ((_capsuleCollider.IsTouchingLayers(LayerMask.GetMask("Ground")) || _capsuleCollider.IsTouchingLayers(LayerMask.GetMask("Hazard"))) && Input.GetAxis("Jump") > Mathf.Epsilon)
         {
             float jump = Input.GetAxis("Jump") * Time.deltaTime * _jumpPower;
             _rigidbody.velocity = new Vector2(_rigidbody.velocity.x, jump);
