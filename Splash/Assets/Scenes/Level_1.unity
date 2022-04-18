@@ -794,6 +794,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: ChasingEnemy
       objectReference: {fileID: 0}
+    - target: {fileID: 5951754572756927802, guid: e1116b2516855f34bb4562d71963c9d1, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 255525960}
+    - target: {fileID: 6688235363260313109, guid: e1116b2516855f34bb4562d71963c9d1, type: 3}
+      propertyPath: activationTimes.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e1116b2516855f34bb4562d71963c9d1, type: 3}
 --- !u!4 &264262063 stripped
