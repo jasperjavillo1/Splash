@@ -12,7 +12,7 @@ public class PlayerJumpState : PlayerMovementBaseState
     public override void EnterState()
     {
         _handleJump();
-        Ctx._ChangeAnimationState("Player_jump");
+        //Ctx._ChangeAnimationState("Player_jump");
     }
     public override void UpdateState()
     {
@@ -20,7 +20,7 @@ public class PlayerJumpState : PlayerMovementBaseState
     }
     public override void ExitState()
     {
-        Ctx._ChangeAnimationState("Player_land");
+        //Ctx._ChangeAnimationState("Player_land");
     }
     public override void CheckSwitchState()
     {
