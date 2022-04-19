@@ -142,7 +142,7 @@ public class PlayerMovementStateMachine : MonoBehaviour
         return Physics2D.Raycast(raycastOrigin, Vector2.down, 0.1f);
     }
 
-
+    /*
     private void OnCollisionEnter2D(Collision2D col)
     {
         // Play impact sound
@@ -159,7 +159,6 @@ public class PlayerMovementStateMachine : MonoBehaviour
         }
 
     }
-
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("PlayerCheckpoint"))
@@ -172,7 +171,7 @@ public class PlayerMovementStateMachine : MonoBehaviour
             keyCount++;
             other.gameObject.SetActive(false);
         }
-    }
+    */
     public void _ChangeAnimationState(string newState)
     {
         if (_currentAnimatorState == newState) return;
