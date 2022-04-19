@@ -669,7 +669,10 @@ MonoBehaviour:
   ySpeed: 0
   xEnd: 0
   xDirection: -1
-  xStart: -8.55
+  xStart: -2
+  xDistPos: 0
+  xDistNeg: 0
+  maxDistance: 2
 --- !u!4 &611007596 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5919633807869971366, guid: cc32e9bfec24e6f4e9e3a2c70064b21c, type: 3}
