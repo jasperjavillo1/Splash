@@ -38,7 +38,6 @@ public class BoomerangProjectile : MonoBehaviour
         if(Mathf.Abs(GameObject.FindWithTag("Player").transform.position.x - transform.position.x) <= 0.125f)
         {
             _hasPassedPlayer = true;
-            Debug.Log("passed player");
         }
         
         if(_hasPassedPlayer)

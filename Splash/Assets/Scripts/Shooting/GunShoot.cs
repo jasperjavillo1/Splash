@@ -8,7 +8,11 @@ public class GunShoot : MonoBehaviour
     //parameters
     [SerializeField] Transform _shotSpawnPosition;
     [SerializeField] GameObject _projectilePrefab;
+    [SerializeField] private float _shootInterval = 0.2f;
     
+
+    //state
+    private float _nextShootTime = 0.2f;
 
     //events
 
@@ -24,9 +28,10 @@ public class GunShoot : MonoBehaviour
 
     private void Update() 
     {
-        if(Time.time > 2f && Input.GetButtonDown("Fire1"))
+        if((Input.GetButton("Fire1") || Input.GetButton("Fire2")) && Time.time > _nextShootTime)
         {
             Shoot();
+            _nextShootTime = Time.time + _shootInterval;
         }
     }
 

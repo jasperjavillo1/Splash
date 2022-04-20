@@ -135,4 +135,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _force: 0.05
-  Damage: 50
+  Damage: 25
