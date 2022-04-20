@@ -160,6 +160,25 @@ public class PlayerMovementStateMachine : MonoBehaviour
         return result;
     }
 
+    public bool HitCeiling()
+    {
+        //Method for determining if player hit a ceiling.
+        bool result = false;
+        float halfX = _capsuleCollider2D.size.x / 2;
+        float halfY = _capsuleCollider2D.size.y / 2;
+        Vector3 raycastOriginUp = _rigidbody2D.transform.position + new Vector3(0, (halfY + 0.1f), 0);
+        Vector3 raycastOriginLeftUp = _rigidbody2D.transform.position + new Vector3(-halfX, halfY, 0);
+        Vector3 raycastOriginRightUp = _rigidbody2D.transform.position + new Vector3(halfX, halfY, 0);
+        bool resultUp = Physics2D.Raycast(raycastOriginUp, Vector2.down, 0.05f);
+        bool resultLeftUp = Physics2D.Raycast(raycastOriginLeftUp, Vector2.down + Vector2.left, 0.01f);
+        bool resultRightUp = Physics2D.Raycast(raycastOriginRightUp, Vector2.down + Vector2.right, 0.01f);
+        if (resultUp || resultLeftUp || resultRightUp)
+        {
+            result = true;
+        }
+        return result;
+    }
+
     private void OnCollisionEnter2D(Collision2D col)
     {
         // Play impact sound
