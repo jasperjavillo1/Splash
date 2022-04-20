@@ -7,7 +7,7 @@ public class PlayerWalkState : PlayerMovementBaseState
     public PlayerWalkState(PlayerMovementStateMachine context, PlayerStateFactory factory) : base(context, factory) { }
     public override void EnterState()
     {
-        Ctx.AppliedMovement = Ctx.CurrentMovement * Time.deltaTime;
+        Ctx.CurrentMovementX = Ctx.CurrentWalkMovement.x * Time.deltaTime;
     }
     public override void UpdateState()
     {

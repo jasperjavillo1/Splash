@@ -2,19 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerGroundedState : PlayerMovementBaseState
+public class PlayerFallingState : PlayerMovementBaseState
 {
-
-
-    public PlayerGroundedState(PlayerMovementStateMachine context, PlayerStateFactory factory) : base(context, factory)
+    public PlayerFallingState(PlayerMovementStateMachine context, PlayerStateFactory factory) : base(context, factory)
     {
         IsRootState = true;
         InitizeSubState();
-
     }
+
     public override void EnterState()
     {
-        Ctx.CurrentMovementY = 0;
+        Ctx.CurrentMovementY = Ctx.Gravity.y * Time.deltaTime;
     }
     public override void UpdateState()
     {
@@ -23,26 +21,22 @@ public class PlayerGroundedState : PlayerMovementBaseState
     public override void ExitState() { }
     public override void CheckSwitchState()
     {
-        if(Ctx.IsJumpPressed)
+        if (Ctx.IsGrounded())
         {
-            SwitchState(Factory.Jump());
-        }
-        if(!Ctx.IsGrounded())
-        {
-            SwitchState(Factory.Falling());
+            SwitchState(Factory.Grounded());
         }
     }
     public override void InitizeSubState()
     {
-        if(!Ctx.IsMovementPressed && !Ctx.IsRunPressed)
+        if (!Ctx.IsMovementPressed && !Ctx.IsRunPressed)
         {
             SetSubState(Factory.Idle());
         }
-        else if(Ctx.IsMovementPressed && !Ctx.IsRunPressed)
+        else if (Ctx.IsMovementPressed && !Ctx.IsRunPressed)
         {
             SetSubState(Factory.Walk());
         }
-        else if(Ctx.IsMovementPressed && Ctx.IsRunPressed)
+        else if (Ctx.IsMovementPressed && Ctx.IsRunPressed)
         {
             SetSubState(Factory.Run());
         }
