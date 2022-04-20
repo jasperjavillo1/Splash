@@ -18,7 +18,10 @@ public class PlayerFallingState : PlayerMovementBaseState
     {
         CheckSwitchState();
     }
-    public override void ExitState() { }
+    public override void ExitState()
+    {
+        Ctx._ChangeAnimationState("Player_land");
+    }
     public override void CheckSwitchState()
     {
         if (Ctx.IsGrounded())

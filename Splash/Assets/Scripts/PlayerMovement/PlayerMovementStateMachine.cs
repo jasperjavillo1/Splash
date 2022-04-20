@@ -105,7 +105,7 @@ public class PlayerMovementStateMachine : MonoBehaviour
     {
         _currentState.UpdateStates();
         _handleMovement();
-        //_MovementAnimation();
+        _MovementAnimation();
     }
 
     private void OnEnable()
@@ -160,7 +160,6 @@ public class PlayerMovementStateMachine : MonoBehaviour
         return result;
     }
 
-    /*
     private void OnCollisionEnter2D(Collision2D col)
     {
         // Play impact sound
@@ -189,7 +188,8 @@ public class PlayerMovementStateMachine : MonoBehaviour
             keyCount++;
             other.gameObject.SetActive(false);
         }
-    */
+    }
+
     public void _ChangeAnimationState(string newState)
     {
         if (_currentAnimatorState == newState) return;

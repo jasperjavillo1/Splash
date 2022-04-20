@@ -20,10 +20,7 @@ public class PlayerJumpState : PlayerMovementBaseState
     {
         CheckSwitchState();
     }
-    public override void ExitState()
-    {
-        //Ctx._ChangeAnimationState("Player_land");
-    }
+    public override void ExitState() { }
     public override void CheckSwitchState()
     {
         if(Ctx.IsGrounded())
@@ -55,7 +52,7 @@ public class PlayerJumpState : PlayerMovementBaseState
     private void _handleJump()
     {
         Ctx.CurrentMovementY = Ctx.JumpVector.y * Time.deltaTime;
-        //Ctx.PlayerHealth.DecreaseHealth(50f);
+        Ctx.PlayerHealth.DecreaseHealth(50f);
     }
 
     private IEnumerator _reachJumpPeak()
