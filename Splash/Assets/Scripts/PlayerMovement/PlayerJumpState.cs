@@ -27,7 +27,7 @@ public class PlayerJumpState : PlayerMovementBaseState
         {
             SwitchState(Factory.Grounded());
         }
-        if(!Ctx.IsJumpPressed)
+        if(!Ctx.IsJumpPressed || Ctx.HitCeiling())
         {
             Ctx.StopCoroutine(_stopJump);
             SwitchState(Factory.Falling());
