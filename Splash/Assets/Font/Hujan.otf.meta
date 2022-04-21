@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: 5973499edc5843c49b79e99eef94f300
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Hujan
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 84827bb785db2574dacfa1bbf80337fe, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
