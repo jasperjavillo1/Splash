@@ -12,6 +12,7 @@ public class PlayerJumpState : PlayerMovementBaseState
     }
     public override void EnterState()
     {
+        Debug.Log("Enter Jump");
         _handleJump();
         //Ctx._ChangeAnimationState("Player_jump");
         _stopJump = Ctx.StartCoroutine(_reachJumpPeak());
@@ -20,7 +21,7 @@ public class PlayerJumpState : PlayerMovementBaseState
     {
         CheckSwitchState();
     }
-    public override void ExitState() { }
+    public override void ExitState() { Debug.Log("Exit Jump"); }
     public override void CheckSwitchState()
     {
         if(Ctx.IsGrounded())

@@ -14,13 +14,14 @@ public class PlayerGroundedState : PlayerMovementBaseState
     }
     public override void EnterState()
     {
+        Debug.Log("Enter Grounded");
         Ctx.CurrentMovementY = 0;
     }
     public override void UpdateState()
     {
         CheckSwitchState();
     }
-    public override void ExitState() { }
+    public override void ExitState() { Debug.Log("Exit Grounded"); }
     public override void CheckSwitchState()
     {
         if(Ctx.IsJumpPressed)
