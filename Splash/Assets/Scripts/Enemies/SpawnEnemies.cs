@@ -8,7 +8,7 @@ public class SpawnEnemies : MonoBehaviour
     public Transform spawnPoint;
     public float timeBetweenWaves = 5f;
     private float countdown = 2f;
-    private int waveIndex = 0;
+    //private int waveIndex = 0;
 
     void Update()
     {
@@ -24,13 +24,17 @@ public class SpawnEnemies : MonoBehaviour
 
     IEnumerator SpawnWave()
     {
-        waveIndex++;
+
+        SpawnEnemy();
+        yield return new WaitForSeconds(0.5f);
+
+        /*waveIndex++;
 
         for (int i = 0; i < waveIndex; i++)
         {
             SpawnEnemy();
             yield return new WaitForSeconds(0.5f);
-        }
+        }*/
     }
     void SpawnEnemy()
     {
