@@ -10,11 +10,7 @@ public class PlayerFallingState : PlayerMovementBaseState
         InitizeSubState();
     }
 
-    public override void EnterState()
-    {
-        Debug.Log("Enter Fall");
-        Ctx.CurrentMovementY = Ctx.Gravity.y * Time.deltaTime;
-    }
+    public override void EnterState() { }
     public override void UpdateState()
     {
         CheckSwitchState();
@@ -22,7 +18,6 @@ public class PlayerFallingState : PlayerMovementBaseState
     public override void ExitState()
     {
         Ctx._ChangeAnimationState("Player_land");
-        Debug.Log("Exit Fall");
     }
     public override void CheckSwitchState()
     {

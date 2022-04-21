@@ -12,16 +12,12 @@ public class PlayerGroundedState : PlayerMovementBaseState
         InitizeSubState();
 
     }
-    public override void EnterState()
-    {
-        Debug.Log("Enter Grounded");
-        Ctx.CurrentMovementY = 0;
-    }
+    public override void EnterState() { }
     public override void UpdateState()
     {
         CheckSwitchState();
     }
-    public override void ExitState() { Debug.Log("Exit Grounded"); }
+    public override void ExitState() { }
     public override void CheckSwitchState()
     {
         if(Ctx.IsJumpPressed)
