@@ -12,7 +12,7 @@ public class PlayerGroundedState : PlayerMovementBaseState
         InitizeSubState();
 
     }
-    public override void EnterState() { }
+    public override void EnterState() { Debug.Log("Enter Grounded"); }
     public override void UpdateState()
     {
         CheckSwitchState();
@@ -24,10 +24,7 @@ public class PlayerGroundedState : PlayerMovementBaseState
         {
             SwitchState(Factory.Jump());
         }
-        if(!Ctx.IsGrounded())
-        {
-            SwitchState(Factory.Falling());
-        }
+        
     }
     public override void InitizeSubState()
     {

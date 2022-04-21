@@ -12,7 +12,6 @@ public class PlayerJumpState : PlayerMovementBaseState
     }
     public override void EnterState()
     {
-        Debug.Log("Enter Jump State");
         _handleJump();
         Ctx._ChangeAnimationState("Player_jump");
     }

@@ -39,7 +39,7 @@ public class PlayerMovementStateMachine : MonoBehaviour
     private float _walkMultipler = 5f;
     private float _runMultiplier = 10f;
     private int _zero = 0;
-    private Vector2 _jumpVector = Vector2.up * 20f;
+    private Vector2 _jumpVector = Vector2.up * 25f;
 
     //state machine variables
     private PlayerMovementBaseState _currentState;
@@ -95,7 +95,7 @@ public class PlayerMovementStateMachine : MonoBehaviour
 
         //set up state
         _states = new PlayerStateFactory(this);
-        _currentState = _states.Falling();
+        _currentState = _states.Grounded();
         _currentState.EnterState();
     }
 
@@ -144,8 +144,8 @@ public class PlayerMovementStateMachine : MonoBehaviour
     {
         //Method for determining if player is grounded.
         float halfY = _capsuleCollider2D.size.y / 2;
-        Vector2 raycastOriginDown = _capsuleCollider2D.offset - new Vector2(0, (halfY + 0.05f));
-        return  Physics2D.Raycast(raycastOriginDown, Vector2.down,0.5f);
+        Vector2 raycastOriginDown = _rigidbody2D.position - new Vector2(0, (halfY + 0.1f));
+        return  Physics2D.Raycast(raycastOriginDown, Vector2.down, 0.1f);
     }
 
     private void OnCollisionEnter2D(Collision2D col)
