@@ -48,7 +48,13 @@ public class BoomerangProjectile : MonoBehaviour
         {
             _rigidbody.AddForce(_projectileDirection * _force * Time.deltaTime);
         }
-        
+    }
 
+    private void OnCollisionEnter2D(Collision2D other) 
+    {
+        if(other.gameObject.tag == "Ground")
+        {
+            Destroy(gameObject);
+        }    
     }
 }

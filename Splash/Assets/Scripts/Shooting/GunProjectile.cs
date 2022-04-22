@@ -29,4 +29,12 @@ public class GunProjectile : MonoBehaviour
     {
         _rigidbody.velocity = _projectileDirection * _speed * Time.deltaTime;
     }
+
+    private void OnCollisionEnter2D(Collision2D other) 
+    {
+        if(other.gameObject.tag == "Ground")
+        {
+            Destroy(gameObject);
+        }    
+    }
 }
