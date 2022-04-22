@@ -20,7 +20,7 @@ public class PlayerGroundedState : PlayerMovementBaseState
     public override void ExitState() { }
     public override void CheckSwitchState()
     {
-        if(Ctx.IsJumpPressed)
+        if(Ctx.IsJumpPressed && Ctx.JumpAvailable)
         {
             SwitchState(Factory.Jump());
         }
