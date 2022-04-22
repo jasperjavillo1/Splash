@@ -33,13 +33,16 @@ public class PlayerMovementStateMachine : MonoBehaviour
 
     //jump variables
     private bool _isJumpPressed;
+    private bool _jumpAvailable = true;
+    [SerializeField] private float _maxJumpTime = 1;
 
     //constants
     private float _walkMultipler = 50f;
     private float _runMultiplier = 100f;
     private int _zero = 0;
-    private Vector2 _jumpVector = Vector2.up * 200f;
-    private Vector2 _gravity = Vector2.down * 100f;
+    [SerializeField] private Vector2 _jumpVector = Vector2.up * 1f;
+    [SerializeField] private float _maxWalkSpeed = 3;
+    [SerializeField] private float _maxRunSpeed = 6;
 
     //state machine variables
     private PlayerMovementBaseState _currentState;
@@ -65,12 +68,15 @@ public class PlayerMovementStateMachine : MonoBehaviour
 
     //jump getters and setters
     public bool IsJumpPressed { get { return _isJumpPressed; } set { _isJumpPressed = value; } }
+    public bool JumpAvailable { get { return _jumpAvailable; } set { _jumpAvailable = value; } }
+    public float MaxJumpTime { get { return _maxJumpTime; } }
 
     //constants getters and setters
     public float RunMultiplier { get { return _runMultiplier; } }
     public int Zero { get { return _zero; } }
     public Vector2 JumpVector { get { return _jumpVector; } }
-    public Vector2 Gravity { get { return _gravity; } }
+    public float MaxWalkSpeed { get { return _maxWalkSpeed; } }
+    public float MaxRunSpeed { get { return _maxRunSpeed; } }
 
     //state machine getters and setters
     public PlayerMovementBaseState CurrentState { get { return _currentState; } set { _currentState = value; } }
@@ -192,6 +198,11 @@ public class PlayerMovementStateMachine : MonoBehaviour
         if (col.gameObject.CompareTag("Squish"))
         {
             col.transform.parent.gameObject.SetActive(false);
+        }
+
+        if (col.gameObject.CompareTag("Ground"))
+        {
+            _jumpAvailable = true;
         }
 
     }
