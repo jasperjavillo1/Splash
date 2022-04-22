@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NewPlayerMovement : MonoBehaviour
+public class CharcterController2D : MonoBehaviour
 {
     public float MS = 1;
     public float JF = 1;
@@ -20,8 +20,8 @@ public class NewPlayerMovement : MonoBehaviour
     {
         var movement = Input.GetAxis("Horizontal");
         transform.position += new Vector3(movement, 0, 0) * Time.deltaTime * MS;
-
-        if (Input.GetButtonDown("Jump") && Mathf.Abs(_rigBody.velocity.y) < 0.001f)
+        
+        if(Input.GetButtonDown("Jump") && Mathf.Abs(_rigBody.velocity.y) < 0.001f)
         {
             _rigBody.AddForce(new Vector2(0, JF), ForceMode2D.Impulse);
         }

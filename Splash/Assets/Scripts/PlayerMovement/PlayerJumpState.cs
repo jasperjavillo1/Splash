@@ -21,10 +21,7 @@ public class PlayerJumpState : PlayerMovementBaseState
     {
         CheckSwitchState();
     }
-    public override void ExitState()
-    {
-        Ctx._ChangeAnimationState("Player_land");
-    }
+    public override void ExitState() { }
     public override void CheckSwitchState()
     {
         if(!Ctx.IsJumpPressed)
@@ -35,6 +32,11 @@ public class PlayerJumpState : PlayerMovementBaseState
         if(Ctx.IsGrounded() && Ctx.JumpAvailable)
         {
             SwitchState(Factory.Grounded());
+        }
+        if(!Ctx.IsJumpPressed || Ctx.HitCeiling())
+        {
+            Ctx.StopCoroutine(_stopJump);
+            SwitchState(Factory.Falling());
         }
     }
     public override void InitizeSubState()
@@ -55,7 +57,7 @@ public class PlayerJumpState : PlayerMovementBaseState
 
     private void handleJump()
     {
-        Ctx.Rigidbody2D.AddForce(Ctx.JumpVector, ForceMode2D.Force);
+        Ctx.CurrentMovementY = Ctx.JumpVector.y * Time.deltaTime;
         Ctx.PlayerHealth.DecreaseHealth(50f);
     }
 

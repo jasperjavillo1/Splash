@@ -10,7 +10,10 @@ public class PlayerFallingState : PlayerMovementBaseState
         InitizeSubState();
     }
 
-    public override void EnterState() { }
+    public override void EnterState()
+    {
+        Ctx.CurrentMovementY = Ctx.Gravity.y * Time.deltaTime;
+    }
     public override void UpdateState()
     {
         CheckSwitchState();

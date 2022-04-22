@@ -2,33 +2,33 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SimpleEnemyMovement : MonoBehaviour
+public class SpawnMovement : MonoBehaviour
 {
-    public float xSpeed, xDistance;
-    private float xDist, xMin, xMax, xDirection;
-
-    private void Start()
-    {
-        xMin = gameObject.transform.position.x;
-        xMax = xMin + xDistance;
-    }
-
+    public float xSpeed;
+    private float xDirection;
+    public bool moveRight = false;
+    public float destroyTime = 10f;
     // Update is called once per frame
     void Update()
     {
+        if (destroyTime > 0f)
+        {
+            destroyTime -= Time.deltaTime;
+        } else 
+        {
+            gameObject.SetActive(false);
+        }
+
         // Sets enemy movement speed
         gameObject.transform.position = new Vector2(transform.position.x + (xSpeed * xDirection / 100), transform.position.y);
 
-        // Controls direction of movement
-        xDist = gameObject.transform.position.x;
-
         // Move Right
-        if (xDist <= xMin)
+        if (moveRight == true)
         {
             xDirection = .1f;
         }
         // Move Left
-        if (xDist >= xMax)
+        else
         {
             xDirection = -.1f;
         }

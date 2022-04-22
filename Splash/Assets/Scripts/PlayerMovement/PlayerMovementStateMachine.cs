@@ -28,7 +28,6 @@ public class PlayerMovementStateMachine : MonoBehaviour
     private Vector2 _currentWalkMovement;
     private Vector2 _currentRunMovement;
     private Vector2 _appliedMovement;
-    private float _currentMaxSpeed;
     private bool _isMovementPressed;
     private bool _isRunPressed;
 
@@ -38,8 +37,8 @@ public class PlayerMovementStateMachine : MonoBehaviour
     [SerializeField] private float _maxJumpTime = 1;
 
     //constants
-    private float _walkMultipler = 5f;
-    private float _runMultiplier = 10f;
+    private float _walkMultipler = 50f;
+    private float _runMultiplier = 100f;
     private int _zero = 0;
     [SerializeField] private Vector2 _jumpVector = Vector2.up * 1f;
     [SerializeField] private float _maxWalkSpeed = 3;
@@ -59,11 +58,11 @@ public class PlayerMovementStateMachine : MonoBehaviour
 
     //player input value getters and setters
     public Vector2 CurrentMovementInput { get { return _currentMovementInput; } set { _currentMovementInput = value; } }
-    public Vector2 CurrentMovement { get { return _currentMovement; } set { _currentMovement = value; } }
     public Vector2 CurrentWalkMovement { get { return _currentWalkMovement; } set { _currentWalkMovement = value; } }
     public Vector2 CurrentRunMovement { get { return _currentRunMovement; } set { _currentRunMovement = value; } }
     public Vector2 AppliedMovement { get { return _appliedMovement; } set { _appliedMovement = value; } }
-    public float CurrentMaxSpeed { get { return _currentMaxSpeed; } set { _currentMaxSpeed = value; } }
+    public float CurrentMovementX { get { return _currentMovement.x; } set { _currentMovement.x = value; } }
+    public float CurrentMovementY { get { return _currentMovement.y; } set { _currentMovement.y = value; } }
     public bool IsMovementPressed { get { return _isMovementPressed; } set { _isMovementPressed = value; } }
     public bool IsRunPressed { get { return _isRunPressed; } set { _isRunPressed = value; } }
 
@@ -103,7 +102,7 @@ public class PlayerMovementStateMachine : MonoBehaviour
 
         //set up state
         _states = new PlayerStateFactory(this);
-        _currentState = _states.Grounded();
+        _currentState = _states.Falling();
         _currentState.EnterState();
     }
 
@@ -151,9 +150,39 @@ public class PlayerMovementStateMachine : MonoBehaviour
     public bool IsGrounded()
     {
         //Method for determining if player is grounded.
+        bool result = false;
+        float halfX = _capsuleCollider2D.size.x / 2;
         float halfY = _capsuleCollider2D.size.y / 2;
-        Vector2 raycastOriginDown = _rigidbody2D.position - new Vector2(0, (halfY + 0.1f));
-        return  Physics2D.Raycast(raycastOriginDown, Vector2.down, 0.1f);
+        Vector3 raycastOriginDown = _rigidbody2D.transform.position + new Vector3(0, -(halfY + 0.1f), 0);
+        Vector3 raycastOriginLeftDown = _rigidbody2D.transform.position + new Vector3(-halfX, -halfY, 0);
+        Vector3 raycastOriginRightDown = _rigidbody2D.transform.position + new Vector3(halfX, -halfY, 0);
+        bool resultDown =  Physics2D.Raycast(raycastOriginDown, Vector2.down, 0.05f);
+        bool resultLeftDown = Physics2D.Raycast(raycastOriginLeftDown, Vector2.down + Vector2.left, 0.01f);
+        bool resultRightDown = Physics2D.Raycast(raycastOriginRightDown, Vector2.down + Vector2.right, 0.01f);
+        if (resultDown || resultLeftDown || resultRightDown)
+        {
+            result = true;
+        }
+        return result;
+    }
+
+    public bool HitCeiling()
+    {
+        //Method for determining if player hit a ceiling.
+        bool result = false;
+        float halfX = _capsuleCollider2D.size.x / 2;
+        float halfY = _capsuleCollider2D.size.y / 2;
+        Vector3 raycastOriginUp = _rigidbody2D.transform.position + new Vector3(0, (halfY + 0.1f), 0);
+        Vector3 raycastOriginLeftUp = _rigidbody2D.transform.position + new Vector3(-halfX, halfY, 0);
+        Vector3 raycastOriginRightUp = _rigidbody2D.transform.position + new Vector3(halfX, halfY, 0);
+        bool resultUp = Physics2D.Raycast(raycastOriginUp, Vector2.down, 0.05f);
+        bool resultLeftUp = Physics2D.Raycast(raycastOriginLeftUp, Vector2.down + Vector2.left, 0.01f);
+        bool resultRightUp = Physics2D.Raycast(raycastOriginRightUp, Vector2.down + Vector2.right, 0.01f);
+        if (resultUp || resultLeftUp || resultRightUp)
+        {
+            result = true;
+        }
+        return result;
     }
 
     private void OnCollisionEnter2D(Collision2D col)
@@ -215,32 +244,7 @@ public class PlayerMovementStateMachine : MonoBehaviour
 
     private void _handleMovement()
     {
-        _appliedMovement.x = _currentMovement.x;
-        if (Mathf.Abs(_rigidbody2D.velocity.x) <= _currentMaxSpeed)
-        {
-            _rigidbody2D.AddForce(_appliedMovement, ForceMode2D.Impulse);
-        }
-    }
-
-    //call when changing between Idle,Walk, and Run for snappy deceleration.
-    public void ResetVelocity()
-    {
-        Vector2 currentVelocity = _rigidbody2D.velocity;
-        if(Mathf.Abs(currentVelocity.x) > _currentMaxSpeed)
-        {
-            if (currentVelocity.x > 0)
-            {
-                currentVelocity.x = _currentMaxSpeed;
-            }
-            else if(currentVelocity.x < 0)
-            {
-                currentVelocity.x = -_currentMaxSpeed;
-            }
-            else
-            {
-                currentVelocity.x = 0;
-            }
-        }
-        _rigidbody2D.velocity = currentVelocity;
+        _appliedMovement = _rigidbody2D.position + _currentMovement;
+        _rigidbody2D.MovePosition(_appliedMovement);
     }
 }
