@@ -7,12 +7,11 @@ public class PlayerRunState : PlayerMovementBaseState
     public PlayerRunState(PlayerMovementStateMachine context, PlayerStateFactory factory) : base(context, factory) { }
     public override void EnterState()
     {
-        Ctx.AppliedMovement = Ctx.CurrentRunMovement * Time.deltaTime;
+        Ctx.CurrentMovementX = Ctx.CurrentRunMovement.x * Time.deltaTime;  
     }
     public override void UpdateState()
     {
         CheckSwitchState();
-        Ctx.PlayerHealth.DecreaseHealth(1f);
     }
     public override void ExitState() { }
     public override void CheckSwitchState()

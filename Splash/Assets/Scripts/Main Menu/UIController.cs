@@ -9,6 +9,7 @@ public class UIController : MonoBehaviour
     public Button btnStart;
     public Button btnQuit;
     public Button btnCredits;
+    public Slider sliderVolume;
 
     // Start is called before the first frame update
     void Start()
@@ -18,20 +19,31 @@ public class UIController : MonoBehaviour
         btnStart = root.Q<Button>("startButton");
         btnQuit = root.Q<Button>("quitButton");
         btnCredits = root.Q<Button>("creditsButton");
+        sliderVolume = root.Q<Slider>("volume");
         btnStart.clicked += StartButtonPressed;
         btnQuit.clicked += QuitButtonPressed;
         btnCredits.clicked += CreditsButtonPressed;
+        AudioListener.volume = (sliderVolume.value/100);
+
     }
 
-    void StartButtonPressed() {
+    void StartButtonPressed() 
+    {
         SceneManager.LoadScene("Level_Select_Screen");
     }
 
-    void QuitButtonPressed() {
+    void QuitButtonPressed() 
+    {
         Application.Quit();
     }
 
-    void CreditsButtonPressed() {
+    void CreditsButtonPressed() 
+    {
         SceneManager.LoadScene("Credits");
+    }
+
+    void Update() 
+    {
+        AudioListener.volume = (sliderVolume.value / 100);    
     }
 }

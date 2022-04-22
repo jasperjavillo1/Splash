@@ -7,7 +7,7 @@ public class PlayerIdleState : PlayerMovementBaseState
     public PlayerIdleState(PlayerMovementStateMachine context, PlayerStateFactory factory) : base(context, factory) { }
     public override void EnterState()
     {
-        Ctx.AppliedMovement = new Vector2(0, 0);
+        Ctx.CurrentMovementX = 0;
     }
     public override void UpdateState()
     {

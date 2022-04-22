@@ -12,6 +12,8 @@ public class PlayerMovementStateMachine : MonoBehaviour
     private Rigidbody2D _rigidbody2D;
     private CapsuleCollider2D _capsuleCollider2D;
     private PlayerHealth _playerHealth;
+    private Animator _animator;
+    private string _currentAnimatorState;
 
     [SerializeField] AudioClip jumpSound;
     [SerializeField] AudioClip impactSound;
@@ -23,6 +25,7 @@ public class PlayerMovementStateMachine : MonoBehaviour
     //player input value variables
     private Vector2 _currentMovementInput;
     private Vector2 _currentMovement;
+    private Vector2 _currentWalkMovement;
     private Vector2 _currentRunMovement;
     private Vector2 _appliedMovement;
     private bool _isMovementPressed;
@@ -32,9 +35,11 @@ public class PlayerMovementStateMachine : MonoBehaviour
     private bool _isJumpPressed;
 
     //constants
-    private float _runMultiplier = 3.0f;
+    private float _walkMultipler = 50f;
+    private float _runMultiplier = 100f;
     private int _zero = 0;
-    private Vector2 _jumpVector = Vector2.up * 5.0f;
+    private Vector2 _jumpVector = Vector2.up * 200f;
+    private Vector2 _gravity = Vector2.down * 100f;
 
     //state machine variables
     private PlayerMovementBaseState _currentState;
@@ -46,12 +51,15 @@ public class PlayerMovementStateMachine : MonoBehaviour
     public Rigidbody2D Rigidbody2D { get { return _rigidbody2D; } }
     public CapsuleCollider2D CapsuleCollider2D { get { return _capsuleCollider2D; } }
     public PlayerHealth PlayerHealth { get { return _playerHealth; } }
+    public Animator Animator { get { return _animator; } }
 
     //player input value getters and setters
     public Vector2 CurrentMovementInput { get { return _currentMovementInput; } set { _currentMovementInput = value; } }
-    public Vector2 CurrentMovement { get { return _currentMovement; } set { _currentMovement = value; } }
+    public Vector2 CurrentWalkMovement { get { return _currentWalkMovement; } set { _currentWalkMovement = value; } }
     public Vector2 CurrentRunMovement { get { return _currentRunMovement; } set { _currentRunMovement = value; } }
     public Vector2 AppliedMovement { get { return _appliedMovement; } set { _appliedMovement = value; } }
+    public float CurrentMovementX { get { return _currentMovement.x; } set { _currentMovement.x = value; } }
+    public float CurrentMovementY { get { return _currentMovement.y; } set { _currentMovement.y = value; } }
     public bool IsMovementPressed { get { return _isMovementPressed; } set { _isMovementPressed = value; } }
     public bool IsRunPressed { get { return _isRunPressed; } set { _isRunPressed = value; } }
 
@@ -62,6 +70,7 @@ public class PlayerMovementStateMachine : MonoBehaviour
     public float RunMultiplier { get { return _runMultiplier; } }
     public int Zero { get { return _zero; } }
     public Vector2 JumpVector { get { return _jumpVector; } }
+    public Vector2 Gravity { get { return _gravity; } }
 
     //state machine getters and setters
     public PlayerMovementBaseState CurrentState { get { return _currentState; } set { _currentState = value; } }
@@ -74,6 +83,9 @@ public class PlayerMovementStateMachine : MonoBehaviour
         _rigidbody2D = GetComponent<Rigidbody2D>();
         _capsuleCollider2D = GetComponent<CapsuleCollider2D>();
         _playerHealth = GetComponent<PlayerHealth>();
+        _animator = GetComponent<Animator>();
+        _currentAnimatorState = "Player_Idle";
+
         //set player input callbacks
         _playerInput.CharacterControls.Move.started += _onMovementInput;
         _playerInput.CharacterControls.Move.canceled += _onMovementInput;
@@ -84,7 +96,7 @@ public class PlayerMovementStateMachine : MonoBehaviour
 
         //set up state
         _states = new PlayerStateFactory(this);
-        _currentState = _states.Grounded();
+        _currentState = _states.Falling();
         _currentState.EnterState();
     }
 
@@ -92,8 +104,8 @@ public class PlayerMovementStateMachine : MonoBehaviour
     void Update()
     {
         _currentState.UpdateStates();
-        //_rigidbody2D.
-        transform.Translate(_appliedMovement);
+        _handleMovement();
+        _MovementAnimation();
     }
 
     private void OnEnable()
@@ -108,7 +120,7 @@ public class PlayerMovementStateMachine : MonoBehaviour
     private void _onMovementInput(InputAction.CallbackContext context)
     {
         _currentMovementInput = context.ReadValue<Vector2>();
-        _currentMovement.x = _currentMovementInput.x;
+        _currentWalkMovement.x = _currentMovementInput.x * _walkMultipler;
         _currentRunMovement.x = _currentMovementInput.x * _runMultiplier;
         _isMovementPressed = _currentMovementInput.x != 0;
     }
@@ -132,32 +144,96 @@ public class PlayerMovementStateMachine : MonoBehaviour
     public bool IsGrounded()
     {
         //Method for determining if player is grounded.
-        Vector3 raycastOrigin = _rigidbody2D.transform.position - new Vector3(0, (_rigidbody2D.transform.localScale.y / 2 + 0.1f), 0);
-        return Physics2D.Raycast(raycastOrigin, Vector2.down, 0.1f);
+        bool result = false;
+        float halfX = _capsuleCollider2D.size.x / 2;
+        float halfY = _capsuleCollider2D.size.y / 2;
+        Vector3 raycastOriginDown = _rigidbody2D.transform.position + new Vector3(0, -(halfY + 0.1f), 0);
+        Vector3 raycastOriginLeftDown = _rigidbody2D.transform.position + new Vector3(-halfX, -halfY, 0);
+        Vector3 raycastOriginRightDown = _rigidbody2D.transform.position + new Vector3(halfX, -halfY, 0);
+        bool resultDown =  Physics2D.Raycast(raycastOriginDown, Vector2.down, 0.05f);
+        bool resultLeftDown = Physics2D.Raycast(raycastOriginLeftDown, Vector2.down + Vector2.left, 0.01f);
+        bool resultRightDown = Physics2D.Raycast(raycastOriginRightDown, Vector2.down + Vector2.right, 0.01f);
+        if (resultDown || resultLeftDown || resultRightDown)
+        {
+            result = true;
+        }
+        return result;
     }
 
+    public bool HitCeiling()
+    {
+        //Method for determining if player hit a ceiling.
+        bool result = false;
+        float halfX = _capsuleCollider2D.size.x / 2;
+        float halfY = _capsuleCollider2D.size.y / 2;
+        Vector3 raycastOriginUp = _rigidbody2D.transform.position + new Vector3(0, (halfY + 0.1f), 0);
+        Vector3 raycastOriginLeftUp = _rigidbody2D.transform.position + new Vector3(-halfX, halfY, 0);
+        Vector3 raycastOriginRightUp = _rigidbody2D.transform.position + new Vector3(halfX, halfY, 0);
+        bool resultUp = Physics2D.Raycast(raycastOriginUp, Vector2.down, 0.05f);
+        bool resultLeftUp = Physics2D.Raycast(raycastOriginLeftUp, Vector2.down + Vector2.left, 0.01f);
+        bool resultRightUp = Physics2D.Raycast(raycastOriginRightUp, Vector2.down + Vector2.right, 0.01f);
+        if (resultUp || resultLeftUp || resultRightUp)
+        {
+            result = true;
+        }
+        return result;
+    }
 
     private void OnCollisionEnter2D(Collision2D col)
     {
         // Play impact sound
-        if (col.gameObject.tag == "Ground" || col.gameObject.tag == "Untagged")
+        if (col.gameObject.CompareTag("Ground") || col.gameObject.CompareTag("Untagged"))
         {
             grounded = true;
             FindObjectOfType<AudioManager>().playSound(impactSound);
         }
-    }
 
+        // If destructor portion of enemy hit, destroy enemy
+        if (col.gameObject.CompareTag("Squish"))
+        {
+            col.transform.parent.gameObject.SetActive(false);
+        }
+
+    }
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.tag == "PlayerCheckpoint")
+        if (other.gameObject.CompareTag("PlayerCheckpoint"))
         {
             FindObjectOfType<AudioManager>().playSound(Checkpoint);
         }
 
-        if (other.tag == "Key")
+        if (other.CompareTag("Key"))
         {
             keyCount++;
             other.gameObject.SetActive(false);
         }
+    }
+
+    public void _ChangeAnimationState(string newState)
+    {
+        if (_currentAnimatorState == newState) return;
+        _animator.Play(newState);
+        _currentAnimatorState = newState;
+    }
+
+    private void _MovementAnimation()
+    {
+        if(_currentState.GetType().Equals(typeof(PlayerGroundedState)))
+        {
+            if(_appliedMovement.x != _zero)
+            {
+                _ChangeAnimationState("Player_moving");
+            }
+            else
+            {
+                _ChangeAnimationState("Player_idle");
+            }
+        }
+    }
+
+    private void _handleMovement()
+    {
+        _appliedMovement = _rigidbody2D.position + _currentMovement;
+        _rigidbody2D.MovePosition(_appliedMovement);
     }
 }

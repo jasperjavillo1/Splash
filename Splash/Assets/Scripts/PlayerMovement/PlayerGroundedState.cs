@@ -12,7 +12,10 @@ public class PlayerGroundedState : PlayerMovementBaseState
         InitizeSubState();
 
     }
-    public override void EnterState() {}
+    public override void EnterState()
+    {
+        Ctx.CurrentMovementY = 0;
+    }
     public override void UpdateState()
     {
         CheckSwitchState();
@@ -23,6 +26,10 @@ public class PlayerGroundedState : PlayerMovementBaseState
         if(Ctx.IsJumpPressed)
         {
             SwitchState(Factory.Jump());
+        }
+        if(!Ctx.IsGrounded())
+        {
+            SwitchState(Factory.Falling());
         }
     }
     public override void InitizeSubState()

@@ -5,6 +5,7 @@
             <ui:Label text="Main Menu" display-tooltip-when-elided="true" name="txtMainMenu" style="position: absolute; -unity-text-align: upper-left; color: rgb(0, 175, 255); -unity-font-style: bold-and-italic; font-size: 136px; left: auto; top: 65px;" />
             <ui:Button text="Start" display-tooltip-when-elided="true" name="startButton" class="button-style" style="width: 575px; font-size: 125px; padding-bottom: 10px; padding-top: 10px; margin-bottom: 55px; margin-top: 45px; height: 200px;" />
             <ui:Button text="Quit" display-tooltip-when-elided="true" name="quitButton" class="button-style" style="width: 575px; font-size: 125px; height: 200px; margin-bottom: 93px;" />
+            <ui:Slider picking-mode="Ignore" label="Volume" value="50" high-value="100" name="volume" direction="Horizontal" style="font-size: 75px; top: -3%; height: 134px; width: 583px; color: rgb(255, 244, 244); background-color: rgb(33, 31, 34); justify-content: center; align-items: center; position: relative; flex-direction: column; -unity-text-align: upper-center; -unity-font-style: bold;" />
             <ui:Button text="Credits" display-tooltip-when-elided="true" name="creditsButton" class="button-style" style="width: 321px; font-size: 75px; height: 91px;" />
         </ui:VisualElement>
     </ui:VisualElement>

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerJumpState : PlayerMovementBaseState
 {
+    private Coroutine _stopJump;
     public PlayerJumpState(PlayerMovementStateMachine context, PlayerStateFactory factory) : base(context, factory)
     {
         IsRootState = true;
@@ -11,7 +12,9 @@ public class PlayerJumpState : PlayerMovementBaseState
     }
     public override void EnterState()
     {
-        _handleJump();    
+        _handleJump();
+        //Ctx._ChangeAnimationState("Player_jump");
+        _stopJump = Ctx.StartCoroutine(_reachJumpPeak());
     }
     public override void UpdateState()
     {
@@ -23,6 +26,11 @@ public class PlayerJumpState : PlayerMovementBaseState
         if(Ctx.IsGrounded())
         {
             SwitchState(Factory.Grounded());
+        }
+        if(!Ctx.IsJumpPressed || Ctx.HitCeiling())
+        {
+            Ctx.StopCoroutine(_stopJump);
+            SwitchState(Factory.Falling());
         }
     }
     public override void InitizeSubState()
@@ -43,8 +51,13 @@ public class PlayerJumpState : PlayerMovementBaseState
 
     private void _handleJump()
     {
-        Ctx.Rigidbody2D.velocity = Ctx.JumpVector;
+        Ctx.CurrentMovementY = Ctx.JumpVector.y * Time.deltaTime;
         Ctx.PlayerHealth.DecreaseHealth(50f);
+    }
 
+    private IEnumerator _reachJumpPeak()
+    {
+        yield return new WaitForSecondsRealtime(0.25f);
+        SwitchState(Factory.Falling());
     }
 }
