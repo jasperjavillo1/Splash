@@ -12,7 +12,7 @@ public class SimpleEnemy : MonoBehaviour
     void Update()
     {
         // Sets enemy movement speed
-        gameObject.transform.position = new Vector2(transform.position.x + (xSpeed * xDirection), transform.position.y + (ySpeed * yDirection));
+        gameObject.transform.position = new Vector2(transform.position.x + (xSpeed * xDirection /100), transform.position.y + (ySpeed * yDirection));
 
         // Controls direction of movement
         xDistance = gameObject.transform.position.x;
