@@ -7,7 +7,7 @@ public class PlayerRunState : PlayerMovementBaseState
     public PlayerRunState(PlayerMovementStateMachine context, PlayerStateFactory factory) : base(context, factory) { }
     public override void EnterState()
     {
-        Ctx.CurrentMaxSpeed = 6;
+        Ctx.CurrentMaxSpeed = 50;
         Ctx.CurrentMovement = Ctx.CurrentRunMovement;
         Ctx.ResetVelocity();
     }

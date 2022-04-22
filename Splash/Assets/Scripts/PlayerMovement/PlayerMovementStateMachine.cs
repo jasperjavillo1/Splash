@@ -39,7 +39,8 @@ public class PlayerMovementStateMachine : MonoBehaviour
     private float _walkMultipler = 5f;
     private float _runMultiplier = 10f;
     private int _zero = 0;
-    private Vector2 _jumpVector = Vector2.up * 25f;
+    [SerializeField]
+    private Vector2 _jumpVector = Vector2.up * 1f;
 
     //state machine variables
     private PlayerMovementBaseState _currentState;
