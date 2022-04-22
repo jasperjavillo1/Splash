@@ -7,9 +7,7 @@ public class PlayerWalkState : PlayerMovementBaseState
     public PlayerWalkState(PlayerMovementStateMachine context, PlayerStateFactory factory) : base(context, factory) { }
     public override void EnterState()
     {
-        Ctx.CurrentMaxSpeed = 3;
-        Ctx.CurrentMovement = Ctx.CurrentWalkMovement;
-        Ctx.ResetVelocity();
+        Ctx.CurrentMovementX = Ctx.CurrentWalkMovement.x * Time.deltaTime;
     }
     public override void UpdateState()
     {
