@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerJumpState : PlayerMovementBaseState
 {
-    private Coroutine _stopJump;
+    private Coroutine cancelJump;
     public PlayerJumpState(PlayerMovementStateMachine context, PlayerStateFactory factory) : base(context, factory)
     {
         IsRootState = true;
@@ -12,9 +12,10 @@ public class PlayerJumpState : PlayerMovementBaseState
     }
     public override void EnterState()
     {
-        _handleJump();
-        //Ctx._ChangeAnimationState("Player_jump");
-        _stopJump = Ctx.StartCoroutine(_reachJumpPeak());
+        Ctx.JumpAvailable = false;
+        cancelJump = Ctx.StartCoroutine(HoldJump());
+        handleJump();
+        Ctx._ChangeAnimationState("Player_jump");
     }
     public override void UpdateState()
     {
@@ -23,7 +24,12 @@ public class PlayerJumpState : PlayerMovementBaseState
     public override void ExitState() { }
     public override void CheckSwitchState()
     {
-        if(Ctx.IsGrounded())
+        if(!Ctx.IsJumpPressed)
+        {
+            Ctx.StopCoroutine(cancelJump);
+            stopJump();
+        }
+        if(Ctx.IsGrounded() && Ctx.JumpAvailable)
         {
             SwitchState(Factory.Grounded());
         }
@@ -49,15 +55,22 @@ public class PlayerJumpState : PlayerMovementBaseState
         }
     }
 
-    private void _handleJump()
+    private void handleJump()
     {
         Ctx.CurrentMovementY = Ctx.JumpVector.y * Time.deltaTime;
         Ctx.PlayerHealth.DecreaseHealth(50f);
     }
 
-    private IEnumerator _reachJumpPeak()
+    private void stopJump()
     {
-        yield return new WaitForSecondsRealtime(0.25f);
-        SwitchState(Factory.Falling());
+        Vector2 currentVelocity = Ctx.Rigidbody2D.velocity;
+        currentVelocity.y = 0;
+        Ctx.Rigidbody2D.velocity = currentVelocity;
+    }
+
+    private IEnumerator HoldJump()
+    {
+        yield return new WaitForSeconds(Ctx.MaxJumpTime);
+        stopJump();
     }
 }
