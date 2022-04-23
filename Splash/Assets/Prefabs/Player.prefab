@@ -616,7 +616,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3300649008393559315}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -704,6 +704,10 @@ MonoBehaviour:
   impactSound: {fileID: 8300000, guid: fc73554d20e71a7439ec665ae8cde551, type: 3}
   Checkpoint: {fileID: 8300000, guid: f4adba02bda7dc84bb8167559717a077, type: 3}
   keyCount: 0
+  _maxJumpTime: 1
+  _jumpVector: {x: 0, y: 1}
+  _maxWalkSpeed: 3
+  _maxRunSpeed: 6
 --- !u!114 &37311668
 MonoBehaviour:
   m_ObjectHideFlags: 0

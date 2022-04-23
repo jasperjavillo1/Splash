@@ -28,6 +28,7 @@ public class PlayerMovementStateMachine : MonoBehaviour
     private Vector2 _currentWalkMovement;
     private Vector2 _currentRunMovement;
     private Vector2 _appliedMovement;
+    private float _currentMaxSpeed;
     private bool _isMovementPressed;
     private bool _isRunPressed;
 
@@ -58,11 +59,11 @@ public class PlayerMovementStateMachine : MonoBehaviour
 
     //player input value getters and setters
     public Vector2 CurrentMovementInput { get { return _currentMovementInput; } set { _currentMovementInput = value; } }
+    public Vector2 CurrentMovement { get { return _currentMovement; } set { _currentMovement = value; } }
     public Vector2 CurrentWalkMovement { get { return _currentWalkMovement; } set { _currentWalkMovement = value; } }
     public Vector2 CurrentRunMovement { get { return _currentRunMovement; } set { _currentRunMovement = value; } }
     public Vector2 AppliedMovement { get { return _appliedMovement; } set { _appliedMovement = value; } }
-    public float CurrentMovementX { get { return _currentMovement.x; } set { _currentMovement.x = value; } }
-    public float CurrentMovementY { get { return _currentMovement.y; } set { _currentMovement.y = value; } }
+    public float CurrentMaxSpeed { get { return _currentMaxSpeed; } set { _currentMaxSpeed = value; } }
     public bool IsMovementPressed { get { return _isMovementPressed; } set { _isMovementPressed = value; } }
     public bool IsRunPressed { get { return _isRunPressed; } set { _isRunPressed = value; } }
 
@@ -244,7 +245,17 @@ public class PlayerMovementStateMachine : MonoBehaviour
 
     private void _handleMovement()
     {
-        _appliedMovement = _rigidbody2D.position + _currentMovement;
-        _rigidbody2D.MovePosition(_appliedMovement);
+        _appliedMovement = _currentMovement;
+        if(Mathf.Abs(_rigidbody2D.velocity.x) < _currentMaxSpeed)
+        {
+            _rigidbody2D.AddForce(_appliedMovement, ForceMode2D.Impulse);
+        }
+    }
+
+    public void ResetVelocity()
+    {
+        Vector2 currentVelocity = _rigidbody2D.velocity;
+        currentVelocity.x = 0;
+        _rigidbody2D.velocity = currentVelocity;
     }
 }
