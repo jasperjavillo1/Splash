@@ -12,7 +12,6 @@ public class PlayerJumpState : PlayerMovementBaseState
     }
     public override void EnterState()
     {
-        Ctx.JumpAvailable = false;
         cancelJump = Ctx.StartCoroutine(HoldJump());
         handleJump();
         Ctx._ChangeAnimationState("Player_jump");
@@ -33,7 +32,7 @@ public class PlayerJumpState : PlayerMovementBaseState
         {
             SwitchState(Factory.Grounded());
         }
-        if(!Ctx.IsJumpPressed || Ctx.HitCeiling())
+        if(!Ctx.IsJumpPressed)
         {
             Ctx.StopCoroutine(cancelJump);
             SwitchState(Factory.Falling());

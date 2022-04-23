@@ -17,7 +17,11 @@ public class PlayerGroundedState : PlayerMovementBaseState
     {
         CheckSwitchState();
     }
-    public override void ExitState() { }
+    public override void ExitState()
+    {
+        Ctx.JumpAvailable = false;
+        Debug.Log("Jump made unavailable.");
+    }
     public override void CheckSwitchState()
     {
         if(Ctx.IsJumpPressed && Ctx.JumpAvailable)
