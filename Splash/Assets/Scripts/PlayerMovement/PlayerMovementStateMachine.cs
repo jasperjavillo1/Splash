@@ -25,18 +25,25 @@ public class PlayerMovementStateMachine : MonoBehaviour
     //player input value variables
     private Vector2 _currentMovementInput;
     private Vector2 _currentMovement;
+    private Vector2 _currentWalkMovement;
     private Vector2 _currentRunMovement;
     private Vector2 _appliedMovement;
+    private float _currentMaxSpeed;
     private bool _isMovementPressed;
     private bool _isRunPressed;
 
     //jump variables
     private bool _isJumpPressed;
+    private bool _jumpAvailable = true;
+    [SerializeField] private float _maxJumpTime = 1;
 
     //constants
-    private float _runMultiplier = 3.0f;
+    private float _walkMultipler = 50f;
+    private float _runMultiplier = 100f;
     private int _zero = 0;
-    private Vector2 _jumpVector = Vector2.up * 5.0f;
+    [SerializeField] private Vector2 _jumpVector = Vector2.up * 1f;
+    [SerializeField] private float _maxWalkSpeed = 3;
+    [SerializeField] private float _maxRunSpeed = 6;
 
     //state machine variables
     private PlayerMovementBaseState _currentState;
@@ -53,18 +60,24 @@ public class PlayerMovementStateMachine : MonoBehaviour
     //player input value getters and setters
     public Vector2 CurrentMovementInput { get { return _currentMovementInput; } set { _currentMovementInput = value; } }
     public Vector2 CurrentMovement { get { return _currentMovement; } set { _currentMovement = value; } }
+    public Vector2 CurrentWalkMovement { get { return _currentWalkMovement; } set { _currentWalkMovement = value; } }
     public Vector2 CurrentRunMovement { get { return _currentRunMovement; } set { _currentRunMovement = value; } }
     public Vector2 AppliedMovement { get { return _appliedMovement; } set { _appliedMovement = value; } }
+    public float CurrentMaxSpeed { get { return _currentMaxSpeed; } set { _currentMaxSpeed = value; } }
     public bool IsMovementPressed { get { return _isMovementPressed; } set { _isMovementPressed = value; } }
     public bool IsRunPressed { get { return _isRunPressed; } set { _isRunPressed = value; } }
 
     //jump getters and setters
     public bool IsJumpPressed { get { return _isJumpPressed; } set { _isJumpPressed = value; } }
+    public bool JumpAvailable { get { return _jumpAvailable; } set { _jumpAvailable = value; } }
+    public float MaxJumpTime { get { return _maxJumpTime; } }
 
     //constants getters and setters
     public float RunMultiplier { get { return _runMultiplier; } }
     public int Zero { get { return _zero; } }
     public Vector2 JumpVector { get { return _jumpVector; } }
+    public float MaxWalkSpeed { get { return _maxWalkSpeed; } }
+    public float MaxRunSpeed { get { return _maxRunSpeed; } }
 
     //state machine getters and setters
     public PlayerMovementBaseState CurrentState { get { return _currentState; } set { _currentState = value; } }
@@ -90,7 +103,7 @@ public class PlayerMovementStateMachine : MonoBehaviour
 
         //set up state
         _states = new PlayerStateFactory(this);
-        _currentState = _states.Grounded();
+        _currentState = _states.Falling();
         _currentState.EnterState();
     }
 
@@ -98,8 +111,7 @@ public class PlayerMovementStateMachine : MonoBehaviour
     void Update()
     {
         _currentState.UpdateStates();
-        //_rigidbody2D.
-        transform.Translate(_appliedMovement);
+        _handleMovement();
         _MovementAnimation();
     }
 
@@ -115,7 +127,7 @@ public class PlayerMovementStateMachine : MonoBehaviour
     private void _onMovementInput(InputAction.CallbackContext context)
     {
         _currentMovementInput = context.ReadValue<Vector2>();
-        _currentMovement.x = _currentMovementInput.x;
+        _currentWalkMovement.x = _currentMovementInput.x * _walkMultipler;
         _currentRunMovement.x = _currentMovementInput.x * _runMultiplier;
         _isMovementPressed = _currentMovementInput.x != 0;
     }
@@ -139,10 +151,40 @@ public class PlayerMovementStateMachine : MonoBehaviour
     public bool IsGrounded()
     {
         //Method for determining if player is grounded.
-        Vector3 raycastOrigin = _rigidbody2D.transform.position - new Vector3(0, (_rigidbody2D.transform.localScale.y / 2 + 0.1f), 0);
-        return Physics2D.Raycast(raycastOrigin, Vector2.down, 0.1f);
+        bool result = false;
+        float halfX = _capsuleCollider2D.size.x / 2;
+        float halfY = _capsuleCollider2D.size.y / 2;
+        Vector3 raycastOriginDown = _rigidbody2D.transform.position + new Vector3(0, -(halfY + 0.1f), 0);
+        Vector3 raycastOriginLeftDown = _rigidbody2D.transform.position + new Vector3(-halfX, -halfY, 0);
+        Vector3 raycastOriginRightDown = _rigidbody2D.transform.position + new Vector3(halfX, -halfY, 0);
+        bool resultDown =  Physics2D.Raycast(raycastOriginDown, Vector2.down, 0.05f);
+        bool resultLeftDown = Physics2D.Raycast(raycastOriginLeftDown, Vector2.down + Vector2.left, 0.01f);
+        bool resultRightDown = Physics2D.Raycast(raycastOriginRightDown, Vector2.down + Vector2.right, 0.01f);
+        if (resultDown || resultLeftDown || resultRightDown)
+        {
+            result = true;
+        }
+        return result;
     }
 
+    public bool HitCeiling()
+    {
+        //Method for determining if player hit a ceiling.
+        bool result = false;
+        float halfX = _capsuleCollider2D.size.x / 2;
+        float halfY = _capsuleCollider2D.size.y / 2;
+        Vector3 raycastOriginUp = _rigidbody2D.transform.position + new Vector3(0, (halfY + 0.1f), 0);
+        Vector3 raycastOriginLeftUp = _rigidbody2D.transform.position + new Vector3(-halfX, halfY, 0);
+        Vector3 raycastOriginRightUp = _rigidbody2D.transform.position + new Vector3(halfX, halfY, 0);
+        bool resultUp = Physics2D.Raycast(raycastOriginUp, Vector2.down, 0.05f);
+        bool resultLeftUp = Physics2D.Raycast(raycastOriginLeftUp, Vector2.down + Vector2.left, 0.01f);
+        bool resultRightUp = Physics2D.Raycast(raycastOriginRightUp, Vector2.down + Vector2.right, 0.01f);
+        if (resultUp || resultLeftUp || resultRightUp)
+        {
+            result = true;
+        }
+        return result;
+    }
 
     private void OnCollisionEnter2D(Collision2D col)
     {
@@ -159,8 +201,12 @@ public class PlayerMovementStateMachine : MonoBehaviour
             col.transform.parent.gameObject.SetActive(false);
         }
 
-    }
+        if (col.gameObject.CompareTag("Ground"))
+        {
+            _jumpAvailable = true;
+        }
 
+    }
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("PlayerCheckpoint"))
@@ -174,6 +220,7 @@ public class PlayerMovementStateMachine : MonoBehaviour
             other.gameObject.SetActive(false);
         }
     }
+
     public void _ChangeAnimationState(string newState)
     {
         if (_currentAnimatorState == newState) return;
@@ -194,5 +241,21 @@ public class PlayerMovementStateMachine : MonoBehaviour
                 _ChangeAnimationState("Player_idle");
             }
         }
+    }
+
+    private void _handleMovement()
+    {
+        _appliedMovement = _currentMovement;
+        if(Mathf.Abs(_rigidbody2D.velocity.x) < _currentMaxSpeed)
+        {
+            _rigidbody2D.AddForce(_appliedMovement, ForceMode2D.Impulse);
+        }
+    }
+
+    public void ResetVelocity()
+    {
+        Vector2 currentVelocity = _rigidbody2D.velocity;
+        currentVelocity.x = 0;
+        _rigidbody2D.velocity = currentVelocity;
     }
 }
