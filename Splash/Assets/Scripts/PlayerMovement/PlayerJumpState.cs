@@ -35,7 +35,7 @@ public class PlayerJumpState : PlayerMovementBaseState
         }
         if(!Ctx.IsJumpPressed || Ctx.HitCeiling())
         {
-            Ctx.StopCoroutine(_stopJump);
+            Ctx.StopCoroutine(cancelJump);
             SwitchState(Factory.Falling());
         }
     }
@@ -57,7 +57,7 @@ public class PlayerJumpState : PlayerMovementBaseState
 
     private void handleJump()
     {
-        Ctx.CurrentMovementY = Ctx.JumpVector.y * Time.deltaTime;
+        Ctx.Rigidbody2D.AddForce(Ctx.JumpVector, ForceMode2D.Impulse);
         Ctx.PlayerHealth.DecreaseHealth(50f);
     }
 
