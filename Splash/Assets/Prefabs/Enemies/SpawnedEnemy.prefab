@@ -120,6 +120,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   xSpeed: 1
   moveRight: 0
+  destroyTime: 10
 --- !u!58 &4370682858835802344
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -148,7 +149,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 100
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1

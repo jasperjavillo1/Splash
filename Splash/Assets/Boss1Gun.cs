@@ -2,10 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Boss1 : MonoBehaviour
+public class Boss1Gun : MonoBehaviour
 {
-    public int health = 50;
-
+    public Boss1 boss1;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,18 +14,17 @@ public class Boss1 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        
     }
-
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("GunProjectile"))
+        if (collision.gameObject.CompareTag("GunProjectile"))
         {
-            health--;
-            if (health == 0)
+            boss1.health--;
+            if (boss1.health == 0)
             {
-               transform.gameObject.SetActive(false);
-               
+                transform.parent.gameObject.SetActive(false);
+
             }
         }
     }

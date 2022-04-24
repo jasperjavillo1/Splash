@@ -19,7 +19,7 @@ public class GoombaHealth : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("GunProjectile"))
         {
-            transform.gameObject.SetActive(false);
+            transform.parent.gameObject.SetActive(false);
 
         }
     }
