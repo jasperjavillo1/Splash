@@ -180,9 +180,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ac058a9787c21a4bab595c08b13c947, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
+  player: {fileID: 3300649008393559315, guid: a3b6e8960f4900c45957ce5f7aa70047, type: 3}
   speed: 1
   distanceBetween: 3
+  health: 3
 --- !u!58 &6317615307000518699
 CircleCollider2D:
   m_ObjectHideFlags: 0

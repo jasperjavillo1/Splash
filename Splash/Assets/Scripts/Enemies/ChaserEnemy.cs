@@ -7,7 +7,7 @@ public class ChaserEnemy : MonoBehaviour
     public GameObject player;
     public float speed, distanceBetween;
     private float distance;
-
+    public int health = 3;
     // Update is called once per frame
     void Update()
     {
@@ -21,6 +21,18 @@ public class ChaserEnemy : MonoBehaviour
         if (distance < distanceBetween)
         {
             transform.SetPositionAndRotation(Vector2.MoveTowards(this.transform.position, player.transform.position, speed * Time.deltaTime), Quaternion.Euler(Vector3.forward * angle));
+        }
+    }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("GunProjectile"))
+        {
+            health--;
+            if (health == 0)
+            {
+                transform.gameObject.SetActive(false);
+
+            }
         }
     }
 }
