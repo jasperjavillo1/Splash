@@ -514,6 +514,7 @@ GameObject:
   - component: {fileID: 7128093929225799347}
   - component: {fileID: 37311668}
   - component: {fileID: 3799654869864051784}
+  - component: {fileID: 1650111909}
   m_Layer: 7
   m_Name: Player
   m_TagString: Player
@@ -555,7 +556,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PL: {fileID: 2192033525742068018}
-  _initialHealth: 2000
+  _initialHealth: 6000
   _currentHealth: 0
 --- !u!212 &3300649008393559317
 SpriteRenderer:
@@ -642,9 +643,9 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.1, y: 0.05}
-  m_Size: {x: 1, y: 1.25}
-  m_Direction: 0
+  m_Offset: {x: 0.07557422, y: -0.54868525}
+  m_Size: {x: 0.19387698, y: 0.09737052}
+  m_Direction: 1
 --- !u!114 &2859956326141728151
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -687,7 +688,7 @@ MonoBehaviour:
   _CurrentLives: 3
   gameOver: {fileID: 2231614604396488356}
   LivesCount: {fileID: 9214895622114437277}
-  livesreset: 0
+  livesreset: 1
 --- !u!114 &7128093929225799347
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -745,6 +746,20 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1650111909
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3300649008393559315}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ac93c89c5e26654386f5fd7d0f9f89e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MS: 5
+  JF: 5
 --- !u!1 &4822720583697805628
 GameObject:
   m_ObjectHideFlags: 0
