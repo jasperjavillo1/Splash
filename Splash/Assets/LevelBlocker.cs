@@ -20,7 +20,7 @@ public class LevelBlocker : MonoBehaviour
     {
         if (!Fountain1.activeInHierarchy && !Fountain2.activeInHierarchy && !Fountain3.activeInHierarchy)
         {
-            Blocker.SetActive(false);
+            Blocker.transform.gameObject.SetActive(false);
         }
     }
 }
