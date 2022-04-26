@@ -9,12 +9,21 @@ public class Boss3 : MonoBehaviour
     private float xDistance, yDistance;
     public int health = 50;
 
+    public GameObject squishPoint;
+
     private void Start()
     {
         xStart = gameObject.transform.position.x;
         yStart = gameObject.transform.position.y;
         xEnd = xStart + 5;
         yEnd = yStart + 2;
+    }
+    IEnumerator WaitTime()
+    {
+        //yield on a new YieldInstruction that waits for .5 seconds.
+        yield return new WaitForSeconds(.25f);
+
+        squishPoint.GetComponent<SpriteRenderer>().color = Color.red;
     }
 
     // Update is called once per frame
@@ -50,14 +59,18 @@ public class Boss3 : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("GunProjectile"))
+        if (collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("GunProjectile"))
         {
             health--;
+
+            squishPoint.GetComponent<SpriteRenderer>().color = Color.cyan;
+            StartCoroutine(WaitTime());
+
             if (health == 0)
             {
                 transform.gameObject.SetActive(false);
-
             }
         }
     }
+
 }

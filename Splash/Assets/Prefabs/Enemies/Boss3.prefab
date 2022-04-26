@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 8472721988234079105}
   m_Layer: 9
   m_Name: Wing
-  m_TagString: Enemy
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -282,6 +282,7 @@ MonoBehaviour:
   xDirection: 0
   yDirection: 0
   health: 50
+  squishPoint: {fileID: 8472721989975608889}
 --- !u!50 &8472721989172003188
 Rigidbody2D:
   serializedVersion: 4
@@ -330,7 +331,7 @@ Transform:
   m_GameObject: {fileID: 8472721989975608889}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.002, y: -0.302, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
+  m_LocalScale: {x: 0.75, y: 0.75, z: 1}
   m_Children: []
   m_Father: {fileID: 8472721989172003191}
   m_RootOrder: 0
@@ -376,7 +377,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: -2413806693520163455, guid: ebe73ca9363db456bacf42c025bb4847, type: 3}
-  m_Color: {r: 1, g: 0.37465727, b: 0, a: 1}
+  m_Color: {r: 1, g: 0.047468763, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -411,7 +412,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7004625324969521465, guid: 7352a3981bc6e734a9638209e4f4a905, type: 3}
       propertyPath: dmgDealt
-      value: 50
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 7004625324969521465, guid: 7352a3981bc6e734a9638209e4f4a905, type: 3}
       propertyPath: targetSpeed
@@ -419,7 +420,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7004625324969521465, guid: 7352a3981bc6e734a9638209e4f4a905, type: 3}
       propertyPath: timeBtwShots
-      value: 0.1
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8261917909544524635, guid: 7352a3981bc6e734a9638209e4f4a905, type: 3}
       propertyPath: m_Name
@@ -489,7 +490,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7004625324969521465, guid: 7352a3981bc6e734a9638209e4f4a905, type: 3}
       propertyPath: dmgDealt
-      value: 50
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 7004625324969521465, guid: 7352a3981bc6e734a9638209e4f4a905, type: 3}
       propertyPath: bulletSpeed
@@ -501,7 +502,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7004625324969521465, guid: 7352a3981bc6e734a9638209e4f4a905, type: 3}
       propertyPath: timeBtwShots
-      value: 0.1
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8261917909544524635, guid: 7352a3981bc6e734a9638209e4f4a905, type: 3}
       propertyPath: m_Name
@@ -571,7 +572,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7004625324969521465, guid: 7352a3981bc6e734a9638209e4f4a905, type: 3}
       propertyPath: dmgDealt
-      value: 50
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 7004625324969521465, guid: 7352a3981bc6e734a9638209e4f4a905, type: 3}
       propertyPath: bulletSpeed
@@ -583,7 +584,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7004625324969521465, guid: 7352a3981bc6e734a9638209e4f4a905, type: 3}
       propertyPath: timeBtwShots
-      value: 0.1
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8261917909544524635, guid: 7352a3981bc6e734a9638209e4f4a905, type: 3}
       propertyPath: m_Name
@@ -723,7 +724,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7004625324969521465, guid: 7352a3981bc6e734a9638209e4f4a905, type: 3}
       propertyPath: dmgDealt
-      value: 50
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 7004625324969521465, guid: 7352a3981bc6e734a9638209e4f4a905, type: 3}
       propertyPath: targetSpeed
@@ -731,7 +732,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7004625324969521465, guid: 7352a3981bc6e734a9638209e4f4a905, type: 3}
       propertyPath: timeBtwShots
-      value: 0.1
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8261917909544524635, guid: 7352a3981bc6e734a9638209e4f4a905, type: 3}
       propertyPath: m_Name
@@ -801,7 +802,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7004625324969521465, guid: 7352a3981bc6e734a9638209e4f4a905, type: 3}
       propertyPath: dmgDealt
-      value: 50
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 7004625324969521465, guid: 7352a3981bc6e734a9638209e4f4a905, type: 3}
       propertyPath: bulletSpeed
@@ -813,7 +814,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7004625324969521465, guid: 7352a3981bc6e734a9638209e4f4a905, type: 3}
       propertyPath: timeBtwShots
-      value: 0.1
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8261917909544524635, guid: 7352a3981bc6e734a9638209e4f4a905, type: 3}
       propertyPath: m_Name
@@ -883,7 +884,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7004625324969521465, guid: 7352a3981bc6e734a9638209e4f4a905, type: 3}
       propertyPath: dmgDealt
-      value: 50
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 7004625324969521465, guid: 7352a3981bc6e734a9638209e4f4a905, type: 3}
       propertyPath: bulletSpeed
@@ -895,7 +896,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7004625324969521465, guid: 7352a3981bc6e734a9638209e4f4a905, type: 3}
       propertyPath: timeBtwShots
-      value: 0.1
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8261917909544524635, guid: 7352a3981bc6e734a9638209e4f4a905, type: 3}
       propertyPath: m_Name
@@ -965,7 +966,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7004625324969521465, guid: 7352a3981bc6e734a9638209e4f4a905, type: 3}
       propertyPath: dmgDealt
-      value: 50
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 7004625324969521465, guid: 7352a3981bc6e734a9638209e4f4a905, type: 3}
       propertyPath: bulletSpeed
@@ -977,7 +978,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7004625324969521465, guid: 7352a3981bc6e734a9638209e4f4a905, type: 3}
       propertyPath: timeBtwShots
-      value: 0.1
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8261917909544524635, guid: 7352a3981bc6e734a9638209e4f4a905, type: 3}
       propertyPath: m_Name
@@ -1047,7 +1048,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7004625324969521465, guid: 7352a3981bc6e734a9638209e4f4a905, type: 3}
       propertyPath: dmgDealt
-      value: 50
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 7004625324969521465, guid: 7352a3981bc6e734a9638209e4f4a905, type: 3}
       propertyPath: bulletSpeed
@@ -1059,7 +1060,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7004625324969521465, guid: 7352a3981bc6e734a9638209e4f4a905, type: 3}
       propertyPath: timeBtwShots
-      value: 0.1
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8261917909544524635, guid: 7352a3981bc6e734a9638209e4f4a905, type: 3}
       propertyPath: m_Name
