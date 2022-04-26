@@ -226,6 +226,14 @@ public class PlayerMovementStateMachine : MonoBehaviour
         {
             _rigidbody2D.AddForce(_appliedMovement, ForceMode2D.Impulse);
         }
+        if(_rigidbody2D.velocity.x > _currentMaxSpeed && _rigidbody2D.velocity.x >= 0)
+        {
+            _rigidbody2D.velocity = new Vector2(_currentMaxSpeed, _rigidbody2D.velocity.y);
+        }
+        if(Mathf.Abs(_rigidbody2D.velocity.x) > _currentMaxSpeed && _rigidbody2D.velocity.x <= 0)
+        {
+            _rigidbody2D.velocity = new Vector2(-_currentMaxSpeed, _rigidbody2D.velocity.y);
+        }
     }
 
     public void ResetVelocity()
