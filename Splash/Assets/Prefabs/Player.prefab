@@ -705,7 +705,7 @@ MonoBehaviour:
   impactSound: {fileID: 8300000, guid: fc73554d20e71a7439ec665ae8cde551, type: 3}
   Checkpoint: {fileID: 8300000, guid: f4adba02bda7dc84bb8167559717a077, type: 3}
   keyCount: 0
-  _maxJumpTime: 1
+  _maxJumpTime: 0.3
   _walkMultipler: 5
   _runMultiplier: 10
   _jumpVector: {x: 0, y: 7}
