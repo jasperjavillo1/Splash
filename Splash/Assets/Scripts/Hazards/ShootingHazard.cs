@@ -19,7 +19,7 @@ public class ShootingHazard : Hazard {
     Coroutine shotWaiter = null;
 
 
-    private void Start() {
+    private void OnEnable() {
         target = transform.GetChild(0).gameObject;
         barrel = transform.GetChild(1).gameObject;
         shotWaiter = StartCoroutine(shotTimeWaiter());
