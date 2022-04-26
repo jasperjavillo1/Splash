@@ -11,7 +11,6 @@ public class PlayerMovementStateMachine : MonoBehaviour
     private SpriteRenderer _spriteRenderer;
     private PlayerInput _playerInput;
     private Rigidbody2D _rigidbody2D;
-    private CapsuleCollider2D _capsuleCollider2D;
     private PlayerHealth _playerHealth;
     private Animator _animator;
     private string _currentAnimatorState;
@@ -55,7 +54,6 @@ public class PlayerMovementStateMachine : MonoBehaviour
     public SpriteRenderer SpriteRenderer { get { return _spriteRenderer; } }
     public PlayerInput PlayerInput { get { return _playerInput; } set { _playerInput = value; } }
     public Rigidbody2D Rigidbody2D { get { return _rigidbody2D; } }
-    public CapsuleCollider2D CapsuleCollider2D { get { return _capsuleCollider2D; } }
     public PlayerHealth PlayerHealth { get { return _playerHealth; } }
     public Animator Animator { get { return _animator; } }
 
@@ -91,7 +89,6 @@ public class PlayerMovementStateMachine : MonoBehaviour
         _spriteRenderer = GetComponent<SpriteRenderer>();
         _playerInput = new PlayerInput();
         _rigidbody2D = GetComponent<Rigidbody2D>();
-        _capsuleCollider2D = GetComponent<CapsuleCollider2D>();
         _playerHealth = GetComponent<PlayerHealth>();
         _animator = GetComponent<Animator>();
         _currentAnimatorState = "Player_Idle";
@@ -212,11 +209,11 @@ public class PlayerMovementStateMachine : MonoBehaviour
                 _ChangeAnimationState("Player_idle");
             }
         }
-        if(_appliedMovement.x > _zero)
+        if(_appliedMovement.x < _zero)
         {
             _spriteRenderer.flipX = false;
         }
-        else if(_appliedMovement.x < _zero)
+        else if(_appliedMovement.x > _zero)
         {
             _spriteRenderer.flipX = true;
         }
