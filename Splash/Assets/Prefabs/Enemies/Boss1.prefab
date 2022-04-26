@@ -321,7 +321,7 @@ CircleCollider2D:
   m_GameObject: {fileID: 7424422255497293277}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 4308b794f9231ac4493f752cc01e6ff3, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -503,6 +503,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7424422257197339632}
     m_Modifications:
+    - target: {fileID: 7004625324969521465, guid: 7352a3981bc6e734a9638209e4f4a905, type: 3}
+      propertyPath: dmgDealt
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 7004625324969521465, guid: 7352a3981bc6e734a9638209e4f4a905, type: 3}
+      propertyPath: targetSpeed
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 8261917909544524635, guid: 7352a3981bc6e734a9638209e4f4a905, type: 3}
       propertyPath: m_Name
       value: ShootingHazard (1)
@@ -595,7 +603,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8133156998974499885, guid: e1116b2516855f34bb4562d71963c9d1, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8708009069484738313, guid: e1116b2516855f34bb4562d71963c9d1, type: 3}
       propertyPath: m_RootOrder
@@ -655,6 +663,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7424422257197339632}
     m_Modifications:
+    - target: {fileID: 7004625324969521465, guid: 7352a3981bc6e734a9638209e4f4a905, type: 3}
+      propertyPath: dmgDealt
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 7004625324969521465, guid: 7352a3981bc6e734a9638209e4f4a905, type: 3}
+      propertyPath: targetSpeed
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 8261917909544524635, guid: 7352a3981bc6e734a9638209e4f4a905, type: 3}
       propertyPath: m_Name
       value: ShootingHazard
