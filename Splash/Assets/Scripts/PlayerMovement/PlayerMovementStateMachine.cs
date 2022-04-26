@@ -8,6 +8,7 @@ public class PlayerMovementStateMachine : MonoBehaviour
 {
     //member variables
     //reference variables
+    private SpriteRenderer _spriteRenderer;
     private PlayerInput _playerInput;
     private Rigidbody2D _rigidbody2D;
     private CapsuleCollider2D _capsuleCollider2D;
@@ -51,6 +52,7 @@ public class PlayerMovementStateMachine : MonoBehaviour
 
     //getters and setters
     //reference vairables getters and setters
+    public SpriteRenderer SpriteRenderer { get { return _spriteRenderer; } }
     public PlayerInput PlayerInput { get { return _playerInput; } set { _playerInput = value; } }
     public Rigidbody2D Rigidbody2D { get { return _rigidbody2D; } }
     public CapsuleCollider2D CapsuleCollider2D { get { return _capsuleCollider2D; } }
@@ -86,6 +88,7 @@ public class PlayerMovementStateMachine : MonoBehaviour
     void Awake()
     {
         //set reference variables
+        _spriteRenderer = GetComponent<SpriteRenderer>();
         _playerInput = new PlayerInput();
         _rigidbody2D = GetComponent<Rigidbody2D>();
         _capsuleCollider2D = GetComponent<CapsuleCollider2D>();
@@ -208,6 +211,14 @@ public class PlayerMovementStateMachine : MonoBehaviour
             {
                 _ChangeAnimationState("Player_idle");
             }
+        }
+        if(_appliedMovement.x > _zero)
+        {
+            _spriteRenderer.flipX = false;
+        }
+        else if(_appliedMovement.x < _zero)
+        {
+            _spriteRenderer.flipX = true;
         }
     }
 
