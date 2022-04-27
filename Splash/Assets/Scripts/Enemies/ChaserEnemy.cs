@@ -6,17 +6,8 @@ public class ChaserEnemy : MonoBehaviour
 {
     public GameObject player;
     public float speed, distanceBetween;
-    private float distance, xStart, yStart;
-    //private Vector3 startPos;
-    //public GameObject startPosition;
+    private float distance;
 
-    /*private void OnEnable()
-
-    {
-        xStart = gameObject.transform.position.x;
-        yStart = gameObject.transform.position.y;
-        startPosition.transform.position = new Vector3(xStart, yStart, 0);
-    }*/
 
     // Update is called once per frame
     void Update()
@@ -32,13 +23,15 @@ public class ChaserEnemy : MonoBehaviour
         {
             transform.SetPositionAndRotation(Vector2.MoveTowards(this.transform.position, player.transform.position, speed * Time.deltaTime), Quaternion.Euler(Vector3.forward * angle));
         }
-        /*if (distance > distanceBetween)
+    }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
         {
-            //startPos.x = xStart;
-            //startPos.y = yStart;
-            //position = gameObject.transform.position;
-            transform.SetPositionAndRotation(Vector2.MoveTowards(this.transform.position, startPosition.transform.position, speed * Time.deltaTime), Quaternion.Euler(Vector3.forward * angle));
-        }*/
+            player.GetComponent<PlayerHealth>().DecreaseHealth(200);
+            transform.gameObject.SetActive(false);
+        }
+
     }
 
 }
