@@ -5,7 +5,7 @@ using UnityEngine;
 public class Boss1Gun : MonoBehaviour
 {
     public GameObject squishPoint;
-
+    [SerializeField] AudioClip bossDamageSound;
     public Boss1 boss1;
     IEnumerator WaitTime()
     {
@@ -21,6 +21,7 @@ public class Boss1Gun : MonoBehaviour
         {
             boss1.health--;
             squishPoint.GetComponent<SpriteRenderer>().color = Color.cyan;
+            FindObjectOfType<AudioManager>().playSound(bossDamageSound);
             StartCoroutine(WaitTime());
 
             if (boss1.health == 0)

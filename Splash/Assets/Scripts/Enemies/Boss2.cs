@@ -5,10 +5,11 @@ using UnityEngine;
 public class Boss2 : MonoBehaviour
 {
     public float xSpeed, ySpeed;
-    public float xStart, xEnd, yStart, yEnd;
+    private float xStart, xEnd, yStart, yEnd;
     private float xDistance, yDistance, xDirection, yDirection;
     public int health = 50;
     public GameObject damagePoint;
+    [SerializeField] AudioClip bossDamageSound;
 
     IEnumerator WaitTime() 
     {
@@ -60,6 +61,7 @@ public class Boss2 : MonoBehaviour
         {
             health--;
             GetComponent<SpriteRenderer>().color = Color.cyan;
+            FindObjectOfType<AudioManager>().playSound(bossDamageSound);
             StartCoroutine(WaitTime());
             if (health == 0)
             {

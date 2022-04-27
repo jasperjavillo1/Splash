@@ -2591,7 +2591,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 875752584861455310, guid: 6f41e518e0b193041837d5cd34a598b9, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.53
+      value: 10.17
       objectReference: {fileID: 0}
     - target: {fileID: 875752584861455310, guid: 6f41e518e0b193041837d5cd34a598b9, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3871,8 +3871,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8472721989172003082, guid: 07c377aaa5008b4468bf6ef50fe4428c, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8472721989172003083, guid: 07c377aaa5008b4468bf6ef50fe4428c, type: 3}
+      propertyPath: bossDamageSound
+      value: 
+      objectReference: {fileID: 8300000, guid: b472d216a506df14a9cf71478017d71c, type: 3}
     - target: {fileID: 8472721989172003191, guid: 07c377aaa5008b4468bf6ef50fe4428c, type: 3}
       propertyPath: m_RootOrder
       value: 2

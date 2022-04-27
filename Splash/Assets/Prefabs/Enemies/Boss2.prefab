@@ -795,12 +795,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   xSpeed: 0
   ySpeed: 1
-  xStart: 0
-  xEnd: 0
-  yStart: 0
-  yEnd: 0
   health: 50
   damagePoint: {fileID: 97516100437987021}
+  bossDamageSound: {fileID: 8300000, guid: b472d216a506df14a9cf71478017d71c, type: 3}
 --- !u!1001 &97516100080334198
 PrefabInstance:
   m_ObjectHideFlags: 0
