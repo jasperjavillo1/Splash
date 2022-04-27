@@ -10,7 +10,8 @@ public class ChaserEnemy : MonoBehaviour
     //private Vector3 startPos;
     //public GameObject startPosition;
 
-    /*private void Start()
+    /*private void OnEnable()
+
     {
         xStart = gameObject.transform.position.x;
         yStart = gameObject.transform.position.y;

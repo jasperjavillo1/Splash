@@ -5,13 +5,12 @@ using UnityEngine;
 public class Boss3 : MonoBehaviour
 {
     public float xSpeed, ySpeed;
-    public float xStart, xEnd, yStart, yEnd, xDirection, yDirection;
-    private float xDistance, yDistance;
+    private float xStart, xEnd, yStart, yEnd, xDirection, yDirection, xDistance, yDistance;
     public int health = 50;
 
     public GameObject squishPoint;
 
-    private void Start()
+    private void OnEnable()
     {
         xStart = gameObject.transform.position.x;
         yStart = gameObject.transform.position.y;

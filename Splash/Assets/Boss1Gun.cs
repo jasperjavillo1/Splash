@@ -15,11 +15,6 @@ public class Boss1Gun : MonoBehaviour
         squishPoint.GetComponent<SpriteRenderer>().color = Color.red;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("GunProjectile"))
