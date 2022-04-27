@@ -11,14 +11,13 @@ public class PauseMenu : MonoBehaviour
     public GameObject pMenu;
     public bool paused;
     private PlayerInput _playerInput;
-    private bool _isPauseButtonPressed;
+    private bool _isPauseButtonPressed = false;
     //public Slider volumeSlider;
 
     private void Awake()
     {
         _playerInput = new PlayerInput();
         _playerInput.PauseMenu.Pause.started += _onPauseButton;
-        _playerInput.PauseMenu.Pause.canceled += _onPauseButton;
         AudioListener.volume = pMenu.GetComponentInChildren<Slider>().value;
 
     }
@@ -35,12 +34,14 @@ public class PauseMenu : MonoBehaviour
         if (_isPauseButtonPressed && paused == false)
         {
             Pause();
+            _isPauseButtonPressed = false;
             paused = true;
         }
 
         else if(_isPauseButtonPressed && paused)
         {
             Resume();
+            _isPauseButtonPressed = false;
             paused = false;
         }
     }
