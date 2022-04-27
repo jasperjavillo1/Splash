@@ -25,7 +25,7 @@ public class ContactHazard : Hazard {
     public List<Vector3> activationTimes = new List<Vector3>(); //  NOTE: won't be a timed hazard unless the type is set to timed
 
 
-    private void Start() {
+    private void Enable() {
         if(activationTimes.Count > 0 && type == contactHazardType.timed)   //  starts the hazard timers if there are any and is not a triggered hazard
             StartCoroutine(activationTimer(true));
 
