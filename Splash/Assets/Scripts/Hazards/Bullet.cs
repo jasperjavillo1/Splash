@@ -8,24 +8,37 @@ public class Bullet : MonoBehaviour {
     bool moving = false;
     Hazard parent;
     private GameObject player;
+
     IEnumerator WaitTime()
     {
         //yield on a new YieldInstruction that waits for .25 seconds.
-        yield return new WaitForSeconds(.15f);
+        yield return new WaitForSeconds(.05f);
 
         player.GetComponent<SpriteRenderer>().color = Color.white;
-       // Destroy(gameObject);
+        Destroy(gameObject);
 
     }
 
     private void OnTriggerEnter2D(Collider2D col) {
-        if(col.gameObject.tag == "Player") {
+        if(col.gameObject.CompareTag("Player")) {
             parent.dealDamageToPlayer();
             player = col.gameObject;
-            col.gameObject.GetComponent<SpriteRenderer>().color = Color.red;
-            StartCoroutine(WaitTime());
+
+            if (col.gameObject.GetComponent<SpriteRenderer>().color == Color.white)
+            {
+                col.gameObject.GetComponent<SpriteRenderer>().color = Color.red;
+                StartCoroutine(WaitTime());
+            }
+            else
+            {
+                Destroy(gameObject);
+            }
+
         }
-        Destroy(gameObject);
+        if (col.gameObject.CompareTag("Ground"))
+        {
+            Destroy(gameObject);
+        }
 
     }
 
