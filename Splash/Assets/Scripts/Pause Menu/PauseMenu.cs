@@ -13,13 +13,21 @@ public class PauseMenu : MonoBehaviour
     private PlayerInput _playerInput;
     private bool _isPauseButtonPressed = false;
     //public Slider volumeSlider;
+    private bool menuOpened = false;
 
     private void Awake()
     {
         _playerInput = new PlayerInput();
         _playerInput.PauseMenu.Pause.started += _onPauseButton;
-        AudioListener.volume = pMenu.GetComponentInChildren<Slider>().value;
-
+        if (menuOpened)
+        {
+            AudioListener.volume = pMenu.GetComponentInChildren<Slider>().value;
+        }
+        else
+        {
+            pMenu.GetComponentInChildren<Slider>().value = AudioListener.volume;
+        }
+        menuOpened = true;
     }
 
     private void Start() 
@@ -29,7 +37,10 @@ public class PauseMenu : MonoBehaviour
 
     public void Update()
     {
-        AudioListener.volume = pMenu.GetComponentInChildren<Slider>().value;
+        if (menuOpened)
+        {
+            AudioListener.volume = pMenu.GetComponentInChildren<Slider>().value;
+        }
 
         if (_isPauseButtonPressed && paused == false)
         {
