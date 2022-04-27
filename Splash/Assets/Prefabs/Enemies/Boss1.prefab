@@ -113,6 +113,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   squishPoint: {fileID: 1797896701}
+  bossDamageSound: {fileID: 8300000, guid: b472d216a506df14a9cf71478017d71c, type: 3}
   boss1: {fileID: 856698898}
 --- !u!1 &1317041490169506437
 GameObject:
@@ -227,6 +228,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   squishPoint: {fileID: 1317041490169506437}
+  bossDamageSound: {fileID: 8300000, guid: b472d216a506df14a9cf71478017d71c, type: 3}
   boss1: {fileID: 856698898}
 --- !u!1 &7424422255497293277
 GameObject:
@@ -342,6 +344,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   squishPoint: {fileID: 7424422255497293277}
   boss1: {fileID: 856698898}
+  bossDamageSound: {fileID: 8300000, guid: b472d216a506df14a9cf71478017d71c, type: 3}
 --- !u!1 &7424422257197339635
 GameObject:
   m_ObjectHideFlags: 0

@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
+
 
 public class PauseMenu : MonoBehaviour
 {
@@ -10,12 +12,15 @@ public class PauseMenu : MonoBehaviour
     public bool paused;
     private PlayerInput _playerInput;
     private bool _isPauseButtonPressed;
+    //public Slider volumeSlider;
 
     private void Awake()
     {
         _playerInput = new PlayerInput();
         _playerInput.PauseMenu.Pause.started += _onPauseButton;
         _playerInput.PauseMenu.Pause.canceled += _onPauseButton;
+        AudioListener.volume = pMenu.GetComponentInChildren<Slider>().value;
+
     }
 
     private void Start() 
@@ -25,6 +30,8 @@ public class PauseMenu : MonoBehaviour
 
     public void Update()
     {
+        AudioListener.volume = pMenu.GetComponentInChildren<Slider>().value;
+
         if (_isPauseButtonPressed && paused == false)
         {
             Pause();
@@ -41,6 +48,7 @@ public class PauseMenu : MonoBehaviour
     private void OnEnable()
     {
         _playerInput.PauseMenu.Enable();
+
     }
     private void OnDisable()
     {

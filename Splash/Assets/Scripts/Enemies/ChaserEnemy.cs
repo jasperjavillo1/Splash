@@ -8,6 +8,7 @@ public class ChaserEnemy : MonoBehaviour
     public float speed, distanceBetween;
     private float distance;
 
+
     // Update is called once per frame
     void Update()
     {
@@ -18,9 +19,17 @@ public class ChaserEnemy : MonoBehaviour
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
 
         // Moves toward player when within specified distance
-        if (distance < distanceBetween)
+        if (distance <= distanceBetween)
         {
             transform.SetPositionAndRotation(Vector2.MoveTowards(this.transform.position, player.transform.position, speed * Time.deltaTime), Quaternion.Euler(Vector3.forward * angle));
+        }
+    }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            player.GetComponent<PlayerHealth>().DecreaseHealth(200);
+            transform.gameObject.SetActive(false);
         }
 
     }

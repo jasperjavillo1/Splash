@@ -5,13 +5,13 @@ using UnityEngine;
 public class Boss3 : MonoBehaviour
 {
     public float xSpeed, ySpeed;
-    public float xStart, xEnd, yStart, yEnd, xDirection, yDirection;
-    private float xDistance, yDistance;
+    private float xStart, xEnd, yStart, yEnd, xDirection, yDirection, xDistance, yDistance;
     public int health = 50;
+    [SerializeField] AudioClip bossDamageSound;
 
     public GameObject squishPoint;
 
-    private void Start()
+    private void OnEnable()
     {
         xStart = gameObject.transform.position.x;
         yStart = gameObject.transform.position.y;
@@ -64,6 +64,7 @@ public class Boss3 : MonoBehaviour
             health--;
 
             squishPoint.GetComponent<SpriteRenderer>().color = Color.cyan;
+            FindObjectOfType<AudioManager>().playSound(bossDamageSound);
             StartCoroutine(WaitTime());
 
             if (health == 0)
