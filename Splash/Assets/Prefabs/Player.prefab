@@ -708,7 +708,7 @@ MonoBehaviour:
   _maxJumpTime: 0.3
   _walkMultipler: 5
   _runMultiplier: 10
-  _jumpVector: {x: 0, y: 7}
+  _jumpVector: {x: 0, y: 10}
   _maxWalkSpeed: 3
   _maxRunSpeed: 6
 --- !u!114 &37311668
@@ -724,6 +724,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _checkpoints:
+  - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   playerLives: {fileID: 2192033525742068018}
@@ -1324,6 +1325,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3300649008393559314}
     m_Modifications:
+    - target: {fileID: 583146863240950532, guid: fd4ee7331d21bcf4c977ef2c0e94de79, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 583146863240950532, guid: fd4ee7331d21bcf4c977ef2c0e94de79, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_FloatArgument
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 7891328378698856874, guid: fd4ee7331d21bcf4c977ef2c0e94de79, type: 3}
       propertyPath: m_RootOrder
       value: 0
