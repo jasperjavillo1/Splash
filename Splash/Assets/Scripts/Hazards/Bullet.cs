@@ -14,7 +14,7 @@ public class Bullet : MonoBehaviour {
         yield return new WaitForSeconds(.15f);
 
         player.GetComponent<SpriteRenderer>().color = Color.white;
-        Destroy(gameObject);
+       // Destroy(gameObject);
 
     }
 
@@ -25,6 +25,7 @@ public class Bullet : MonoBehaviour {
             col.gameObject.GetComponent<SpriteRenderer>().color = Color.red;
             StartCoroutine(WaitTime());
         }
+        Destroy(gameObject);
 
     }
 
