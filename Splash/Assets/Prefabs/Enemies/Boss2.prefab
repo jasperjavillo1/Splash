@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 97516098926297525}
   - component: {fileID: 97516098926297526}
   - component: {fileID: 97516098926297513}
+  - component: {fileID: 1165681847}
   m_Layer: 6
   m_Name: RotatorHazard
   m_TagString: Ground
@@ -151,6 +152,18 @@ MonoBehaviour:
   triggeredActivationTime: 1
   dmgBufferPeriod: 0.5
   activationTimes: []
+--- !u!114 &1165681847
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 97516098926297522}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f002f468ddc40ff40ad7afe9a0351586, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &97516099145274284
 GameObject:
   m_ObjectHideFlags: 0
@@ -164,6 +177,7 @@ GameObject:
   - component: {fileID: 97516099145274272}
   - component: {fileID: 97516099145274273}
   - component: {fileID: 97516099145274286}
+  - component: {fileID: 1863961376}
   m_Layer: 6
   m_Name: RotatorHazard (1)
   m_TagString: Ground
@@ -302,6 +316,18 @@ MonoBehaviour:
   triggeredActivationTime: 1
   dmgBufferPeriod: 0.5
   activationTimes: []
+--- !u!114 &1863961376
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 97516099145274284}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f002f468ddc40ff40ad7afe9a0351586, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &97516099281251659
 GameObject:
   m_ObjectHideFlags: 0
@@ -314,6 +340,7 @@ GameObject:
   - component: {fileID: 97516099281251658}
   - component: {fileID: 97516099281251663}
   - component: {fileID: 97516099281251660}
+  - component: {fileID: 612838115}
   m_Layer: 6
   m_Name: BlockerHazard
   m_TagString: Ground
@@ -431,6 +458,18 @@ MonoBehaviour:
   triggeredActivationTime: 1
   dmgBufferPeriod: 0.5
   activationTimes: []
+--- !u!114 &612838115
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 97516099281251659}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f002f468ddc40ff40ad7afe9a0351586, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &97516099918060251
 GameObject:
   m_ObjectHideFlags: 0
@@ -443,6 +482,7 @@ GameObject:
   - component: {fileID: 97516099918060250}
   - component: {fileID: 97516099918060255}
   - component: {fileID: 97516099918060252}
+  - component: {fileID: 576322340}
   m_Layer: 6
   m_Name: BlockerHazard (1)
   m_TagString: Ground
@@ -560,6 +600,18 @@ MonoBehaviour:
   triggeredActivationTime: 1
   dmgBufferPeriod: 0.5
   activationTimes: []
+--- !u!114 &576322340
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 97516099918060251}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f002f468ddc40ff40ad7afe9a0351586, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &97516100051014097
 GameObject:
   m_ObjectHideFlags: 0

@@ -7,13 +7,25 @@ public class Bullet : MonoBehaviour {
     float speed;
     bool moving = false;
     Hazard parent;
+    private GameObject player;
+    IEnumerator WaitTime()
+    {
+        //yield on a new YieldInstruction that waits for .25 seconds.
+        yield return new WaitForSeconds(.15f);
+
+        player.GetComponent<SpriteRenderer>().color = Color.white;
+        Destroy(gameObject);
+
+    }
 
     private void OnTriggerEnter2D(Collider2D col) {
         if(col.gameObject.tag == "Player") {
             parent.dealDamageToPlayer();
+            player = col.gameObject;
+            col.gameObject.GetComponent<SpriteRenderer>().color = Color.red;
+            StartCoroutine(WaitTime());
         }
 
-        Destroy(gameObject);
     }
 
     public void moveToTarget(Hazard p, Vector2 t, float s) {
