@@ -7,6 +7,8 @@ public class ChaserEnemy : MonoBehaviour
     public GameObject player;
     public float speed, distanceBetween;
     private float distance;
+    [SerializeField] AudioClip explodeDamageSound;
+    [SerializeField] AudioClip playerDamageSound;
 
 
     // Update is called once per frame
@@ -29,6 +31,9 @@ public class ChaserEnemy : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             player.GetComponent<PlayerHealth>().DecreaseHealth(200);
+            FindObjectOfType<AudioManager>().playSound(playerDamageSound);
+            FindObjectOfType<AudioManager>().playSound(explodeDamageSound);
+
             transform.gameObject.SetActive(false);
         }
 

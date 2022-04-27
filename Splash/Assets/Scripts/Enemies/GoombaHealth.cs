@@ -4,21 +4,14 @@ using UnityEngine;
 
 public class GoombaHealth : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] AudioClip goombaDamageSound;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("GunProjectile"))
+        if (collision.gameObject.CompareTag("GunProjectile") || collision.gameObject.CompareTag("Player"))
         {
+            FindObjectOfType<AudioManager>().playSound(goombaDamageSound);
+
             transform.parent.gameObject.SetActive(false);
 
         }

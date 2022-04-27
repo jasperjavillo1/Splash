@@ -3442,7 +3442,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1983879891
 Transform:
   m_ObjectHideFlags: 0
@@ -3754,6 +3754,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: RotatingHazard
       objectReference: {fileID: 0}
+    - target: {fileID: 6555624082522348863, guid: 5cdefd68fd04d5c458c313baf17c4c2d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5cdefd68fd04d5c458c313baf17c4c2d, type: 3}
 --- !u!1001 &7424422255786964915
@@ -3833,50 +3837,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1228982236}
     m_Modifications:
-    - target: {fileID: 1486269638251654708, guid: 07c377aaa5008b4468bf6ef50fe4428c, type: 3}
-      propertyPath: dmgDealt
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 1486269638517753878, guid: 07c377aaa5008b4468bf6ef50fe4428c, type: 3}
-      propertyPath: dmgDealt
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 1486269638550151333, guid: 07c377aaa5008b4468bf6ef50fe4428c, type: 3}
-      propertyPath: dmgDealt
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 1486269638602439789, guid: 07c377aaa5008b4468bf6ef50fe4428c, type: 3}
-      propertyPath: dmgDealt
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 1486269639137274138, guid: 07c377aaa5008b4468bf6ef50fe4428c, type: 3}
-      propertyPath: dmgDealt
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 1486269639576680455, guid: 07c377aaa5008b4468bf6ef50fe4428c, type: 3}
-      propertyPath: dmgDealt
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 1486269639665109860, guid: 07c377aaa5008b4468bf6ef50fe4428c, type: 3}
-      propertyPath: dmgDealt
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 1486269640170049926, guid: 07c377aaa5008b4468bf6ef50fe4428c, type: 3}
-      propertyPath: dmgDealt
-      value: 100
-      objectReference: {fileID: 0}
     - target: {fileID: 8472721989172003082, guid: 07c377aaa5008b4468bf6ef50fe4428c, type: 3}
       propertyPath: m_Name
       value: Boss3
       objectReference: {fileID: 0}
     - target: {fileID: 8472721989172003082, guid: 07c377aaa5008b4468bf6ef50fe4428c, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8472721989172003083, guid: 07c377aaa5008b4468bf6ef50fe4428c, type: 3}
-      propertyPath: bossDamageSound
-      value: 
-      objectReference: {fileID: 8300000, guid: b472d216a506df14a9cf71478017d71c, type: 3}
     - target: {fileID: 8472721989172003191, guid: 07c377aaa5008b4468bf6ef50fe4428c, type: 3}
       propertyPath: m_RootOrder
       value: 2

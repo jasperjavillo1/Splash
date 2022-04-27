@@ -184,6 +184,8 @@ MonoBehaviour:
   player: {fileID: 0}
   speed: 1
   distanceBetween: 10
+  explodeDamageSound: {fileID: 8300000, guid: f2bbc93eadde2014188caafe6a9c13d8, type: 3}
+  playerDamageSound: {fileID: 8300000, guid: 8186cd7ee1abbc8469b61d6e8d6e82ac, type: 3}
 --- !u!58 &6317615307000518699
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -331,4 +333,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80caba5e0582628428d6e642a7441161, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  chaserDamageSound: {fileID: 8300000, guid: 1d6ab41c4b7da39468f62fd52c70d282, type: 3}
   health: 10

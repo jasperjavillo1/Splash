@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class ChaserHealth : MonoBehaviour
 {
+    [SerializeField] AudioClip chaserDamageSound;
+
     IEnumerator WaitTime()
     {
         //yield on a new YieldInstruction that waits for .25 seconds.
@@ -20,6 +22,7 @@ public class ChaserHealth : MonoBehaviour
         {
             health--;
             transform.parent.gameObject.GetComponent<SpriteRenderer>().color = Color.cyan;
+            FindObjectOfType<AudioManager>().playSound(chaserDamageSound);
             StartCoroutine(WaitTime());
 
             if (health == 0)
