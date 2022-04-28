@@ -1,0 +1,31 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class PlayerBlink : MonoBehaviour
+{
+    IEnumerator WaitTime()
+    {
+        //yield on a new YieldInstruction that waits for .05 seconds.
+        yield return new WaitForSeconds(.1f);
+
+        GetComponent<SpriteRenderer>().color = Color.white;
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            GetComponent<SpriteRenderer>().color = Color.red;
+            StartCoroutine(WaitTime());
+        }
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            GetComponent<SpriteRenderer>().color = Color.red;
+            StartCoroutine(WaitTime());
+        }
+    }
+}

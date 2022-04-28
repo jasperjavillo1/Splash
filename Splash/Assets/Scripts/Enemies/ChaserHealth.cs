@@ -8,8 +8,8 @@ public class ChaserHealth : MonoBehaviour
 
     IEnumerator WaitTime()
     {
-        //yield on a new YieldInstruction that waits for .25 seconds.
-        yield return new WaitForSeconds(.25f);
+        //yield on a new YieldInstruction that waits for .05 seconds.
+        yield return new WaitForSeconds(.05f);
 
         transform.parent.gameObject.GetComponent<SpriteRenderer>().color = Color.red;
     }

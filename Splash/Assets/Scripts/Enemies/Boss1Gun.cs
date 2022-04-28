@@ -9,8 +9,8 @@ public class Boss1Gun : MonoBehaviour
     public Boss1 boss1;
     IEnumerator WaitTime()
     {
-        //yield on a new YieldInstruction that waits for .25 seconds.
-        yield return new WaitForSeconds(.25f);
+        //yield on a new YieldInstruction that waits for .05 seconds.
+        yield return new WaitForSeconds(.05f);
 
         squishPoint.GetComponent<SpriteRenderer>().color = Color.red;
     }

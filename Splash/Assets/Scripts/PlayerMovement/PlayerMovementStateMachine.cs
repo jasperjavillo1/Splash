@@ -113,6 +113,7 @@ public class PlayerMovementStateMachine : MonoBehaviour
         _currentState.UpdateStates();
         _handleMovement();
         _MovementAnimation();
+
     }
 
     private void OnEnable()
@@ -169,11 +170,6 @@ public class PlayerMovementStateMachine : MonoBehaviour
             FindObjectOfType<AudioManager>().playSound(impactSound);
         }
 
-        // If destructor portion of enemy hit, destroy enemy
-        if (col.gameObject.CompareTag("Squish"))
-        {
-            col.transform.parent.gameObject.SetActive(false);
-        }
     }
     private void OnTriggerEnter2D(Collider2D other)
     {

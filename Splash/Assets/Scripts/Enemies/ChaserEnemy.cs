@@ -10,15 +10,6 @@ public class ChaserEnemy : MonoBehaviour
     [SerializeField] AudioClip explodeDamageSound;
     [SerializeField] AudioClip playerDamageSound;
 
-    IEnumerator WaitTime()
-    {
-        //yield on a new YieldInstruction that waits for .25 seconds.
-        yield return new WaitForSeconds(.15f);
-        player.GetComponent<SpriteRenderer>().color = Color.white;
-        gameObject.SetActive(false);
-
-    }
-
     // Update is called once per frame
     void Update()
     {
@@ -41,8 +32,8 @@ public class ChaserEnemy : MonoBehaviour
             player.GetComponent<PlayerHealth>().DecreaseHealth(200);
             FindObjectOfType<AudioManager>().playSound(playerDamageSound);
             FindObjectOfType<AudioManager>().playSound(explodeDamageSound);
-            collision.gameObject.GetComponent<SpriteRenderer>().color = Color.red;
-            StartCoroutine(WaitTime());
+            gameObject.SetActive(false);
+
         }
 
     }

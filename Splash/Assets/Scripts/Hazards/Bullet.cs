@@ -9,30 +9,16 @@ public class Bullet : MonoBehaviour {
     Hazard parent;
     private GameObject player;
 
-    IEnumerator WaitTime()
-    {
-        //yield on a new YieldInstruction that waits for .25 seconds.
-        yield return new WaitForSeconds(.05f);
 
-        player.GetComponent<SpriteRenderer>().color = Color.white;
-        Destroy(gameObject);
-
-    }
 
     private void OnTriggerEnter2D(Collider2D col) {
         if(col.gameObject.CompareTag("Player")) {
             parent.dealDamageToPlayer();
             player = col.gameObject;
 
-            if (col.gameObject.GetComponent<SpriteRenderer>().color == Color.white)
-            {
-                col.gameObject.GetComponent<SpriteRenderer>().color = Color.red;
-                StartCoroutine(WaitTime());
-            }
-            else
-            {
-                Destroy(gameObject);
-            }
+
+            Destroy(gameObject);
+            
 
         }
         if (col.gameObject.CompareTag("Ground"))

@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 7899808882172311721}
   - component: {fileID: 7899808882172311722}
   - component: {fileID: 7899808882172311733}
-  - component: {fileID: 997987131}
   m_Layer: 9
   m_Name: GoombaLike
   m_TagString: Enemy
@@ -32,8 +31,8 @@ Transform:
   m_LocalPosition: {x: -2.04, y: -0.507, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children:
-  - {fileID: 7899808882453096489}
   - {fileID: 5233887169469938461}
+  - {fileID: 7899808882453096489}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -97,7 +96,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 7899808882172311726}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 4308b794f9231ac4493f752cc01e6ff3, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -145,20 +144,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 789f271fed9d75148b502546a12be09a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  xSpeed: 1
+  xSpeed: 2
   xDistance: 3
---- !u!114 &997987131
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7899808882172311726}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f002f468ddc40ff40ad7afe9a0351586, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &7899808882453096494
 GameObject:
   m_ObjectHideFlags: 0
@@ -171,7 +158,7 @@ GameObject:
   - component: {fileID: 7899808882453096491}
   - component: {fileID: 7899808882453096488}
   - component: {fileID: 767144191}
-  m_Layer: 9
+  m_Layer: 6
   m_Name: Destructor
   m_TagString: Squish
   m_Icon: {fileID: 0}
@@ -186,11 +173,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7899808882453096494}
   m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: -0.005300224, y: 0.21348798, z: 0}
-  m_LocalScale: {x: 0.10000001, y: 0.10000001, z: 1}
+  m_LocalPosition: {x: -0.0053002834, y: 0.120000005, z: 0}
+  m_LocalScale: {x: 0.29999998, y: 0.14999999, z: 1}
   m_Children: []
   m_Father: {fileID: 7899808882172311723}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
 --- !u!212 &7899808882453096491
 SpriteRenderer:
@@ -231,9 +218,9 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: -9095717837082945937, guid: bd3cb4af8406d4436a2ae8c2aafe1f8d, type: 3}
-  m_Color: {r: 1, g: 0.5430124, b: 0, a: 1}
+  m_Color: {r: 1, g: 0.32495618, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -272,6 +259,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   goombaDamageSound: {fileID: 8300000, guid: 1d6ab41c4b7da39468f62fd52c70d282, type: 3}
+  health: 3
 --- !u!1 &8092917262027598362
 GameObject:
   m_ObjectHideFlags: 0
@@ -298,13 +286,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8092917262027598362}
-  m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: -0.005300224, y: 0.21348798, z: 0}
-  m_LocalScale: {x: 0.10000001, y: 0.10000001, z: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.005300224, y: 0.052, z: 0}
+  m_LocalScale: {x: 0.10000001, y: 0.22, z: 1}
   m_Children: []
   m_Father: {fileID: 7899808882172311723}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &8390514227056440402
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -312,7 +300,7 @@ SpriteRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8092917262027598362}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -385,3 +373,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   goombaDamageSound: {fileID: 8300000, guid: 1d6ab41c4b7da39468f62fd52c70d282, type: 3}
+  health: 2

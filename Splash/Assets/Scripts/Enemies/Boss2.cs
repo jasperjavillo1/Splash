@@ -13,7 +13,7 @@ public class Boss2 : MonoBehaviour
 
     IEnumerator WaitTime() 
     {
-        yield return new WaitForSeconds(.25f);
+        yield return new WaitForSeconds(.05f);
         GetComponent<SpriteRenderer>().color = Color.red;
     }
 
