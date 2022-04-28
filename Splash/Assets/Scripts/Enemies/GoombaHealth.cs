@@ -12,7 +12,7 @@ public class GoombaHealth : MonoBehaviour
         //yield on a new YieldInstruction that waits for .05 seconds.
         yield return new WaitForSeconds(.05f);
 
-        transform.parent.gameObject.GetComponent<SpriteRenderer>().color = Color.white;
+        transform.parent.GetComponent<SpriteRenderer>().color = Color.white;
 
     }
 
@@ -23,18 +23,18 @@ public class GoombaHealth : MonoBehaviour
         if (collision.gameObject.CompareTag("GunProjectile"))
         {
             health--;
-            transform.parent.gameObject.GetComponent<SpriteRenderer>().color = Color.red;
+            transform.parent.GetComponent<SpriteRenderer>().color = Color.red;
             StartCoroutine(WaitTime());
             if (health == 0)
             {
-                transform.parent.gameObject.SetActive(false);
+                Destroy(transform.parent.gameObject);
 
             }
 
         }
         if (collision.gameObject.CompareTag("Player"))
         {
-            transform.parent.gameObject.SetActive(false);
+            Destroy(transform.parent.gameObject);
         }
     }
 

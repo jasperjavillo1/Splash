@@ -6,7 +6,7 @@ public class PlayerBlink : MonoBehaviour
 {
     IEnumerator WaitTime()
     {
-        //yield on a new YieldInstruction that waits for .05 seconds.
+        //yield on a new YieldInstruction that waits for .1 seconds.
         yield return new WaitForSeconds(.1f);
 
         GetComponent<SpriteRenderer>().color = Color.white;

@@ -27,8 +27,7 @@ public class ChaserHealth : MonoBehaviour
 
             if (health == 0)
             {
-                transform.parent.gameObject.SetActive(false);
-
+                Destroy(transform.parent.gameObject);
             }
         }
 

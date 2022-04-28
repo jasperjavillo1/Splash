@@ -32,7 +32,7 @@ public class ChaserEnemy : MonoBehaviour
             player.GetComponent<PlayerHealth>().DecreaseHealth(200);
             FindObjectOfType<AudioManager>().playSound(playerDamageSound);
             FindObjectOfType<AudioManager>().playSound(explodeDamageSound);
-            gameObject.SetActive(false);
+            Destroy(gameObject);
 
         }
 
