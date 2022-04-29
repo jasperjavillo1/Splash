@@ -762,6 +762,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f002f468ddc40ff40ad7afe9a0351586, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerHurtSound: {fileID: 8300000, guid: 8186cd7ee1abbc8469b61d6e8d6e82ac, type: 3}
 --- !u!114 &3205313971523627699
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -775,7 +776,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cleanseCounter: {fileID: 181383124505580730}
-  fountainsCleansed: 0
+  toxicFountains: 3
 --- !u!1 &4822720583697805628
 GameObject:
   m_ObjectHideFlags: 0

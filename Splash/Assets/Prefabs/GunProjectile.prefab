@@ -136,3 +136,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _speed: 500
   Damage: 10
+  bubblePopSound: {fileID: 8300000, guid: 1d6ab41c4b7da39468f62fd52c70d282, type: 3}

@@ -12,6 +12,7 @@ TagManager:
   - EnemyProjectile
   - GunProjectile
   - Squish
+  - BossSquish
   layers:
   - Default
   - TransparentFX

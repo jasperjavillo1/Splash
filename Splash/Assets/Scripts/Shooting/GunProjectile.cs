@@ -7,6 +7,7 @@ public class GunProjectile : MonoBehaviour
     //parameters
     [SerializeField] float _speed;
     [SerializeField] public float Damage;
+    [SerializeField] AudioClip bubblePopSound;
 
     //state
     Vector3 _projectileDirection;
@@ -35,6 +36,7 @@ public class GunProjectile : MonoBehaviour
 
         if(other.gameObject.CompareTag("Ground") || other.gameObject.CompareTag("Enemy") || other.gameObject.CompareTag("Squish"))
         {
+            FindObjectOfType<AudioManager>().playSound(bubblePopSound);
             Destroy(gameObject);
         }    
     }

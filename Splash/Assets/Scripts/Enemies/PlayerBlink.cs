@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerBlink : MonoBehaviour
 {
+    [SerializeField] AudioClip playerHurtSound;
     IEnumerator WaitTime()
     {
         //yield on a new YieldInstruction that waits for .1 seconds.
@@ -16,12 +17,14 @@ public class PlayerBlink : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Enemy") || collision.gameObject.CompareTag("EnemyProjectile"))
         {
+            FindObjectOfType<AudioManager>().playSound(playerHurtSound);
             GetComponent<SpriteRenderer>().color = Color.red;
             StartCoroutine(WaitTime());
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        FindObjectOfType<AudioManager>().playSound(playerHurtSound);
         if (collision.gameObject.CompareTag("Enemy"))
         {
             GetComponent<SpriteRenderer>().color = Color.red;

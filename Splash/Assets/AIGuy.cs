@@ -7,6 +7,7 @@ public class AIGuy : MonoBehaviour
     public GameObject player;
     public float speed, distanceBetween;
     private float distance;
+    public int health = 50;
     [SerializeField] AudioClip playerDamageSound;
 
     // Update is called once per frame

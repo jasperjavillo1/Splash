@@ -17,7 +17,7 @@ public class Boss1Gun : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("GunProjectile"))
+        if (collision.gameObject.CompareTag("GunProjectile") || collision.gameObject.CompareTag("Player"))
         {
             boss1.health--;
             squishPoint.GetComponent<SpriteRenderer>().color = Color.cyan;

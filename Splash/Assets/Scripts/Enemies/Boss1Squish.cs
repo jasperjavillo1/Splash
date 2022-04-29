@@ -9,10 +9,10 @@ public class Boss1Squish : MonoBehaviour
     [SerializeField] AudioClip bossDamageSound;
     IEnumerator WaitTime()
     {
-        //yield on a new YieldInstruction that waits for .05 seconds.
-        yield return new WaitForSeconds(.05f);
+        //yield on a new YieldInstruction that waits for .1 seconds.
+        yield return new WaitForSeconds(.1f);
 
-        squishPoint.GetComponent<SpriteRenderer>().color = Color.yellow;
+        squishPoint.GetComponent<SpriteRenderer>().color = Color.red;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

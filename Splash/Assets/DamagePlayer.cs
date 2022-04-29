@@ -6,6 +6,7 @@ public class DamagePlayer : MonoBehaviour
 {
     public int damage;
     private GameObject player;
+    [SerializeField] AudioClip playerHurtSound;
 
     IEnumerator DamageWait()
     {
@@ -18,6 +19,7 @@ public class DamagePlayer : MonoBehaviour
     {
         if(collision.gameObject.CompareTag("Player"))
         {
+            FindObjectOfType<AudioManager>().playSound(playerHurtSound);
             player = collision.gameObject;
             StartCoroutine(DamageWait());
         }

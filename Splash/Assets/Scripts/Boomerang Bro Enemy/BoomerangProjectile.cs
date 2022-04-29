@@ -8,7 +8,6 @@ public class BoomerangProjectile : MonoBehaviour
     [SerializeField] private float _force;
     public float Damage;
 
-
     //state
     private Vector3 _projectileDirection;
     private bool _hasPassedPlayer;
@@ -52,7 +51,7 @@ public class BoomerangProjectile : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other) 
     {
-        if(other.gameObject.tag == "Ground")
+        if(other.gameObject.CompareTag("Ground"))
         {
             Destroy(gameObject);
         }    

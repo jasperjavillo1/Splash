@@ -6,6 +6,7 @@ public class EnemyHealth : MonoBehaviour
 {
     //parameters
     [SerializeField] float _health;
+    [SerializeField] AudioClip broDamageSound;
 
     IEnumerator Blink()
     {
@@ -27,6 +28,7 @@ public class EnemyHealth : MonoBehaviour
         {
             _health-= other.gameObject.GetComponent<GunProjectile>().Damage;
             Destroy(other.gameObject);
+            FindObjectOfType<AudioManager>().playSound(broDamageSound);
             GetComponent<SpriteRenderer>().color = Color.red;
             StartCoroutine(Blink());
 

@@ -18,22 +18,22 @@ public class GoombaHealth : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        FindObjectOfType<AudioManager>().playSound(goombaDamageSound);
 
         if (collision.gameObject.CompareTag("GunProjectile"))
         {
             health--;
+            FindObjectOfType<AudioManager>().playSound(goombaDamageSound);
             transform.parent.GetComponent<SpriteRenderer>().color = Color.red;
             StartCoroutine(WaitTime());
             if (health == 0)
             {
                 Destroy(transform.parent.gameObject);
-
             }
 
         }
         if (collision.gameObject.CompareTag("Player"))
         {
+            FindObjectOfType<AudioManager>().playSound(goombaDamageSound);
             Destroy(transform.parent.gameObject);
         }
     }

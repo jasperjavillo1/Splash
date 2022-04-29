@@ -8,6 +8,7 @@ public class Boss3 : MonoBehaviour
     private float xStart, xEnd, yStart, yEnd, xDirection, yDirection, xDistance, yDistance;
     public int health = 50;
     [SerializeField] AudioClip bossDamageSound;
+    [SerializeField] AudioClip bubbleDamageSound;
 
     public GameObject squishPoint;
 
@@ -64,6 +65,7 @@ public class Boss3 : MonoBehaviour
             health--;
 
             squishPoint.GetComponent<SpriteRenderer>().color = Color.cyan;
+            FindObjectOfType<AudioManager>().playSound(bubbleDamageSound);
             FindObjectOfType<AudioManager>().playSound(bossDamageSound);
             StartCoroutine(WaitTime());
 
