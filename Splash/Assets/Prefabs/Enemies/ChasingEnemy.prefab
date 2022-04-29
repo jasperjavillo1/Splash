@@ -334,4 +334,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   chaserDamageSound: {fileID: 8300000, guid: 1d6ab41c4b7da39468f62fd52c70d282, type: 3}
-  health: 2
+  health: 10

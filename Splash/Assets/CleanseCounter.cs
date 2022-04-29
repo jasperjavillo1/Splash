@@ -29,7 +29,6 @@ public class CleanseCounter : MonoBehaviour
         if (collision.CompareTag("Key"))
         {
             cleansed = true;
-            Destroy(collision.gameObject);
         }
     }
 }

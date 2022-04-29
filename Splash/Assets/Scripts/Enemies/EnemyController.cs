@@ -7,19 +7,17 @@ public class EnemyController : MonoBehaviour
     public GameObject enemySpawnPoint;
     public bool start = false, stop = false;
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    IEnumerator WaitTime()
     {
-        if (collision.gameObject.CompareTag("Player"))
+        yield return new WaitForSeconds(.1f);
+        if (start)
         {
-            if (start)
-            {
-                enemySpawnPoint.SetActive(true);
+            GetComponent<SpriteRenderer>().color = Color.green;
 
-            }
-            if (stop)
-            {
-                enemySpawnPoint.SetActive(false);
-            }
+        }
+        if (stop)
+        {
+            GetComponent<SpriteRenderer>().color = Color.red;
         }
     }
 
@@ -30,25 +28,17 @@ public class EnemyController : MonoBehaviour
             if (start)
             {
                 enemySpawnPoint.SetActive(true);
+                GetComponent<SpriteRenderer>().color = Color.black;
+                StartCoroutine(WaitTime());
 
             }
             if (stop)
             {
                 enemySpawnPoint.SetActive(false);
+                GetComponent<SpriteRenderer>().color = Color.black;
+                StartCoroutine(WaitTime());
             }
         }
     }
 
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
