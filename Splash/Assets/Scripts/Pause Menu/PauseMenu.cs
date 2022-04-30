@@ -12,8 +12,7 @@ public class PauseMenu : MonoBehaviour
     public bool paused;
     private PlayerInput _playerInput;
     private bool _isPauseButtonPressed = false;
-    //public Slider volumeSlider;
-    private bool menuOpened = false;
+    public bool menuOpened = false;
 
     private void Awake()
     {

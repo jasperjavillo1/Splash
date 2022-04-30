@@ -5,13 +5,15 @@ using UnityEngine.SceneManagement;
 
 public class MainMenuCanvas : MonoBehaviour {
 
+    //public GameObject mainMenu;
+
     //  buttons
     public void Play() {
         SceneManager.LoadScene("Level_Select_Screen");
     }
 
     public void Options() {
-        SceneManager.LoadScene("OptionsMenu");
+        //SceneManager.LoadScene("OptionsMenu");
     }
 
     public void Credits() {

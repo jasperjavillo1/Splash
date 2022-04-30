@@ -8,12 +8,10 @@ public class AudioManager : MonoBehaviour {
     //  all of the AudioClips that are currently playing
     readonly List<AudioClip> playedClips = new List<AudioClip>();
     
-    bool isPlaying = false;
     private GameObject[] audioManagers;
-
     private void Awake() {
         StartCoroutine(RefreshPlaylist());
-
+        
         audioManagers = GameObject.FindGameObjectsWithTag("AudioManager");
 
         if (audioManagers.Length > 1)
