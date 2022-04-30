@@ -65,8 +65,8 @@ public class Boss3 : MonoBehaviour
             health--;
 
             squishPoint.GetComponent<SpriteRenderer>().color = Color.cyan;
-            FindObjectOfType<AudioManager>().playSound(bubbleDamageSound);
-            FindObjectOfType<AudioManager>().playSound(bossDamageSound);
+            FindObjectOfType<AudioManager>().PlaySound(bubbleDamageSound);
+            FindObjectOfType<AudioManager>().PlaySound(bossDamageSound);
             StartCoroutine(WaitTime());
 
             if (health == 0)

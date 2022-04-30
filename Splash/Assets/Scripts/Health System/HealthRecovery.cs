@@ -18,7 +18,7 @@ public class HealthRecovery : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D col) {
         if(col.gameObject.tag == "Player") {
-            FindObjectOfType<AudioManager>().playSound(regenSound);
+            FindObjectOfType<AudioManager>().PlaySound(regenSound);
         }
     }
 }

@@ -21,7 +21,7 @@ public class Boss1Squish : MonoBehaviour
         {
             boss1.health--;
             squishPoint.GetComponent<SpriteRenderer>().color = Color.cyan;
-            FindObjectOfType<AudioManager>().playSound(bossDamageSound);
+            FindObjectOfType<AudioManager>().PlaySound(bossDamageSound);
             StartCoroutine(WaitTime());
 
             if (boss1.health == 0)

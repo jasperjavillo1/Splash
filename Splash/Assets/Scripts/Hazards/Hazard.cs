@@ -35,7 +35,7 @@ public class Hazard : MonoBehaviour {
         //  hurt animations
         playerHurtAnimation();
         //  play sound
-        FindObjectOfType<AudioManager>().playSound(hurtSound);
+        FindObjectOfType<AudioManager>().PlaySound(hurtSound);
     }
 
 

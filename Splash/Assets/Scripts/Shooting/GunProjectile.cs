@@ -36,7 +36,7 @@ public class GunProjectile : MonoBehaviour
 
         if(other.gameObject.CompareTag("Ground") || other.gameObject.CompareTag("Enemy") || other.gameObject.CompareTag("Squish"))
         {
-            FindObjectOfType<AudioManager>().playSound(bubblePopSound);
+            FindObjectOfType<AudioManager>().PlaySound(bubblePopSound);
             Destroy(gameObject);
         }    
     }

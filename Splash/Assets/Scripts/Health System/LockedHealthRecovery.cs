@@ -34,7 +34,7 @@ public class LockedHealthRecovery : MonoBehaviour
             // Enables and plays initial regen sound
             if (sound == false)
             {
-                FindObjectOfType<AudioManager>().playSound(regenSound);
+                FindObjectOfType<AudioManager>().PlaySound(regenSound);
             }
             sound = true;
 
@@ -49,7 +49,7 @@ public class LockedHealthRecovery : MonoBehaviour
         // Plays health regen sound
         if (col.CompareTag("Player") && sound == true)
         {
-            FindObjectOfType<AudioManager>().playSound(regenSound);
+            FindObjectOfType<AudioManager>().PlaySound(regenSound);
         }
     }
 }

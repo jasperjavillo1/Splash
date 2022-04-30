@@ -23,7 +23,7 @@ public class UIController : MonoBehaviour
         btnStart.clicked += StartButtonPressed;
         btnQuit.clicked += QuitButtonPressed;
         btnCredits.clicked += CreditsButtonPressed;
-        AudioListener.volume = (sliderVolume.value/100);
+        AudioListener.volume = sliderVolume.value/100;
 
     }
 
@@ -44,6 +44,6 @@ public class UIController : MonoBehaviour
 
     void Update() 
     {
-        AudioListener.volume = (sliderVolume.value / 100);    
+        AudioListener.volume = sliderVolume.value / 100;    
     }
 }

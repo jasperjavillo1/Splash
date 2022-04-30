@@ -61,7 +61,7 @@ public class Boss2 : MonoBehaviour
         {
             health--;
             GetComponent<SpriteRenderer>().color = Color.cyan;
-            FindObjectOfType<AudioManager>().playSound(bossDamageSound);
+            FindObjectOfType<AudioManager>().PlaySound(bossDamageSound);
             StartCoroutine(WaitTime());
             if (health == 0)
             {

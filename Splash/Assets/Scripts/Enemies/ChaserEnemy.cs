@@ -30,8 +30,8 @@ public class ChaserEnemy : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             player.GetComponent<PlayerHealth>().DecreaseHealth(200);
-            FindObjectOfType<AudioManager>().playSound(playerDamageSound);
-            FindObjectOfType<AudioManager>().playSound(explodeDamageSound);
+            FindObjectOfType<AudioManager>().PlaySound(playerDamageSound);
+            FindObjectOfType<AudioManager>().PlaySound(explodeDamageSound);
             Destroy(gameObject);
 
         }

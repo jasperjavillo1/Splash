@@ -144,7 +144,7 @@ public class PlayerMovementStateMachine : MonoBehaviour
         if (grounded)
         {
             // Play jump sound
-            FindObjectOfType<AudioManager>().playSound(jumpSound);
+            FindObjectOfType<AudioManager>().PlaySound(jumpSound);
             grounded = false;
         }
     }
@@ -167,7 +167,7 @@ public class PlayerMovementStateMachine : MonoBehaviour
         {
             grounded = true;
             _jumpAvailable = true;
-            FindObjectOfType<AudioManager>().playSound(impactSound);
+            FindObjectOfType<AudioManager>().PlaySound(impactSound);
         }
 
     }
@@ -175,7 +175,7 @@ public class PlayerMovementStateMachine : MonoBehaviour
     {
         if (other.gameObject.CompareTag("PlayerCheckpoint"))
         {
-            FindObjectOfType<AudioManager>().playSound(Checkpoint);
+            FindObjectOfType<AudioManager>().PlaySound(Checkpoint);
         }
 
         if (other.CompareTag("Key"))

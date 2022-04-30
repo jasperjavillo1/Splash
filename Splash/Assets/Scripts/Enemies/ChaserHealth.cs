@@ -22,7 +22,7 @@ public class ChaserHealth : MonoBehaviour
         {
             health--;
             transform.parent.gameObject.GetComponent<SpriteRenderer>().color = Color.cyan;
-            FindObjectOfType<AudioManager>().playSound(chaserDamageSound);
+            FindObjectOfType<AudioManager>().PlaySound(chaserDamageSound);
             StartCoroutine(WaitTime());
 
             if (health == 0)

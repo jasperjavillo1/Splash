@@ -20,7 +20,7 @@ public class WinConScript : MonoBehaviour
         if(collision.tag == "Player")
         {
             winCon.SetActive(true);
-            FindObjectOfType<AudioManager>().playSound(StageClear);
+            FindObjectOfType<AudioManager>().PlaySound(StageClear);
 
             playerCheckpointManager.ResetToFirstCheckpoint();
 

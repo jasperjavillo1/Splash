@@ -17,14 +17,14 @@ public class PlayerBlink : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Enemy") || collision.gameObject.CompareTag("EnemyProjectile"))
         {
-            FindObjectOfType<AudioManager>().playSound(playerHurtSound);
+            FindObjectOfType<AudioManager>().PlaySound(playerHurtSound);
             GetComponent<SpriteRenderer>().color = Color.red;
             StartCoroutine(WaitTime());
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        FindObjectOfType<AudioManager>().playSound(playerHurtSound);
+        FindObjectOfType<AudioManager>().PlaySound(playerHurtSound);
         if (collision.gameObject.CompareTag("Enemy"))
         {
             GetComponent<SpriteRenderer>().color = Color.red;

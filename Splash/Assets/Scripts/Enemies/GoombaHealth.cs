@@ -22,7 +22,7 @@ public class GoombaHealth : MonoBehaviour
         if (collision.gameObject.CompareTag("GunProjectile"))
         {
             health--;
-            FindObjectOfType<AudioManager>().playSound(goombaDamageSound);
+            FindObjectOfType<AudioManager>().PlaySound(goombaDamageSound);
             transform.parent.GetComponent<SpriteRenderer>().color = Color.red;
             StartCoroutine(WaitTime());
             if (health == 0)
@@ -33,7 +33,7 @@ public class GoombaHealth : MonoBehaviour
         }
         if (collision.gameObject.CompareTag("Player"))
         {
-            FindObjectOfType<AudioManager>().playSound(goombaDamageSound);
+            FindObjectOfType<AudioManager>().PlaySound(goombaDamageSound);
             Destroy(transform.parent.gameObject);
         }
     }
