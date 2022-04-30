@@ -8,6 +8,7 @@ public class LevelBlocker : MonoBehaviour
     public GameObject Fountain2;
     public GameObject Fountain3;
     public GameObject Blocker;
+    public GameObject BossWarning;
 
     // Start is called before the first frame update
     void Start()
@@ -22,5 +23,14 @@ public class LevelBlocker : MonoBehaviour
         {
             Blocker.transform.gameObject.SetActive(false);
         }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        BossWarning.SetActive(true);
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        BossWarning.SetActive(false);
     }
 }
