@@ -22,7 +22,8 @@ public class GunProjectile : MonoBehaviour
         _rigidbody = GetComponent<Rigidbody2D>();
         _playerHealth = FindObjectOfType<PlayerHealth>();
 
-        _playerHealth.DecreaseHealth(_shootCost);
+        if(!_playerHealth.IsInBossFight)
+            _playerHealth.DecreaseHealth(_shootCost);
 
         Vector2 mousePosition = new Vector2(Camera.main.ScreenToWorldPoint(Input.mousePosition).x, Camera.main.ScreenToWorldPoint(Input.mousePosition).y);
 
