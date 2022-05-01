@@ -33,7 +33,6 @@ public class GunShoot : MonoBehaviour
     public void Shoot()
     {
         Instantiate(_projectilePrefab, new Vector2(_shotSpawnPosition.position.x, _shotSpawnPosition.position.y), Quaternion.identity);
-        _playerHealth.DecreaseHealth(_healthCost);
         _audioSource.PlayOneShot(_gunShootSound);
 
         if(OnObjectHit != null) OnObjectHit();

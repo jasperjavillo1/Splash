@@ -1,12 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = System.Random;
 
 public class EnemyHealth : MonoBehaviour
 {
     //parameters
     [SerializeField] float _health;
     [SerializeField] AudioClip broDamageSound;
+    [SerializeField] GameObject _healthPickup;
+    [SerializeField] [Range(0,100)] int _healthDropProbability;
 
     IEnumerator Blink()
     {
@@ -18,6 +21,11 @@ public class EnemyHealth : MonoBehaviour
     {
         if(_health <= 0)
         {
+            int probaility = new Random().Next(0, 100 + 1);
+            if (probaility <= _healthDropProbability)
+            {
+                Instantiate(_healthPickup, transform.position, Quaternion.identity);
+            }
             Destroy(gameObject);
         }
     }

@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 8909597500628395306}
   - component: {fileID: 8909597500628395303}
   - component: {fileID: 8909597500628395302}
-  m_Layer: 12
+  m_Layer: 14
   m_Name: Boomerang Bro
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -132,7 +132,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!114 &8909597500628395303
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -162,3 +162,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _health: 20
   broDamageSound: {fileID: 8300000, guid: 1d6ab41c4b7da39468f62fd52c70d282, type: 3}
+  _healthPickup: {fileID: 3645637729903897741, guid: 7f11bb2946eb2f9468f9251709ed4bc1, type: 3}
+  _healthDropProbability: 0

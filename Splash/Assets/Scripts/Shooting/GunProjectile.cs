@@ -5,24 +5,35 @@ using UnityEngine;
 public class GunProjectile : MonoBehaviour
 {
     //parameters
-    [SerializeField] float _speed = 75;
+    [SerializeField] float _speed = 200;
     [SerializeField] public float Damage;
     [SerializeField] AudioClip bubblePopSound;
+    [SerializeField] float _shootCost = 50;
 
     //state
-    Vector3 _projectileDirection;
+    Vector2 _projectileDirection;
 
     //cache
     Rigidbody2D _rigidbody;
-
-    private void Awake() 
-    {
-        _rigidbody = GetComponent<Rigidbody2D>();    
-    }
+    PlayerHealth _playerHealth;
 
     private void Start() 
     {
-        _projectileDirection = (Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position);
+        _rigidbody = GetComponent<Rigidbody2D>();
+        _playerHealth = FindObjectOfType<PlayerHealth>();
+
+        _playerHealth.DecreaseHealth(_shootCost);
+
+        Vector2 mousePosition = new Vector2(Camera.main.ScreenToWorldPoint(Input.mousePosition).x, Camera.main.ScreenToWorldPoint(Input.mousePosition).y);
+
+        Vector2 projectilePosition = new Vector2(transform.position.x, transform.position.y);
+
+        Vector2 projectileDirection = (mousePosition - projectilePosition);
+        float projectileDirectionMagnitude = Mathf.Sqrt(projectileDirection.x * projectileDirection.x + projectileDirection.y * projectileDirection.y);
+        Vector2 normalizedProjectileDirection = projectileDirection / projectileDirectionMagnitude;
+
+        _projectileDirection = normalizedProjectileDirection;
+
         Destroy(gameObject, 5f);
     }
 
