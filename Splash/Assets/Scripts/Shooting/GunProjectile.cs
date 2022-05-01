@@ -5,7 +5,7 @@ using UnityEngine;
 public class GunProjectile : MonoBehaviour
 {
     //parameters
-    [SerializeField] float _speed;
+    [SerializeField] float _speed = 75;
     [SerializeField] public float Damage;
     [SerializeField] AudioClip bubblePopSound;
 
@@ -22,7 +22,7 @@ public class GunProjectile : MonoBehaviour
 
     private void Start() 
     {
-        _projectileDirection = (Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position).normalized;
+        _projectileDirection = (Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position);
         Destroy(gameObject, 5f);
     }
 

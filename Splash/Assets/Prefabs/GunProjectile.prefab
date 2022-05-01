@@ -134,6 +134,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9abc50212f39e54386866b73068fa9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 500
+  _speed: 75
   Damage: 10
   bubblePopSound: {fileID: 8300000, guid: 1d6ab41c4b7da39468f62fd52c70d282, type: 3}
