@@ -9,6 +9,7 @@ using UnityEngine.UI;
 public class PauseMenu : MonoBehaviour
 {
     public GameObject pMenu;
+    public GameObject oMenu;
     public bool paused;
     private PlayerInput _playerInput;
     private bool _isPauseButtonPressed = false;
@@ -25,6 +26,8 @@ public class PauseMenu : MonoBehaviour
         else
         {
             pMenu.GetComponentInChildren<Slider>().value = AudioListener.volume;
+            Debug.Log("Awake PMSL: " + AudioListener.volume);
+
         }
         menuOpened = true;
     }
@@ -39,8 +42,9 @@ public class PauseMenu : MonoBehaviour
         if (menuOpened)
         {
             AudioListener.volume = pMenu.GetComponentInChildren<Slider>().value;
-        }
+            oMenu.GetComponentInChildren<Slider>().value = AudioListener.volume;
 
+        }
         if (_isPauseButtonPressed && paused == false)
         {
             Pause();

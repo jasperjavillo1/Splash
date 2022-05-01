@@ -3703,7 +3703,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 97516100437987021, guid: 3ac6d75e7f11ca146a6ab0de358ec988, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 97516100437987022, guid: 3ac6d75e7f11ca146a6ab0de358ec988, type: 3}
       propertyPath: m_RootOrder
@@ -3989,6 +3989,10 @@ PrefabInstance:
     - target: {fileID: 7424422257197339635, guid: 5dfbfc608746b444d8c5c8e670d7fb9a, type: 3}
       propertyPath: m_Name
       value: Boss1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7424422257197339635, guid: 5dfbfc608746b444d8c5c8e670d7fb9a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5dfbfc608746b444d8c5c8e670d7fb9a, type: 3}
