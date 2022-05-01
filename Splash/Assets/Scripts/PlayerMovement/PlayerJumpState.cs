@@ -57,7 +57,8 @@ public class PlayerJumpState : PlayerMovementBaseState
     private void handleJump()
     {
         Ctx.Rigidbody2D.AddForce(Ctx.JumpVector, ForceMode2D.Impulse);
-        Ctx.PlayerHealth.DecreaseHealth(50f);
+        if(!Ctx.PlayerHealth.IsInBossFight)
+            Ctx.PlayerHealth.DecreaseHealth(50f);
     }
 
     private void stopJump()
