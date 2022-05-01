@@ -8,6 +8,10 @@ public class HealthPickup : MonoBehaviour
     [SerializeField] AudioClip regenSound;
     [SerializeField] float healthIncreaseAmount = 500;
 
+    private void OnEnable()
+    {
+        Destroy(gameObject, 5);
+    }
     private void OnCollisionEnter2D(Collision2D col)
     {
         if (col.gameObject.tag == "Player")

@@ -95,6 +95,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73d5a7c303baab1478d88f392d08c3c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _healthPickUp: {fileID: 0}
+  _healthPickUp: {fileID: 3645637729903897741, guid: 7f11bb2946eb2f9468f9251709ed4bc1, type: 3}
   _timeBetweenDrop: 5
   _initialWait: 0
