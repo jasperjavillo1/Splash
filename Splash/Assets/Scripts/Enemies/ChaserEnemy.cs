@@ -10,6 +10,11 @@ public class ChaserEnemy : MonoBehaviour
     [SerializeField] AudioClip explodeDamageSound;
     [SerializeField] AudioClip playerDamageSound;
 
+    private void OnEnable()
+    {
+        player = GameObject.Find("Player");
+    }
+
     // Update is called once per frame
     void Update()
     {

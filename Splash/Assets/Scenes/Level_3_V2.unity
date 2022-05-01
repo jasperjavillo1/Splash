@@ -10969,6 +10969,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Stalagmite (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 5898144732635995514, guid: ed2884857398f12408ce47ce2a8572ce, type: 3}
+      propertyPath: _initialWait
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5898144732635995514, guid: ed2884857398f12408ce47ce2a8572ce, type: 3}
+      propertyPath: _timeBetweenDrop
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 5898144732635995515, guid: ed2884857398f12408ce47ce2a8572ce, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -11035,6 +11043,14 @@ PrefabInstance:
     - target: {fileID: 5898144732635995512, guid: ed2884857398f12408ce47ce2a8572ce, type: 3}
       propertyPath: m_Name
       value: Stalagmite (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5898144732635995514, guid: ed2884857398f12408ce47ce2a8572ce, type: 3}
+      propertyPath: _initialWait
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5898144732635995514, guid: ed2884857398f12408ce47ce2a8572ce, type: 3}
+      propertyPath: _timeBetweenDrop
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5898144732635995515, guid: ed2884857398f12408ce47ce2a8572ce, type: 3}
       propertyPath: m_RootOrder
@@ -72662,6 +72678,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Stalagmite (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 5898144732635995514, guid: ed2884857398f12408ce47ce2a8572ce, type: 3}
+      propertyPath: _initialWait
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5898144732635995514, guid: ed2884857398f12408ce47ce2a8572ce, type: 3}
+      propertyPath: _timeBetweenDrop
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 5898144732635995515, guid: ed2884857398f12408ce47ce2a8572ce, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -73032,6 +73056,63 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8909597500628395297, guid: 443ff0577e63c954d95d8534a65216bb, type: 3}
   m_PrefabInstance: {fileID: 48000547}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1260591603
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4725124940210977948, guid: 150a0f9a2d74e4144b40a7bdbe330247, type: 3}
+      propertyPath: m_Name
+      value: DisablePlayerHealthCostTrigger
+      objectReference: {fileID: 0}
+    - target: {fileID: 4725124940210977954, guid: 150a0f9a2d74e4144b40a7bdbe330247, type: 3}
+      propertyPath: m_RootOrder
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 4725124940210977954, guid: 150a0f9a2d74e4144b40a7bdbe330247, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 61.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4725124940210977954, guid: 150a0f9a2d74e4144b40a7bdbe330247, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4725124940210977954, guid: 150a0f9a2d74e4144b40a7bdbe330247, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4725124940210977954, guid: 150a0f9a2d74e4144b40a7bdbe330247, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4725124940210977954, guid: 150a0f9a2d74e4144b40a7bdbe330247, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4725124940210977954, guid: 150a0f9a2d74e4144b40a7bdbe330247, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4725124940210977954, guid: 150a0f9a2d74e4144b40a7bdbe330247, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4725124940210977954, guid: 150a0f9a2d74e4144b40a7bdbe330247, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4725124940210977954, guid: 150a0f9a2d74e4144b40a7bdbe330247, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4725124940210977954, guid: 150a0f9a2d74e4144b40a7bdbe330247, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 150a0f9a2d74e4144b40a7bdbe330247, type: 3}
 --- !u!1 &1281720301
 GameObject:
   m_ObjectHideFlags: 0
@@ -76646,6 +76727,10 @@ PrefabInstance:
     - target: {fileID: 5898144732635995512, guid: ed2884857398f12408ce47ce2a8572ce, type: 3}
       propertyPath: m_Name
       value: Stalagmite
+      objectReference: {fileID: 0}
+    - target: {fileID: 5898144732635995514, guid: ed2884857398f12408ce47ce2a8572ce, type: 3}
+      propertyPath: _timeBetweenDrop
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5898144732635995515, guid: ed2884857398f12408ce47ce2a8572ce, type: 3}
       propertyPath: m_RootOrder
