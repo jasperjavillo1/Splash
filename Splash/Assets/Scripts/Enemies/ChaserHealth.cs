@@ -5,7 +5,13 @@ using UnityEngine;
 public class ChaserHealth : MonoBehaviour
 {
     [SerializeField] AudioClip chaserDamageSound;
+    public Transform regenPrefab;
+    public Transform spawnPoint;
 
+    void DropRegen()
+    {
+        Instantiate(regenPrefab, spawnPoint.position, spawnPoint.rotation);
+    }
     IEnumerator WaitTime()
     {
         //yield on a new YieldInstruction that waits for .05 seconds.
@@ -27,6 +33,7 @@ public class ChaserHealth : MonoBehaviour
 
             if (health == 0)
             {
+                DropRegen();
                 Destroy(transform.parent.gameObject);
             }
         }

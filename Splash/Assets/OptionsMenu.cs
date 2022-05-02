@@ -9,28 +9,39 @@ public class OptionsMenu : MonoBehaviour
     public Slider musicVolume;
     public Slider effectsVolume;
     public GameObject pauseMenu;
+    public bool passedVolume = false;
 
-    public void MainMenu()
-    {
-        //SceneManager.LoadScene(0);
-
-    }
-    
     void Update()
     {
-        AudioListener.volume = masterVolume.value;
-        FindObjectOfType<AudioManager>().GetComponents<AudioSource>()[1].volume = musicVolume.value;
-        FindObjectOfType<AudioManager>().GetComponents<AudioSource>()[0].volume = effectsVolume.value;
-        pauseMenu.GetComponentInChildren<Slider>().value = AudioListener.volume;
+        if (passedVolume)
+        {
+            AudioListener.volume = masterVolume.value;
+            pauseMenu.GetComponentInChildren<Slider>().value = AudioListener.volume;
+            
+            FindObjectOfType<AudioManager>().GetComponents<AudioSource>()[1].volume = musicVolume.value;
+            FindObjectOfType<AudioManager>().GetComponents<AudioSource>()[0].volume = effectsVolume.value;
+        }
     }
 
 
     private void OnEnable()
     {
-        if (pauseMenu.GetComponentInChildren<Slider>().value != .5f)
+        if (passedVolume)
         {
-            masterVolume.value = pauseMenu.GetComponentInChildren<Slider>().value;
-            AudioListener.volume = pauseMenu.GetComponentInChildren<Slider>().value;
+            AudioListener.volume = masterVolume.GetComponentInChildren<Slider>().value;
+
+            FindObjectOfType<AudioManager>().GetComponents<AudioSource>()[1].volume = musicVolume.value;
+            FindObjectOfType<AudioManager>().GetComponents<AudioSource>()[0].volume = effectsVolume.value;
+
         }
+        else
+        {
+            masterVolume.GetComponentInChildren<Slider>().value = AudioListener.volume;
+
+            musicVolume.value = FindObjectOfType<AudioManager>().GetComponents<AudioSource>()[1].volume;
+            effectsVolume.value = FindObjectOfType<AudioManager>().GetComponents<AudioSource>()[0].volume;
+
+        }
+        passedVolume = true;
     }
 }

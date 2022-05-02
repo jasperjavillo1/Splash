@@ -33,9 +33,11 @@ public class GunShoot : MonoBehaviour
     public void Shoot()
     {
         Instantiate(_projectilePrefab, new Vector2(_shotSpawnPosition.position.x, _shotSpawnPosition.position.y), Quaternion.identity);
+        _audioSource.volume = FindObjectOfType<AudioManager>().GetComponents<AudioSource>()[0].volume;
         _audioSource.PlayOneShot(_gunShootSound);
 
-        if(OnObjectHit != null) OnObjectHit();
+
+        if (OnObjectHit != null) OnObjectHit();
     }
 
     private void Update() 

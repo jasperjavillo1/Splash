@@ -138,6 +138,10 @@ PrefabInstance:
       propertyPath: _checkpoints.Array.data[1]
       value: 
       objectReference: {fileID: 571841836}
+    - target: {fileID: 37311668, guid: a3b6e8960f4900c45957ce5f7aa70047, type: 3}
+      propertyPath: _checkpoints.Array.data[2]
+      value: 
+      objectReference: {fileID: 2086124715}
     - target: {fileID: 3300649008393559314, guid: a3b6e8960f4900c45957ce5f7aa70047, type: 3}
       propertyPath: m_RootOrder
       value: 11
@@ -3685,6 +3689,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2086124715 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 875752584855877031, guid: 6f41e518e0b193041837d5cd34a598b9, type: 3}
+  m_PrefabInstance: {fileID: 1478718586}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &2087098650 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3976544267235853364, guid: 80c283ae3c64613489ed24b0f3dd3d90, type: 3}
@@ -3700,10 +3709,6 @@ PrefabInstance:
     - target: {fileID: 97516100437987021, guid: 3ac6d75e7f11ca146a6ab0de358ec988, type: 3}
       propertyPath: m_Name
       value: Boss2
-      objectReference: {fileID: 0}
-    - target: {fileID: 97516100437987021, guid: 3ac6d75e7f11ca146a6ab0de358ec988, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 97516100437987022, guid: 3ac6d75e7f11ca146a6ab0de358ec988, type: 3}
       propertyPath: m_RootOrder
@@ -3753,7 +3758,12 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 201063590}
-    m_RemovedComponents: []
+    - target: {fileID: 7646572452275148611, guid: 3ac6d75e7f11ca146a6ab0de358ec988, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 201063590}
+    m_RemovedComponents:
+    - {fileID: 7646572452275148611, guid: 3ac6d75e7f11ca146a6ab0de358ec988, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 3ac6d75e7f11ca146a6ab0de358ec988, type: 3}
 --- !u!4 &97516100657897114 stripped
 Transform:

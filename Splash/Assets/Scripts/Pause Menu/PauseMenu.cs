@@ -9,27 +9,24 @@ using UnityEngine.UI;
 public class PauseMenu : MonoBehaviour
 {
     public GameObject pMenu;
-    public GameObject oMenu;
     public bool paused;
     private PlayerInput _playerInput;
     private bool _isPauseButtonPressed = false;
-    public bool menuOpened = false;
+    public bool passedVolume = false;
 
     private void Awake()
     {
         _playerInput = new PlayerInput();
         _playerInput.PauseMenu.Pause.started += _onPauseButton;
-        if (menuOpened)
+        if (passedVolume)
         {
             AudioListener.volume = pMenu.GetComponentInChildren<Slider>().value;
         }
         else
         {
             pMenu.GetComponentInChildren<Slider>().value = AudioListener.volume;
-            Debug.Log("Awake PMSL: " + AudioListener.volume);
-
         }
-        menuOpened = true;
+        passedVolume = true;
     }
 
     private void Start() 
@@ -39,10 +36,10 @@ public class PauseMenu : MonoBehaviour
 
     public void Update()
     {
-        if (menuOpened)
+        if (passedVolume)
         {
-            AudioListener.volume = pMenu.GetComponentInChildren<Slider>().value;
-            oMenu.GetComponentInChildren<Slider>().value = AudioListener.volume;
+            AudioListener.volume = pMenu.GetComponentInChildren<Slider>().value;            
+            Debug.Log("pUpdate 1 Master Volume: " + AudioListener.volume);
 
         }
         if (_isPauseButtonPressed && paused == false)

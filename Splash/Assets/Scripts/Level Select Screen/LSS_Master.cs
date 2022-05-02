@@ -9,13 +9,11 @@ public class LSS_Master : MonoBehaviour
     public static int Lvl_2;
     public static int Lvl_3;
     public static int Lvl_4;
-    public static int Lvl_5;
 
     public GameObject LVL1;
     public GameObject LVL2;
     public GameObject LVL3;
     public GameObject LVL4;
-    public GameObject LVL5;
     public GameObject Credits;
 
 
@@ -40,11 +38,8 @@ public class LSS_Master : MonoBehaviour
         {
             LVL4.SetActive(false);
         }
-        if (Lvl_5 == 1)
-        {
-            LVL5.SetActive(false);
-        }
-        if (Lvl_1 == 1 && Lvl_2 == 1 && Lvl_3 == 1 && Lvl_4 == 1 && Lvl_5 == 1)
+
+        if (Lvl_1 == 1 && Lvl_2 == 1 && Lvl_3 == 1 && Lvl_4 == 1)
         {
             Credits.SetActive(true);
         }
@@ -73,10 +68,6 @@ public class LSS_Master : MonoBehaviour
     {
         SceneManager.LoadScene(6);
     }
-    public void GoToLevel5()
-    {
-        SceneManager.LoadScene(7);
-    }
 
     public void SetLvl1Complete()
     {
@@ -98,13 +89,5 @@ public class LSS_Master : MonoBehaviour
         Lvl_4 = 1;
         PlayerPrefs.SetInt("Lvl_4", Lvl_4 = 1);
     }
-    public void SetLvl5Complete()
-    {
-        Lvl_4 = 1;
-        PlayerPrefs.SetInt("Lvl_5", Lvl_5 = 1);
-    }
-
-
-
 
 }
