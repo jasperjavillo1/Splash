@@ -672,7 +672,6 @@ GameObject:
   - component: {fileID: 97516100437987020}
   - component: {fileID: 97516100437987009}
   - component: {fileID: 97516100437987008}
-  - component: {fileID: 7646572452275148611}
   m_Layer: 12
   m_Name: Boss2
   m_TagString: Enemy
@@ -794,28 +793,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24e65d8a1599d2048bba5e1ac586c204, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  xSpeed: 0
+  xSpeed: 1
   ySpeed: 1
   health: 50
   damagePoint: {fileID: 97516100437987021}
   bossDamageSound: {fileID: 8300000, guid: b472d216a506df14a9cf71478017d71c, type: 3}
---- !u!114 &7646572452275148611
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 97516100437987021}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6ac058a9787c21a4bab595c08b13c947, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 0}
-  speed: 1
-  distanceBetween: 5
-  explodeDamageSound: {fileID: 8300000, guid: f2bbc93eadde2014188caafe6a9c13d8, type: 3}
-  playerDamageSound: {fileID: 8300000, guid: 8186cd7ee1abbc8469b61d6e8d6e82ac, type: 3}
 --- !u!1001 &97516100080334198
 PrefabInstance:
   m_ObjectHideFlags: 0

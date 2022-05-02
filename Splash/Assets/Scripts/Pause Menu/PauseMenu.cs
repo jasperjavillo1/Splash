@@ -39,7 +39,6 @@ public class PauseMenu : MonoBehaviour
         if (passedVolume)
         {
             AudioListener.volume = pMenu.GetComponentInChildren<Slider>().value;            
-            Debug.Log("pUpdate 1 Master Volume: " + AudioListener.volume);
 
         }
         if (_isPauseButtonPressed && paused == false)
