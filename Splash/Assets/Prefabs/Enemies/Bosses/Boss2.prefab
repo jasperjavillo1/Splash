@@ -793,7 +793,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24e65d8a1599d2048bba5e1ac586c204, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  xSpeed: 1
+  xSpeed: 0
   ySpeed: 1
   health: 50
   damagePoint: {fileID: 97516100437987021}
