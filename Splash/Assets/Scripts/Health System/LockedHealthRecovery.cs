@@ -9,6 +9,7 @@ public class LockedHealthRecovery : MonoBehaviour
     public PlayerMovementStateMachine pmsm;
     bool key;
     bool sound = false;
+    float increaseAmount;
 
     public void Update()
     {
@@ -39,8 +40,14 @@ public class LockedHealthRecovery : MonoBehaviour
             sound = true;
 
             // Performs health regen
-            PlayerHealth PH = other.GetComponent<PlayerHealth>();        
-            PH.ResetHealth();
+            PlayerHealth PH = other.GetComponent<PlayerHealth>();
+
+            if (PH.GetCurrentHealth() < PH.GetInitialHealth())
+            {
+                increaseAmount = PH.GetInitialHealth() - PH.GetCurrentHealth();
+                PH.IncreaseHealth(increaseAmount);
+            }    
+
         }
     }
 

@@ -126,7 +126,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dmgDealt: 200
-  hurtSound: {fileID: 8300000, guid: 8186cd7ee1abbc8469b61d6e8d6e82ac, type: 3}
+  hurtSound: {fileID: 8300000, guid: 4e774bc6b1d7f9149a8a20bb5d199638, type: 3}
   type: 0
   triggeredActivationDelay: 0
   triggeredActivationTime: 1

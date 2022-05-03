@@ -333,7 +333,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80caba5e0582628428d6e642a7441161, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  chaserDamageSound: {fileID: 8300000, guid: 1d6ab41c4b7da39468f62fd52c70d282, type: 3}
+  chaserDamageSound: {fileID: 8300000, guid: ad3a1dea0f8b103489bb2d9d8616b35a, type: 3}
   regenPrefab: {fileID: 3645637729903897743, guid: 7f11bb2946eb2f9468f9251709ed4bc1, type: 3}
   spawnPoint: {fileID: 6579981084760612348}
   health: 6

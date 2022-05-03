@@ -590,7 +590,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7004625324969521465, guid: 7352a3981bc6e734a9638209e4f4a905, type: 3}
       propertyPath: dmgDealt
-      value: 200
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 7004625324969521465, guid: 7352a3981bc6e734a9638209e4f4a905, type: 3}
       propertyPath: targetSpeed
@@ -664,7 +664,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7004625324969521465, guid: 7352a3981bc6e734a9638209e4f4a905, type: 3}
       propertyPath: dmgDealt
-      value: 200
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 7004625324969521465, guid: 7352a3981bc6e734a9638209e4f4a905, type: 3}
       propertyPath: targetSpeed

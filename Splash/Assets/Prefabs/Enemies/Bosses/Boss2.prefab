@@ -144,7 +144,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a0e5145927ed0f4fa18dc76131a166e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dmgDealt: 200
+  dmgDealt: 100
   hurtSound: {fileID: 8300000, guid: 8186cd7ee1abbc8469b61d6e8d6e82ac, type: 3}
   type: 0
   triggeredActivationDelay: 0
@@ -295,7 +295,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a0e5145927ed0f4fa18dc76131a166e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dmgDealt: 200
+  dmgDealt: 100
   hurtSound: {fileID: 8300000, guid: 8186cd7ee1abbc8469b61d6e8d6e82ac, type: 3}
   type: 0
   triggeredActivationDelay: 0
@@ -424,7 +424,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a0e5145927ed0f4fa18dc76131a166e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dmgDealt: 200
+  dmgDealt: 100
   hurtSound: {fileID: 8300000, guid: 8186cd7ee1abbc8469b61d6e8d6e82ac, type: 3}
   type: 0
   triggeredActivationDelay: 0
@@ -553,7 +553,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a0e5145927ed0f4fa18dc76131a166e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dmgDealt: 200
+  dmgDealt: 100
   hurtSound: {fileID: 8300000, guid: 8186cd7ee1abbc8469b61d6e8d6e82ac, type: 3}
   type: 0
   triggeredActivationDelay: 0

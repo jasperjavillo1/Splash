@@ -831,6 +831,7 @@ MonoBehaviour:
   PL: {fileID: 2192033525742068018}
   _initialHealth: 6000
   _currentHealth: 0
+  healthBar: {fileID: 1517037812051323121}
 --- !u!212 &3300649008393559317
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1676,6 +1677,11 @@ PrefabInstance:
 --- !u!4 &1517037812051323120 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 702706505424607024, guid: 210520257bc0d9d479e7a0e56da9912a, type: 3}
+  m_PrefabInstance: {fileID: 2075343649898971072}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1517037812051323121 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 702706505424607025, guid: 210520257bc0d9d479e7a0e56da9912a, type: 3}
   m_PrefabInstance: {fileID: 2075343649898971072}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &3300649008253190647

@@ -16,14 +16,16 @@ public class GunProjectile : MonoBehaviour
     //cache
     Rigidbody2D _rigidbody;
     PlayerHealth _playerHealth;
-
+    
     private void Start() 
     {
         _rigidbody = GetComponent<Rigidbody2D>();
         _playerHealth = FindObjectOfType<PlayerHealth>();
 
         if(!_playerHealth.IsInBossFight)
+        {
             _playerHealth.DecreaseHealth(_shootCost);
+        }
 
         Vector2 mousePosition = new Vector2(Camera.main.ScreenToWorldPoint(Input.mousePosition).x, Camera.main.ScreenToWorldPoint(Input.mousePosition).y);
 
@@ -41,6 +43,7 @@ public class GunProjectile : MonoBehaviour
     private void FixedUpdate() 
     {
         _rigidbody.velocity = _projectileDirection * _speed * Time.deltaTime;
+
     }
 
     private void OnCollisionEnter2D(Collision2D other) 
@@ -52,4 +55,5 @@ public class GunProjectile : MonoBehaviour
             Destroy(gameObject);
         }    
     }
+
 }

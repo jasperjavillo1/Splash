@@ -28,6 +28,7 @@ public class PlayerHealth : MonoBehaviour
     public delegate void HealthZeroEventHandler();
     public event HealthZeroEventHandler OnHealthZero;
 
+    public GameObject healthBar;
 
     private void Awake()
     {
@@ -53,6 +54,9 @@ public class PlayerHealth : MonoBehaviour
 
     public void DecreaseHealth(float amount)
     {
+        healthBar.GetComponent<SpriteRenderer>().color = Color.cyan;
+        StartCoroutine(Blink());
+
         _currentHealth -= Mathf.Abs(amount);
         if (OnHealthChange != null) OnHealthChange();
 
@@ -65,13 +69,16 @@ public class PlayerHealth : MonoBehaviour
 
     public void IncreaseHealth(float amount)
     {
+        healthBar.GetComponent<SpriteRenderer>().color = Color.green;
+        StartCoroutine(Blink());
+
         _currentHealth += Mathf.Abs(amount);
         if (OnHealthChange != null) OnHealthChange();
     }
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.gameObject.tag == "EnemyProjectile")
+        if (other.gameObject.CompareTag("EnemyProjectile"))
         {
             if (other.gameObject.GetComponent<EnemyProjectile>())
             {
@@ -93,6 +100,13 @@ public class PlayerHealth : MonoBehaviour
         {
             IsInBossFight = true;
         }
+    }
+
+
+    IEnumerator Blink()
+    {
+        yield return new WaitForSeconds(.1f);
+        healthBar.GetComponent<SpriteRenderer>().color = Color.white;
     }
 }
 
