@@ -11,6 +11,7 @@ public class PlayerMovementStateMachine : MonoBehaviour
     private SpriteRenderer _spriteRenderer;
     private PlayerInput _playerInput;
     private Rigidbody2D _rigidbody2D;
+    private CircleCollider2D _circleCollider2D;
     private PlayerHealth _playerHealth;
     private Animator _animator;
     private string _currentAnimatorState;
@@ -36,6 +37,7 @@ public class PlayerMovementStateMachine : MonoBehaviour
     private bool _isJumpPressed;
     private bool _jumpAvailable = true;
     [SerializeField] private float _maxJumpTime = 1;
+    [SerializeField] private LayerMask _groundLayer;
 
     //constants
     [SerializeField]private float _walkMultipler = 5f;
@@ -89,6 +91,7 @@ public class PlayerMovementStateMachine : MonoBehaviour
         _spriteRenderer = GetComponent<SpriteRenderer>();
         _playerInput = new PlayerInput();
         _rigidbody2D = GetComponent<Rigidbody2D>();
+        _circleCollider2D = GetComponent<CircleCollider2D>();
         _playerHealth = GetComponent<PlayerHealth>();
         _animator = GetComponent<Animator>();
         _currentAnimatorState = "Player_Idle";
@@ -111,9 +114,12 @@ public class PlayerMovementStateMachine : MonoBehaviour
     void Update()
     {
         _currentState.UpdateStates();
-        _handleMovement();
         _MovementAnimation();
+    }
 
+    private void FixedUpdate()
+    {
+        _handleMovement();
     }
 
     private void OnEnable()
@@ -151,13 +157,18 @@ public class PlayerMovementStateMachine : MonoBehaviour
 
     public bool IsGrounded()
     {
-        //Method for determining if player is grounded.
-        /*
-        float halfY = _capsuleCollider2D.size.y / 2;
-        Vector3 raycastOriginDown = _rigidbody2D.transform.position + new Vector3(0, -(halfY + 0.1f), 0);
-        return  Physics2D.Raycast(raycastOriginDown, Vector2.down, 0.1f);
-        */
-        return Mathf.Abs(_rigidbody2D.velocity.y) < 0.01f;
+        Vector2 position = transform.position;
+        Vector3 direction = Vector3.down;
+        float distance = 0.8f;
+        RaycastHit2D hit = Physics2D.Raycast(position, direction, distance, _groundLayer);
+        if (hit.collider == null)
+        {
+            return false;
+        }
+        else
+        {
+            return true;
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D col)
@@ -166,10 +177,9 @@ public class PlayerMovementStateMachine : MonoBehaviour
         if (col.gameObject.CompareTag("Ground") || col.gameObject.CompareTag("Untagged"))
         {
             grounded = true;
-            _jumpAvailable = true;
+            //_jumpAvailable = true;
             FindObjectOfType<AudioManager>().PlaySound(impactSound);
         }
-
     }
     private void OnTriggerEnter2D(Collider2D other)
     {

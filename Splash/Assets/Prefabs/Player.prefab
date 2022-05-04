@@ -980,6 +980,9 @@ MonoBehaviour:
   Checkpoint: {fileID: 8300000, guid: f4adba02bda7dc84bb8167559717a077, type: 3}
   keyCount: 0
   _maxJumpTime: 0.3
+  _groundLayer:
+    serializedVersion: 2
+    m_Bits: 64
   _walkMultipler: 5
   _runMultiplier: 10
   _jumpVector: {x: 0, y: 10}

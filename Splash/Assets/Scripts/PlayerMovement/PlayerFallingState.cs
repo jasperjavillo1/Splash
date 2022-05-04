@@ -18,6 +18,7 @@ public class PlayerFallingState : PlayerMovementBaseState
     public override void ExitState()
     {
         Ctx._ChangeAnimationState("Player_land");
+        Ctx.JumpAvailable = true;
     }
     public override void CheckSwitchState()
     {
