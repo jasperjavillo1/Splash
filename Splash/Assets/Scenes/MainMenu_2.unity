@@ -1477,7 +1477,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6292079203241237881, guid: f1b51339e73012e45ab2a7ef7382eb27, type: 3}
   m_PrefabInstance: {fileID: 1810997179}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1717306544
+--- !u!114 &1717306548
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1490,6 +1490,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   themeSong: {fileID: 8300000, guid: dc6b42f918071e44597a371a20d5ab5e, type: 3}
+  battleMusic: {fileID: 8300000, guid: 638af0fa1235983468d4cbcbc578e4d8, type: 3}
+  victoryClip: {fileID: 8300000, guid: 940148608b9f6b741b0343685767b22c, type: 3}
 --- !u!1001 &1810997179
 PrefabInstance:
   m_ObjectHideFlags: 0

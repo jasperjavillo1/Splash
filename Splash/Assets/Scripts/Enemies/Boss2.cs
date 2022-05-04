@@ -10,6 +10,7 @@ public class Boss2 : MonoBehaviour
     public int health = 50;
     public GameObject damagePoint;
     [SerializeField] AudioClip bossDamageSound;
+    [SerializeField] AudioClip bossDeath;
 
     IEnumerator WaitTime() 
     {
@@ -65,6 +66,7 @@ public class Boss2 : MonoBehaviour
             StartCoroutine(WaitTime());
             if (health == 0)
             {
+                FindObjectOfType<AudioManager>().PlaySound(bossDeath);
                 gameObject.SetActive(false);
             }
         }

@@ -9,6 +9,7 @@ public class Boss3 : MonoBehaviour
     public int health = 50;
     [SerializeField] AudioClip bossDamageSound;
     [SerializeField] AudioClip bubbleDamageSound;
+    [SerializeField] AudioClip bossDeath;
 
     public GameObject squishPoint;
 
@@ -71,6 +72,7 @@ public class Boss3 : MonoBehaviour
 
             if (health == 0)
             {
+                FindObjectOfType<AudioManager>().PlaySound(bossDeath);
                 transform.gameObject.SetActive(false);
             }
         }

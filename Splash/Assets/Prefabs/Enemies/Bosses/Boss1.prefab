@@ -127,7 +127,7 @@ GameObject:
   - component: {fileID: 4578410694737125110}
   - component: {fileID: 906726978758108468}
   m_Layer: 12
-  m_Name: Capsule
+  m_Name: Hazard
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -581,6 +581,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 50
+  bossDeath: {fileID: 8300000, guid: fc839ee0f13cc344fa83608af7d2849b, type: 3}
 --- !u!1001 &7424422255510360944
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -590,11 +591,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7004625324969521465, guid: 7352a3981bc6e734a9638209e4f4a905, type: 3}
       propertyPath: dmgDealt
-      value: 100
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 7004625324969521465, guid: 7352a3981bc6e734a9638209e4f4a905, type: 3}
+      propertyPath: bulletSpeed
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 7004625324969521465, guid: 7352a3981bc6e734a9638209e4f4a905, type: 3}
       propertyPath: targetSpeed
-      value: 10
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 8261917909544524635, guid: 7352a3981bc6e734a9638209e4f4a905, type: 3}
       propertyPath: m_Name
@@ -664,11 +669,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7004625324969521465, guid: 7352a3981bc6e734a9638209e4f4a905, type: 3}
       propertyPath: dmgDealt
-      value: 100
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 7004625324969521465, guid: 7352a3981bc6e734a9638209e4f4a905, type: 3}
+      propertyPath: bulletSpeed
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 7004625324969521465, guid: 7352a3981bc6e734a9638209e4f4a905, type: 3}
       propertyPath: targetSpeed
-      value: 10
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 8261917909544524635, guid: 7352a3981bc6e734a9638209e4f4a905, type: 3}
       propertyPath: m_Name
