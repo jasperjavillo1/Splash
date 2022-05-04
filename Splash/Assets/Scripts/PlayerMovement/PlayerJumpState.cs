@@ -12,7 +12,9 @@ public class PlayerJumpState : PlayerMovementBaseState
     }
     public override void EnterState()
     {
+        Ctx.JumpAvailable = false;
         cancelJump = Ctx.StartCoroutine(HoldJump());
+        Ctx.StartCoroutine(DelayJumpAvilable());
         handleJump();
         Ctx._ChangeAnimationState("Player_jump");
     }
@@ -27,15 +29,11 @@ public class PlayerJumpState : PlayerMovementBaseState
         {
             Ctx.StopCoroutine(cancelJump);
             stopJump();
+            SwitchState(Factory.Falling());
         }
         if(Ctx.IsGrounded() && Ctx.JumpAvailable)
         {
             SwitchState(Factory.Grounded());
-        }
-        if(!Ctx.IsJumpPressed)
-        {
-            Ctx.StopCoroutine(cancelJump);
-            SwitchState(Factory.Falling());
         }
     }
     public override void InitizeSubState()
@@ -74,5 +72,10 @@ public class PlayerJumpState : PlayerMovementBaseState
     {
         yield return new WaitForSeconds(Ctx.MaxJumpTime);
         stopJump();
+    }
+    private IEnumerator DelayJumpAvilable()
+    {
+        yield return new WaitForSeconds(0.1f);
+        Ctx.JumpAvailable = true;
     }
 }

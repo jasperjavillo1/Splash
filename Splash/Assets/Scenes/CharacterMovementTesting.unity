@@ -217,7 +217,7 @@ GameObject:
   - component: {fileID: 172809317}
   - component: {fileID: 172809316}
   - component: {fileID: 172809315}
-  m_Layer: 3
+  m_Layer: 6
   m_Name: Square (1)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -348,7 +348,7 @@ GameObject:
   - component: {fileID: 215092673}
   - component: {fileID: 215092672}
   - component: {fileID: 215092671}
-  m_Layer: 3
+  m_Layer: 6
   m_Name: Square (2)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -479,7 +479,7 @@ GameObject:
   - component: {fileID: 399174476}
   - component: {fileID: 399174478}
   - component: {fileID: 399174479}
-  m_Layer: 3
+  m_Layer: 6
   m_Name: Square
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -633,6 +633,15 @@ MonoBehaviour:
   impactSound: {fileID: 0}
   Checkpoint: {fileID: 0}
   keyCount: 0
+  _maxJumpTime: 1
+  _walkMultipler: 5
+  _runMultiplier: 10
+  _jumpVector: {x: 0, y: 7}
+  _maxWalkSpeed: 3
+  _maxRunSpeed: 6
+  _groundLayer:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!70 &563245939
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

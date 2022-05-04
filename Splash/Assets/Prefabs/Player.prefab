@@ -986,6 +986,9 @@ MonoBehaviour:
   _jumpVector: {x: 0, y: 10}
   _maxWalkSpeed: 3
   _maxRunSpeed: 6
+  _groundLayer:
+    serializedVersion: 2
+    m_Bits: 64
 --- !u!114 &37311668
 MonoBehaviour:
   m_ObjectHideFlags: 0
