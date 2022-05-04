@@ -44,6 +44,7 @@ public class PlayerMovementStateMachine : MonoBehaviour
     [SerializeField] private Vector2 _jumpVector = new Vector2(0,7);
     [SerializeField] private float _maxWalkSpeed = 3f;
     [SerializeField] private float _maxRunSpeed = 6f;
+    [SerializeField] private LayerMask _groundLayer;
 
     //state machine variables
     private PlayerMovementBaseState _currentState;
@@ -151,13 +152,18 @@ public class PlayerMovementStateMachine : MonoBehaviour
 
     public bool IsGrounded()
     {
-        //Method for determining if player is grounded.
-        /*
-        float halfY = _capsuleCollider2D.size.y / 2;
-        Vector3 raycastOriginDown = _rigidbody2D.transform.position + new Vector3(0, -(halfY + 0.1f), 0);
-        return  Physics2D.Raycast(raycastOriginDown, Vector2.down, 0.1f);
-        */
-        return Mathf.Abs(_rigidbody2D.velocity.y) < 0.01f;
+        Vector2 position = transform.position;
+        Vector3 direction = Vector3.down;
+        float distance = 0.8f;
+        RaycastHit2D hit = Physics2D.Raycast(position, direction, distance, _groundLayer);
+        if(hit.collider == null)
+        {
+            return false;
+        }
+        else
+        {
+            return true;
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D col)
@@ -166,7 +172,6 @@ public class PlayerMovementStateMachine : MonoBehaviour
         if (col.gameObject.CompareTag("Ground") || col.gameObject.CompareTag("Untagged"))
         {
             grounded = true;
-            _jumpAvailable = true;
             FindObjectOfType<AudioManager>().PlaySound(impactSound);
         }
 

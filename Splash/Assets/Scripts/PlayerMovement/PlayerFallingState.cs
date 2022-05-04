@@ -23,6 +23,7 @@ public class PlayerFallingState : PlayerMovementBaseState
     {
         if (Ctx.IsGrounded())
         {
+            Ctx.JumpAvailable = true;
             SwitchState(Factory.Grounded());
         }
     }
