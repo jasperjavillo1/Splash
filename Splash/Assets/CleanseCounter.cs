@@ -7,11 +7,18 @@ using UnityEngine.UI;
 public class CleanseCounter : MonoBehaviour
 {
     public TextMeshProUGUI cleanseCounter;
-    public int toxicFountains = 3;
+    private int toxicFountains = 0;
     bool cleansed = false;
+    private GameObject[] keys;
+
     // Start is called before the first frame update
     void Start()
     {
+        keys = GameObject.FindGameObjectsWithTag("Key");
+        foreach(GameObject fountainKey in keys)
+        {
+            toxicFountains++;
+        }
     }
 
     // Update is called once per frame

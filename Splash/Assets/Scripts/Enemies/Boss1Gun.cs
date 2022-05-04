@@ -9,8 +9,8 @@ public class Boss1Gun : MonoBehaviour
     public Boss1 boss1;
     IEnumerator WaitTime()
     {
-        //yield on a new YieldInstruction that waits for .05 seconds.
-        yield return new WaitForSeconds(.05f);
+        //yield on a new YieldInstruction that waits for .1 seconds.
+        yield return new WaitForSeconds(.1f);
 
         squishPoint.GetComponent<SpriteRenderer>().color = Color.red;
     }
@@ -26,7 +26,7 @@ public class Boss1Gun : MonoBehaviour
 
             if (boss1.health == 0)
             {
-                transform.parent.gameObject.SetActive(false);
+                //transform.parent.gameObject.SetActive(false);
 
             }
         }

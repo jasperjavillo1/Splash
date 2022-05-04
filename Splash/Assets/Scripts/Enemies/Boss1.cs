@@ -5,19 +5,17 @@ using UnityEngine;
 public class Boss1 : MonoBehaviour
 {
     public int health = 50;
+    [SerializeField] AudioClip bossDeath;
 
-
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void Update()
     {
-        if (collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("GunProjectile"))
+        if (health == 0)
         {
-            health--;
+            FindObjectOfType<AudioManager>().PlaySound(bossDeath);
 
-            if (health == 0)
-            {
-               transform.gameObject.SetActive(false);
-               
-            }
+            transform.gameObject.SetActive(false);
+
         }
     }
+
 }

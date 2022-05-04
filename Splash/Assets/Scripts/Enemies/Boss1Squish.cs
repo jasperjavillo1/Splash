@@ -26,7 +26,7 @@ public class Boss1Squish : MonoBehaviour
 
             if (boss1.health == 0)
             {
-                transform.parent.gameObject.SetActive(false);
+                //transform.parent.gameObject.SetActive(false);
 
             }
         }

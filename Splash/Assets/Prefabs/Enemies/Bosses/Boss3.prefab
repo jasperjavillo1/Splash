@@ -292,6 +292,7 @@ MonoBehaviour:
   health: 50
   bossDamageSound: {fileID: 8300000, guid: b472d216a506df14a9cf71478017d71c, type: 3}
   bubbleDamageSound: {fileID: 8300000, guid: 1d6ab41c4b7da39468f62fd52c70d282, type: 3}
+  bossDeath: {fileID: 8300000, guid: fc839ee0f13cc344fa83608af7d2849b, type: 3}
   squishPoint: {fileID: 8472721989975608889}
 --- !u!50 &8472721989172003188
 Rigidbody2D:
@@ -422,11 +423,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7004625324969521465, guid: 7352a3981bc6e734a9638209e4f4a905, type: 3}
       propertyPath: dmgDealt
-      value: 50
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 7004625324969521465, guid: 7352a3981bc6e734a9638209e4f4a905, type: 3}
+      propertyPath: bulletSpeed
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 7004625324969521465, guid: 7352a3981bc6e734a9638209e4f4a905, type: 3}
       propertyPath: targetSpeed
-      value: 10
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 7004625324969521465, guid: 7352a3981bc6e734a9638209e4f4a905, type: 3}
       propertyPath: timeBtwShots
@@ -500,7 +505,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7004625324969521465, guid: 7352a3981bc6e734a9638209e4f4a905, type: 3}
       propertyPath: dmgDealt
-      value: 50
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 7004625324969521465, guid: 7352a3981bc6e734a9638209e4f4a905, type: 3}
       propertyPath: bulletSpeed
@@ -582,7 +587,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7004625324969521465, guid: 7352a3981bc6e734a9638209e4f4a905, type: 3}
       propertyPath: dmgDealt
-      value: 50
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 7004625324969521465, guid: 7352a3981bc6e734a9638209e4f4a905, type: 3}
       propertyPath: bulletSpeed
@@ -734,11 +739,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7004625324969521465, guid: 7352a3981bc6e734a9638209e4f4a905, type: 3}
       propertyPath: dmgDealt
-      value: 50
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 7004625324969521465, guid: 7352a3981bc6e734a9638209e4f4a905, type: 3}
+      propertyPath: bulletSpeed
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 7004625324969521465, guid: 7352a3981bc6e734a9638209e4f4a905, type: 3}
       propertyPath: targetSpeed
-      value: 10
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 7004625324969521465, guid: 7352a3981bc6e734a9638209e4f4a905, type: 3}
       propertyPath: timeBtwShots
@@ -812,7 +821,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7004625324969521465, guid: 7352a3981bc6e734a9638209e4f4a905, type: 3}
       propertyPath: dmgDealt
-      value: 50
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 7004625324969521465, guid: 7352a3981bc6e734a9638209e4f4a905, type: 3}
       propertyPath: bulletSpeed
@@ -894,7 +903,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7004625324969521465, guid: 7352a3981bc6e734a9638209e4f4a905, type: 3}
       propertyPath: dmgDealt
-      value: 50
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 7004625324969521465, guid: 7352a3981bc6e734a9638209e4f4a905, type: 3}
       propertyPath: bulletSpeed
@@ -976,7 +985,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7004625324969521465, guid: 7352a3981bc6e734a9638209e4f4a905, type: 3}
       propertyPath: dmgDealt
-      value: 50
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 7004625324969521465, guid: 7352a3981bc6e734a9638209e4f4a905, type: 3}
       propertyPath: bulletSpeed
@@ -1058,7 +1067,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7004625324969521465, guid: 7352a3981bc6e734a9638209e4f4a905, type: 3}
       propertyPath: dmgDealt
-      value: 50
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 7004625324969521465, guid: 7352a3981bc6e734a9638209e4f4a905, type: 3}
       propertyPath: bulletSpeed

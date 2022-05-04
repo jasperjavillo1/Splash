@@ -49,7 +49,7 @@ public class GunProjectile : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D other) 
     {
 
-        if(other.gameObject.CompareTag("Ground") || other.gameObject.CompareTag("Enemy") || other.gameObject.CompareTag("Squish"))
+        if(other.gameObject.CompareTag("Ground") || other.gameObject.CompareTag("Enemy") || other.gameObject.CompareTag("Squish") || other.gameObject.CompareTag("BossSquish"))
         {
             FindObjectOfType<AudioManager>().PlaySound(bubblePopSound);
             Destroy(gameObject);
