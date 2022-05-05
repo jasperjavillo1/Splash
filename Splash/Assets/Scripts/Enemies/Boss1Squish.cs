@@ -9,6 +9,7 @@ public class Boss1Squish : MonoBehaviour
     [SerializeField] AudioClip bossDamageSound;
     IEnumerator WaitTime()
     {
+        boss1.health--;
         //yield on a new YieldInstruction that waits for .1 seconds.
         yield return new WaitForSeconds(.1f);
 
@@ -19,7 +20,6 @@ public class Boss1Squish : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("GunProjectile"))
         {
-            boss1.health--;
             squishPoint.GetComponent<SpriteRenderer>().color = Color.cyan;
             FindObjectOfType<AudioManager>().PlaySound(bossDamageSound);
             StartCoroutine(WaitTime());

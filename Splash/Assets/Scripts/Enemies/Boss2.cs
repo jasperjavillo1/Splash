@@ -23,6 +23,7 @@ public class Boss2 : MonoBehaviour
         xStart = gameObject.transform.position.x;
         yStart = gameObject.transform.position.y;
         yEnd = yStart + 2;
+        xEnd = xStart + 2;
     }
 
     // Update is called once per frame

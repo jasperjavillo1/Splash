@@ -182,7 +182,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
-  speed: 1
+  speed: 2
   distanceBetween: 5
   explodeDamageSound: {fileID: 8300000, guid: f2bbc93eadde2014188caafe6a9c13d8, type: 3}
   playerDamageSound: {fileID: 8300000, guid: 8186cd7ee1abbc8469b61d6e8d6e82ac, type: 3}
@@ -336,4 +336,4 @@ MonoBehaviour:
   chaserDamageSound: {fileID: 8300000, guid: ad3a1dea0f8b103489bb2d9d8616b35a, type: 3}
   regenPrefab: {fileID: 3645637729903897743, guid: 7f11bb2946eb2f9468f9251709ed4bc1, type: 3}
   spawnPoint: {fileID: 6579981084760612348}
-  health: 6
+  health: 3
