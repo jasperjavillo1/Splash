@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6292079203241237884}
   - component: {fileID: 6292079203241237883}
   - component: {fileID: 6292079203241237882}
+  - component: {fileID: 1717306548}
   m_Layer: 0
   m_Name: AudioManager
   m_TagString: AudioManager
@@ -151,7 +152,7 @@ AudioSource:
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
-  Pan2D: 0
+  Pan2D: -0.51
   rolloffMode: 0
   BypassEffects: 0
   BypassListenerEffects: 0
@@ -239,3 +240,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   effectPlayer: {fileID: 6292079203241237884}
   musicPlayer: {fileID: 6292079203241237883}
+--- !u!114 &1717306548
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6292079203241237881}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3fc489b8d54cf574790333e8f19cab4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  themeSong: {fileID: 8300000, guid: dc6b42f918071e44597a371a20d5ab5e, type: 3}
+  battleMusic: {fileID: 8300000, guid: 638af0fa1235983468d4cbcbc578e4d8, type: 3}
+  victoryClip: {fileID: 8300000, guid: 940148608b9f6b741b0343685767b22c, type: 3}

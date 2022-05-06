@@ -1,12 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = System.Random;
 
 public class ChaserHealth : MonoBehaviour
 {
     [SerializeField] AudioClip chaserDamageSound;
     public Transform regenPrefab;
     public Transform spawnPoint;
+    [SerializeField] [Range(0, 100)] int _healthDropProbability;
 
     void DropRegen()
     {
@@ -33,7 +35,11 @@ public class ChaserHealth : MonoBehaviour
 
             if (health == 0)
             {
-                DropRegen();
+                int probaility = new Random().Next(0, 100 + 1);
+                if (probaility <= _healthDropProbability)
+                {
+                    DropRegen();
+                }
                 Destroy(transform.parent.gameObject);
             }
         }

@@ -68,6 +68,10 @@ public class LSS_Master : MonoBehaviour
     {
         SceneManager.LoadScene(6);
     }
+    public void MainMenu()
+    {
+        SceneManager.LoadScene(0);
+    }
 
     public void SetLvl1Complete()
     {

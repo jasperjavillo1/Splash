@@ -23,17 +23,32 @@ public class MusicManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (FindObjectOfType<AudioManager>().GetComponents<AudioSource>()[1].isPlaying == false && hasBoss == false)
+        {
+            FindObjectOfType<AudioManager>().GetComponents<AudioSource>()[1].clip = themeSong;
+            FindObjectOfType<AudioManager>().GetComponents<AudioSource>()[1].Play();
+            Debug.Log("Main Music Restarted");
+
+        }
+
         if (hasBoss && boss1)
         {
+            
+            if(FindObjectOfType<AudioManager>().GetComponents<AudioSource>()[1].isPlaying == false)
+            {
+                FindObjectOfType<AudioManager>().GetComponents<AudioSource>()[1].Play();
+                Debug.Log("Boss Music Restarted");
+
+            }
 
             if (boss.GetComponent<Boss1>().health <= 0)
             {
                 FindObjectOfType<AudioManager>().GetComponents<AudioSource>()[1].Stop();
                 FindObjectOfType<AudioManager>().GetComponents<AudioSource>()[1].clip = victoryClip;
                 FindObjectOfType<AudioManager>().GetComponents<AudioSource>()[1].Play();
-                FindObjectOfType<AudioManager>().PlayMusic(themeSong, true);
-                hasBoss = false;
 
+                //FindObjectOfType<AudioManager>().PlayMusic(themeSong, true);
+                hasBoss = false;
             }
         }
         if (hasBoss && boss2)
@@ -43,9 +58,9 @@ public class MusicManager : MonoBehaviour
                 FindObjectOfType<AudioManager>().GetComponents<AudioSource>()[1].Stop();
                 FindObjectOfType<AudioManager>().GetComponents<AudioSource>()[1].clip = victoryClip;
                 FindObjectOfType<AudioManager>().GetComponents<AudioSource>()[1].Play();
-                FindObjectOfType<AudioManager>().PlayMusic(themeSong, true);
-                hasBoss = false;
 
+                //FindObjectOfType<AudioManager>().PlayMusic(themeSong, true);
+                hasBoss = false;
             }
         }
         if (hasBoss && boss3)
@@ -55,9 +70,9 @@ public class MusicManager : MonoBehaviour
                 FindObjectOfType<AudioManager>().GetComponents<AudioSource>()[1].Stop();
                 FindObjectOfType<AudioManager>().GetComponents<AudioSource>()[1].clip = victoryClip;
                 FindObjectOfType<AudioManager>().GetComponents<AudioSource>()[1].Play();
-                FindObjectOfType<AudioManager>().PlayMusic(themeSong, true);
-                hasBoss = false;
 
+                //FindObjectOfType<AudioManager>().PlayMusic(themeSong, true);
+                hasBoss = false;
             }
         }
         if (hasBoss && bossT)
@@ -67,17 +82,16 @@ public class MusicManager : MonoBehaviour
                 FindObjectOfType<AudioManager>().GetComponents<AudioSource>()[1].Stop();
                 FindObjectOfType<AudioManager>().GetComponents<AudioSource>()[1].clip = victoryClip;
                 FindObjectOfType<AudioManager>().GetComponents<AudioSource>()[1].Play();
-                FindObjectOfType<AudioManager>().PlayMusic(themeSong, true);
-                hasBoss = false;
 
+                //FindObjectOfType<AudioManager>().PlayMusic(themeSong, true);
+                hasBoss = false;
             }
         }
     }
 
     private void Awake()
     {
-        FindObjectOfType<AudioManager>().PlayMusic(themeSong, true);
-
+        //FindObjectOfType<AudioManager>().PlayMusic(themeSong, true);
 
         if (SceneManager.GetActiveScene().buildIndex == 3)
         {
@@ -117,7 +131,10 @@ public class MusicManager : MonoBehaviour
             if (battleMusicStart == false)
             {
                 FindObjectOfType<AudioManager>().GetComponents<AudioSource>()[1].Stop();
-                FindObjectOfType<AudioManager>().PlayMusic(battleMusic, true);
+                //FindObjectOfType<AudioManager>().PlayMusic(battleMusic, true);
+                FindObjectOfType<AudioManager>().GetComponents<AudioSource>()[1].clip = battleMusic;
+                FindObjectOfType<AudioManager>().GetComponents<AudioSource>()[1].Play();
+
                 battleMusicStart = true;
             }
 

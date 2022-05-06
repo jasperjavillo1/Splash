@@ -77,7 +77,6 @@ public class BossHealthBar : MonoBehaviour
             }
 
             Slider.value = boss1.health;
-            Debug.Log("Slider value: " + Slider.value + " , Boss Health: " + boss1.health);
             if (boss1.health == 0)
             {
                 Slider.gameObject.SetActive(false);
@@ -92,7 +91,6 @@ public class BossHealthBar : MonoBehaviour
             }
 
             Slider.value = boss3.health;
-            Debug.Log("Slider value: " + Slider.value + " , Boss Health: " + boss3.health);
             if (boss3.health == 0)
             {
                 Slider.gameObject.SetActive(false);
@@ -107,7 +105,6 @@ public class BossHealthBar : MonoBehaviour
             }
 
             Slider.value = boss2.health;
-            Debug.Log("Slider value: " + Slider.value + " , Boss Health: " + boss2.health);
             if (boss2.health == 0)
             {
                 Slider.gameObject.SetActive(false);
@@ -121,7 +118,6 @@ public class BossHealthBar : MonoBehaviour
                 Slider.GetComponentsInChildren<Image>()[1].color = Color.green;
 
                 Slider.value = boss1.health;
-                Debug.Log("Slider value: " + Slider.value + " , Boss Health: " + boss1.health);
                 if (boss1.health == 0)
                 {
                     Slider.gameObject.SetActive(false);
@@ -133,7 +129,6 @@ public class BossHealthBar : MonoBehaviour
                 Slider.GetComponentsInChildren<Image>()[1].color = Color.green;
 
                 Slider.value = boss3.health;
-                Debug.Log("Slider value: " + Slider.value + " , Boss Health: " + boss3.health);
                 if (boss3.health == 0)
                 {
                     Slider.gameObject.SetActive(false);
@@ -145,7 +140,6 @@ public class BossHealthBar : MonoBehaviour
                 Slider.GetComponentsInChildren<Image>()[1].color = Color.green;
 
                 Slider.value = boss2.health;
-                Debug.Log("Slider value: " + Slider.value + " , Boss Health: " + boss2.health);
                 if (boss2.health == 0)
                 {
                     Slider.gameObject.SetActive(false);
@@ -166,7 +160,6 @@ public class BossHealthBar : MonoBehaviour
     {
         if (SceneManager.GetActiveScene() == SceneManager.GetSceneByBuildIndex(3))
         {
-            Debug.Log("Testing");
             //boss1 = FindObjectOfType<Boss1>();
 
             if (!boss1.isActiveAndEnabled)
@@ -182,8 +175,6 @@ public class BossHealthBar : MonoBehaviour
             //boss2 = FindObjectOfType<Boss2>();
             if (!boss3.isActiveAndEnabled)
             {
-                Debug.Log("What's up?");
-
                 //gameObject.SetActive(false);
                 Slider.GetComponentsInChildren<Image>()[0].color = Color.clear;
                 Slider.GetComponentsInChildren<Image>()[1].color = Color.clear;

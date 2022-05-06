@@ -37,7 +37,7 @@ public class EnemyHealth : MonoBehaviour
             _health-= other.gameObject.GetComponent<GunProjectile>().Damage;
             Destroy(other.gameObject);
             FindObjectOfType<AudioManager>().PlaySound(broDamageSound);
-            GetComponent<SpriteRenderer>().color = Color.red;
+            GetComponent<SpriteRenderer>().color = Color.blue;
             StartCoroutine(Blink());
 
         }    

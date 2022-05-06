@@ -14,12 +14,16 @@ public class HealthPickup : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D col)
     {
-        if (col.gameObject.tag == "Player")
+        if (col.gameObject.CompareTag("Player"))
         {
             FindObjectOfType<AudioManager>().PlaySound(regenSound);
             PlayerHealth PH = col.gameObject.GetComponent<PlayerHealth>();
-            PH.IncreaseHealth(healthIncreaseAmount);
+            if (PH.GetCurrentHealth() < PH.GetInitialHealth())
+            {
+                PH.IncreaseHealth(healthIncreaseAmount);
+            }
             Destroy(gameObject);
+
         }
     }
 }

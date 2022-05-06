@@ -9,7 +9,7 @@ public class HealthRecovery : MonoBehaviour
     [SerializeField] float healthIncrementAmount;
     private void OnTriggerStay2D(Collider2D other)
     {
-        if(other.tag == "Player")
+        if(other.CompareTag("Player"))
         {
             PlayerHealth PH = other.GetComponent<PlayerHealth>();
 
@@ -18,7 +18,7 @@ public class HealthRecovery : MonoBehaviour
     }
 
     private void OnTriggerEnter2D(Collider2D col) {
-        if(col.gameObject.tag == "Player") {
+        if(col.gameObject.CompareTag("Player")) {
             FindObjectOfType<AudioManager>().PlaySound(regenSound);
         }
     }
