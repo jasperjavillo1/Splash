@@ -160,7 +160,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21c64a208e164274e811364daf61c881, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _health: 20
+  _health: 50
   broDamageSound: {fileID: 8300000, guid: 1d6ab41c4b7da39468f62fd52c70d282, type: 3}
   _healthPickup: {fileID: 3645637729903897741, guid: 7f11bb2946eb2f9468f9251709ed4bc1, type: 3}
   _healthDropProbability: 35
