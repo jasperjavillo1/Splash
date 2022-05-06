@@ -15,6 +15,10 @@ public class PlayerLives : MonoBehaviour
     private PlayerInput _playerInput;
     private bool _isLivesSystemTestPressed;
 
+    //events
+    public delegate void GameOverEventHandler();
+    public event GameOverEventHandler OnGameOver;
+
     private void Awake()
     {
         _playerInput = new PlayerInput();
@@ -49,6 +53,7 @@ public class PlayerLives : MonoBehaviour
         {
 
             livesreset = true;
+            if (OnGameOver != null) OnGameOver();
             gameOver.SetActive(true);
             
         }

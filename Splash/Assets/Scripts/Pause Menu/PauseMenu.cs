@@ -14,6 +14,10 @@ public class PauseMenu : MonoBehaviour
     private bool _isPauseButtonPressed = false;
     public bool passedVolume = false;
 
+    //events
+    public delegate void LeaveSceneEventHandler();
+    public event LeaveSceneEventHandler OnLeaveScene;
+
     private void Awake()
     {
         _playerInput = new PlayerInput();
@@ -87,11 +91,13 @@ public class PauseMenu : MonoBehaviour
     public void QuitGame()
     {
         Application.Quit();
+        if (OnLeaveScene != null) OnLeaveScene();
     }
 
     public void GoToMainMenu()
     {
         Time.timeScale = 1f;
         SceneManager.LoadScene(0);
+        if (OnLeaveScene != null) OnLeaveScene();
     }
 }
