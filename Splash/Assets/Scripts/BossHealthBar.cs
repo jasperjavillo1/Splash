@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class BossHealthBar : MonoBehaviour
 {
@@ -14,57 +15,6 @@ public class BossHealthBar : MonoBehaviour
     public Boss2 boss2;
     public Boss3 boss3;
 
-
-    //public GameObject boss;
-    
-    
-    public void Start()
-    {
-        //boss1 = FindObjectOfType<Boss1>();
-        //Debug.Log("Boss Name: " + boss1.name);
-
-        /*if (SceneManager.GetActiveScene() == SceneManager.GetSceneByBuildIndex(3))
-        {
-            Debug.Log("Testing");
-            boss1 = FindObjectOfType<Boss1>();
-
-            if (!boss1.isActiveAndEnabled)
-            {
-                //gameObject.SetActive(false);
-                Slider.GetComponentsInChildren<Image>()[0].color = Color.clear;
-                Slider.GetComponentsInChildren<Image>()[1].color = Color.clear;
-
-            }
-        }
-
-
-
-        if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("SampleScene 1"))
-        {
-            Debug.Log("Testing");
-            boss1 = FindObjectOfType<Boss1>();
-
-            if (!boss1.isActiveAndEnabled)
-            {
-                //gameObject.SetActive(false);
-                Slider.GetComponentsInChildren<Image>()[0].color = Color.clear;
-                Slider.GetComponentsInChildren<Image>()[1].color = Color.clear;
-
-            }
-        }*/
-    }
-
-    /*public void SetHealth(float health, float MaxHealth)
-    {
-        health = boss1.health;
-
-        Slider.gameObject.SetActive(health < MaxHealth);
-        Slider.value = health;
-        Slider.maxValue = MaxHealth;
-
-        Slider.fillRect.GetComponentInChildren<Image>().color = Color.Lerp(Low, High, Slider.normalizedValue);
-    }*/
-
     // Update is called once per frame
     void Update()
     {
@@ -74,12 +24,16 @@ public class BossHealthBar : MonoBehaviour
             {
                 Slider.GetComponentsInChildren<Image>()[0].color = Color.red;
                 Slider.GetComponentsInChildren<Image>()[1].color = Color.green;
+                transform.GetChild(1).GetComponent<TextMeshProUGUI>().enabled = true;
+
             }
 
             Slider.value = boss1.health;
             if (boss1.health == 0)
             {
                 Slider.gameObject.SetActive(false);
+                transform.GetChild(1).GetComponent<TextMeshProUGUI>().enabled = false;
+
             }
         }
         if (SceneManager.GetActiveScene() == SceneManager.GetSceneByBuildIndex(4))
@@ -88,12 +42,16 @@ public class BossHealthBar : MonoBehaviour
             {
                 Slider.GetComponentsInChildren<Image>()[0].color = Color.red;
                 Slider.GetComponentsInChildren<Image>()[1].color = Color.green;
+                transform.GetChild(1).GetComponent<TextMeshProUGUI>().enabled = true;
+
             }
 
             Slider.value = boss3.health;
             if (boss3.health == 0)
             {
                 Slider.gameObject.SetActive(false);
+                transform.GetChild(1).GetComponent<TextMeshProUGUI>().enabled = false;
+
             }
         }
         if (SceneManager.GetActiveScene() == SceneManager.GetSceneByBuildIndex(5))
@@ -102,12 +60,16 @@ public class BossHealthBar : MonoBehaviour
             {
                 Slider.GetComponentsInChildren<Image>()[0].color = Color.red;
                 Slider.GetComponentsInChildren<Image>()[1].color = Color.green;
+                transform.GetChild(1).GetComponent<TextMeshProUGUI>().enabled = true;
+
             }
 
             Slider.value = boss2.health;
             if (boss2.health == 0)
             {
                 Slider.gameObject.SetActive(false);
+                transform.GetChild(1).GetComponent<TextMeshProUGUI>().enabled = false;
+
             }
         }
         if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("SampleScene 1"))
@@ -116,33 +78,41 @@ public class BossHealthBar : MonoBehaviour
             {
                 Slider.GetComponentsInChildren<Image>()[0].color = Color.red;
                 Slider.GetComponentsInChildren<Image>()[1].color = Color.green;
-
+                transform.GetChild(1).GetComponent<TextMeshProUGUI>().enabled = true;
                 Slider.value = boss1.health;
                 if (boss1.health == 0)
                 {
                     Slider.gameObject.SetActive(false);
+                    transform.GetChild(1).GetComponent<TextMeshProUGUI>().enabled = false;
+
                 }
             }
             else if (boss3.isActiveAndEnabled)
             {
                 Slider.GetComponentsInChildren<Image>()[0].color = Color.red;
                 Slider.GetComponentsInChildren<Image>()[1].color = Color.green;
+                transform.GetChild(1).GetComponent<TextMeshProUGUI>().enabled = true;
 
                 Slider.value = boss3.health;
                 if (boss3.health == 0)
                 {
                     Slider.gameObject.SetActive(false);
+                    transform.GetChild(1).GetComponent<TextMeshProUGUI>().enabled = false;
+
                 }
             }
             else if (boss2.isActiveAndEnabled)
             {
                 Slider.GetComponentsInChildren<Image>()[0].color = Color.red;
                 Slider.GetComponentsInChildren<Image>()[1].color = Color.green;
+                transform.GetChild(1).GetComponent<TextMeshProUGUI>().enabled = true;
 
                 Slider.value = boss2.health;
                 if (boss2.health == 0)
                 {
                     Slider.gameObject.SetActive(false);
+                    transform.GetChild(1).GetComponent<TextMeshProUGUI>().enabled = false;
+
                 }
             }
             else
@@ -150,10 +120,10 @@ public class BossHealthBar : MonoBehaviour
                 //gameObject.SetActive(false);
                 Slider.GetComponentsInChildren<Image>()[0].color = Color.clear;
                 Slider.GetComponentsInChildren<Image>()[1].color = Color.clear;
+                transform.GetChild(1).GetComponent<TextMeshProUGUI>().enabled = false;
 
             }
         }
-        //Slider.transform.position = Camera.main.WorldToScreenPoint(transform.parent.position + Offset);
     }
 
     private void Awake()
@@ -167,6 +137,7 @@ public class BossHealthBar : MonoBehaviour
                 //gameObject.SetActive(false);
                 Slider.GetComponentsInChildren<Image>()[0].color = Color.clear;
                 Slider.GetComponentsInChildren<Image>()[1].color = Color.clear;
+                transform.GetChild(1).GetComponent<TextMeshProUGUI>().enabled = false;
 
             }
         }
@@ -178,6 +149,7 @@ public class BossHealthBar : MonoBehaviour
                 //gameObject.SetActive(false);
                 Slider.GetComponentsInChildren<Image>()[0].color = Color.clear;
                 Slider.GetComponentsInChildren<Image>()[1].color = Color.clear;
+                transform.GetChild(1).GetComponent<TextMeshProUGUI>().enabled = false;
 
             }
         }
@@ -188,25 +160,26 @@ public class BossHealthBar : MonoBehaviour
                 //gameObject.SetActive(false);
                 Slider.GetComponentsInChildren<Image>()[0].color = Color.clear;
                 Slider.GetComponentsInChildren<Image>()[1].color = Color.clear;
+                transform.GetChild(1).GetComponent<TextMeshProUGUI>().enabled = false;
 
             }
         }
         if(SceneManager.GetActiveScene() == SceneManager.GetSceneByName("SampleScene 1"))
         {
             //boss1 = FindObjectOfType<Boss1>();
-
             if (!boss1.isActiveAndEnabled)
             {
                 //gameObject.SetActive(false);
                 Slider.GetComponentsInChildren<Image>()[0].color = Color.clear;
                 Slider.GetComponentsInChildren<Image>()[1].color = Color.clear;
-
+                transform.GetChild(1).GetComponent<TextMeshProUGUI>().enabled = false;
             }
             else if (!boss2.isActiveAndEnabled)
             {
                 //gameObject.SetActive(false);
                 Slider.GetComponentsInChildren<Image>()[0].color = Color.clear;
                 Slider.GetComponentsInChildren<Image>()[1].color = Color.clear;
+                transform.GetChild(1).GetComponent<TextMeshProUGUI>().enabled = false;
 
             }
             else if (!boss3.isActiveAndEnabled)
@@ -214,6 +187,7 @@ public class BossHealthBar : MonoBehaviour
                 //gameObject.SetActive(false);
                 Slider.GetComponentsInChildren<Image>()[0].color = Color.clear;
                 Slider.GetComponentsInChildren<Image>()[1].color = Color.clear;
+                transform.GetChild(1).GetComponent<TextMeshProUGUI>().enabled = false;
 
             }
         }

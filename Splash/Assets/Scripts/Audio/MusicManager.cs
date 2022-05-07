@@ -23,14 +23,6 @@ public class MusicManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        /*if (SceneManager.GetActiveScene().buildIndex == 0)
-        {
-            if (GetComponents<AudioSource>()[1].clip.name == "bossMusic2")
-            {
-                GetComponents<AudioSource>()[1].clip = themeSong;
-            }
-        }*/
-
         if (FindObjectOfType<AudioManager>().GetComponents<AudioSource>()[1].isPlaying == false && hasBoss == false)
         {
             FindObjectOfType<AudioManager>().GetComponents<AudioSource>()[1].clip = themeSong;
@@ -100,6 +92,11 @@ public class MusicManager : MonoBehaviour
     private void Awake()
     {
         //FindObjectOfType<AudioManager>().PlayMusic(themeSong, true);
+        if (SceneManager.GetActiveScene().buildIndex == 0)
+        {
+            FindObjectOfType<AudioManager>().GetComponents<AudioSource>()[1].Stop();
+
+        }
 
         if (SceneManager.GetActiveScene().buildIndex == 3)
         {

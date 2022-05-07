@@ -27,7 +27,11 @@ public class LevelBlocker : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        BossWarning.SetActive(true);
+        if (Fountain1.activeInHierarchy || Fountain2.activeInHierarchy || Fountain3.activeInHierarchy)
+        {
+            BossWarning.SetActive(true);
+
+        }
     }
     private void OnTriggerExit2D(Collider2D collision)
     {

@@ -4,12 +4,15 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using UnityEngine.InputSystem;
+using TMPro;
 
 public class PlayerLives : MonoBehaviour
 {
     public float _CurrentLives =3f;
     public GameObject gameOver;
-    public UnityEngine.UI.Text LivesCount;
+    //public Text LivesCount;
+    public TextMeshProUGUI LivesCount;
+
     public bool livesreset;
 
     private PlayerInput _playerInput;
@@ -28,7 +31,7 @@ public class PlayerLives : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {  
-        LivesCount = GameObject.Find("LivesCountText").GetComponent<UnityEngine.UI.Text>();
+        LivesCount = GameObject.Find("LivesCountText").GetComponent<TextMeshProUGUI>();
         gameOver.SetActive(false);
         
         _CurrentLives = PlayerPrefs.GetFloat("CurrentLives");

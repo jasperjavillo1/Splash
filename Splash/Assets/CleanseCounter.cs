@@ -19,6 +19,8 @@ public class CleanseCounter : MonoBehaviour
         {
             toxicFountains++;
         }
+        cleanseCounter.text = toxicFountains.ToString();
+
     }
 
     // Update is called once per frame
@@ -27,7 +29,7 @@ public class CleanseCounter : MonoBehaviour
         if (cleansed)
         {
             toxicFountains--;
-            cleanseCounter.text = "Toxic Fountains: " + toxicFountains;
+            cleanseCounter.text = toxicFountains.ToString();
             cleansed = false;
         }
     }
