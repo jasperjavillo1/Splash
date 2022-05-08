@@ -239,6 +239,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   effectPlayer: {fileID: 6292079203241237884}
   musicPlayer: {fileID: 6292079203241237883}
-  mainMenuMusic: {fileID: 0}
+  mainMenuMusic: {fileID: 8300000, guid: 9508a8e2a4345e24c9659008a987fdbf, type: 3}
   levelMusic: {fileID: 8300000, guid: 577cc31eeeee787419e3395ede58d256, type: 3}
   music: 0
