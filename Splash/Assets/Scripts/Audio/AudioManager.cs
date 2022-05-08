@@ -4,13 +4,28 @@ using UnityEngine;
 
 public class AudioManager : MonoBehaviour {
     [SerializeField] AudioSource effectPlayer, musicPlayer;
+    [SerializeField] AudioClip mainMenuMusic, levelMusic;
+
+    [SerializeField] musicState music = musicState.none;
 
     //  all of the AudioClips that are currently playing
     List<AudioClip> playedClips = new List<AudioClip>();
 
 
+    public enum musicState {
+        none, mainMenu, level
+    }
+
+
     private void Awake() {
         StartCoroutine(refreshPlaylist());
+    }
+
+    private void Start() {
+        if(music == musicState.mainMenu)
+            playMusic(mainMenuMusic, true);
+        else if(music == musicState.level)
+            playMusic(levelMusic, true);
     }
 
     //  plays a sound effect
