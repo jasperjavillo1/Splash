@@ -106,6 +106,9 @@ public class PlayerMovementStateMachine : MonoBehaviour
         _states = new PlayerStateFactory(this);
         _currentState = _states.Falling();
         _currentState.EnterState();
+
+        keyCount = PlayerPrefs.GetInt("KeyCount", keyCount);
+       
     }
 
     // Update is called once per frame
@@ -114,6 +117,8 @@ public class PlayerMovementStateMachine : MonoBehaviour
         _currentState.UpdateStates();
         _handleMovement();
         _MovementAnimation();
+
+        keyCount = PlayerPrefs.GetInt("KeyCount", keyCount);
 
     }
 
@@ -186,6 +191,7 @@ public class PlayerMovementStateMachine : MonoBehaviour
         if (other.CompareTag("Key"))
         {
             keyCount++;
+            PlayerPrefs.SetInt("KeyCount", keyCount);
             other.gameObject.SetActive(false);
         }
     }

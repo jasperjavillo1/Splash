@@ -54,7 +54,7 @@ public class PlayerLives : MonoBehaviour
         //Game Over "if" statement.
         if (_CurrentLives <=0f)
         {
-
+            PlayerPrefs.SetInt("KeyCount", 0);
             livesreset = true;
             if (OnGameOver != null) OnGameOver();
             gameOver.SetActive(true);

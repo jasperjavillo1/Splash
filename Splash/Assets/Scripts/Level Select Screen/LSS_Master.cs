@@ -20,7 +20,7 @@ public class LSS_Master : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        PlayerPrefs.SetInt("KeyCount", 0);
 
         if (Lvl_1 == 1)
         {

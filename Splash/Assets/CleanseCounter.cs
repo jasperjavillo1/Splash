@@ -10,6 +10,7 @@ public class CleanseCounter : MonoBehaviour
     private int toxicFountains = 0;
     bool cleansed = false;
     private GameObject[] keys;
+    private int playerPrefKey;
 
     // Start is called before the first frame update
     void Start()
@@ -18,7 +19,11 @@ public class CleanseCounter : MonoBehaviour
         foreach(GameObject fountainKey in keys)
         {
             toxicFountains++;
+
+            playerPrefKey = PlayerPrefs.GetInt("KeyCount");
         }
+
+        toxicFountains -= playerPrefKey;
         cleanseCounter.text = toxicFountains.ToString();
 
     }
@@ -26,9 +31,12 @@ public class CleanseCounter : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //playerPrefKey = PlayerPrefs.GetInt("KeyCount");
+
         if (cleansed)
         {
             toxicFountains--;
+            toxicFountains -= playerPrefKey;
             cleanseCounter.text = toxicFountains.ToString();
             cleansed = false;
         }

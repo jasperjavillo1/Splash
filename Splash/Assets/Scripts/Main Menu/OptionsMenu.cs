@@ -20,6 +20,8 @@ public class OptionsMenu : MonoBehaviour
             
             FindObjectOfType<AudioManager>().GetComponents<AudioSource>()[1].volume = musicVolume.value;
             FindObjectOfType<AudioManager>().GetComponents<AudioSource>()[0].volume = effectsVolume.value;
+
+            //PlayerPrefs.SetFloat("masterVolume", AudioListener.volume);
         }
     }
 
