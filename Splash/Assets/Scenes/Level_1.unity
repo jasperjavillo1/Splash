@@ -4040,11 +4040,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &474185848 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2924721525751834001, guid: a3b6e8960f4900c45957ce5f7aa70047, type: 3}
-  m_PrefabInstance: {fileID: 1709004460}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &479231713
 GameObject:
   m_ObjectHideFlags: 0
@@ -56729,6 +56724,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c62ff07285553314fb0db2208433209c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1709004464 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 966379272, guid: a3b6e8960f4900c45957ce5f7aa70047, type: 3}
+  m_PrefabInstance: {fileID: 1709004460}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1712747099
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -57049,7 +57049,7 @@ PrefabInstance:
     - target: {fileID: 7419122751148653267, guid: a81d77d3b5a8ed540bcd0db83752a76d, type: 3}
       propertyPath: winCon
       value: 
-      objectReference: {fileID: 474185848}
+      objectReference: {fileID: 1709004464}
     - target: {fileID: 7419122751148653267, guid: a81d77d3b5a8ed540bcd0db83752a76d, type: 3}
       propertyPath: StageClear
       value: 
