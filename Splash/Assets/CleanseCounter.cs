@@ -23,7 +23,7 @@ public class CleanseCounter : MonoBehaviour
             playerPrefKey = PlayerPrefs.GetInt("KeyCount");
         }
 
-        toxicFountains -= playerPrefKey;
+        toxicFountains = playerPrefKey;
         cleanseCounter.text = toxicFountains.ToString();
 
     }

@@ -1138,7 +1138,7 @@ RectTransform:
   m_GameObject: {fileID: 961778671}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.8223794, y: 0.8223794, z: 0.8223794}
+  m_LocalScale: {x: 1, y: 1, z: 0.8223794}
   m_Children: []
   m_Father: {fileID: 711101799}
   m_RootOrder: 0
@@ -1881,9 +1881,9 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1288332164, guid: 1925b0a8f533b23428b7e5774347f0da, type: 3}
+    - target: {fileID: 1005836385021291557, guid: 1925b0a8f533b23428b7e5774347f0da, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 547.66614
+      value: 497.82135
       objectReference: {fileID: 0}
     - target: {fileID: 3450168136900057587, guid: 1925b0a8f533b23428b7e5774347f0da, type: 3}
       propertyPath: m_AnchorMax.x
@@ -1913,10 +1913,6 @@ PrefabInstance:
       propertyPath: m_AnchorMin.x
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 3450168137727279537, guid: 1925b0a8f533b23428b7e5774347f0da, type: 3}
-      propertyPath: m_Value
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 3450168137742626126, guid: 1925b0a8f533b23428b7e5774347f0da, type: 3}
       propertyPath: m_AnchorMax.x
       value: 1
@@ -1929,22 +1925,6 @@ PrefabInstance:
       propertyPath: m_AnchorMin.x
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 3450168138171604137, guid: 1925b0a8f533b23428b7e5774347f0da, type: 3}
-      propertyPath: m_Value
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3450168138171604137, guid: 1925b0a8f533b23428b7e5774347f0da, type: 3}
-      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3450168138171604137, guid: 1925b0a8f533b23428b7e5774347f0da, type: 3}
-      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3450168138171604137, guid: 1925b0a8f533b23428b7e5774347f0da, type: 3}
-      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 3450168138225578110, guid: 1925b0a8f533b23428b7e5774347f0da, type: 3}
       propertyPath: m_AnchorMax.x
       value: 1
@@ -1952,63 +1932,11 @@ PrefabInstance:
     - target: {fileID: 3450168138225578110, guid: 1925b0a8f533b23428b7e5774347f0da, type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3450168138374600650, guid: 1925b0a8f533b23428b7e5774347f0da, type: 3}
-      propertyPath: m_Value
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3450168138493513502, guid: 1925b0a8f533b23428b7e5774347f0da, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3450168138493513502, guid: 1925b0a8f533b23428b7e5774347f0da, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 3450168138493513502, guid: 1925b0a8f533b23428b7e5774347f0da, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
-      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 3450168138493513502, guid: 1925b0a8f533b23428b7e5774347f0da, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 711101795}
-    - target: {fileID: 3450168138493513502, guid: 1925b0a8f533b23428b7e5774347f0da, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
-      value: 
-      objectReference: {fileID: 2093621023}
-    - target: {fileID: 3450168138493513502, guid: 1925b0a8f533b23428b7e5774347f0da, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3450168138493513502, guid: 1925b0a8f533b23428b7e5774347f0da, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SetActive
-      objectReference: {fileID: 0}
-    - target: {fileID: 3450168138493513502, guid: 1925b0a8f533b23428b7e5774347f0da, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: SetActive
-      objectReference: {fileID: 0}
-    - target: {fileID: 3450168138493513502, guid: 1925b0a8f533b23428b7e5774347f0da, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: UnityEngine.GameObject, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 3450168138493513502, guid: 1925b0a8f533b23428b7e5774347f0da, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
-      value: UnityEngine.GameObject, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 3450168138493513502, guid: 1925b0a8f533b23428b7e5774347f0da, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3450168138493513502, guid: 1925b0a8f533b23428b7e5774347f0da, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_BoolArgument
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3450168138493513502, guid: 1925b0a8f533b23428b7e5774347f0da, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
     - target: {fileID: 3450168138563021372, guid: 1925b0a8f533b23428b7e5774347f0da, type: 3}
       propertyPath: m_Name
       value: OptionsMenu
