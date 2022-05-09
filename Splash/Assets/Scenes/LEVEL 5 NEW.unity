@@ -352,7 +352,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8909597500628395302, guid: 443ff0577e63c954d95d8534a65216bb, type: 3}
       propertyPath: _health
-      value: 20
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 8909597500628395302, guid: 443ff0577e63c954d95d8534a65216bb, type: 3}
       propertyPath: _healthDropProbability
@@ -9350,7 +9350,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8909597500628395302, guid: 443ff0577e63c954d95d8534a65216bb, type: 3}
       propertyPath: _health
-      value: 20
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 8909597500628395302, guid: 443ff0577e63c954d95d8534a65216bb, type: 3}
       propertyPath: _healthDropProbability
@@ -10195,7 +10195,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8909597500628395302, guid: 443ff0577e63c954d95d8534a65216bb, type: 3}
       propertyPath: _health
-      value: 20
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 8909597500628395302, guid: 443ff0577e63c954d95d8534a65216bb, type: 3}
       propertyPath: _healthDropProbability
@@ -10273,7 +10273,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8909597500628395302, guid: 443ff0577e63c954d95d8534a65216bb, type: 3}
       propertyPath: _health
-      value: 20
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 8909597500628395302, guid: 443ff0577e63c954d95d8534a65216bb, type: 3}
       propertyPath: _healthDropProbability
@@ -10395,7 +10395,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8909597500628395302, guid: 443ff0577e63c954d95d8534a65216bb, type: 3}
       propertyPath: _health
-      value: 20
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 8909597500628395302, guid: 443ff0577e63c954d95d8534a65216bb, type: 3}
       propertyPath: _healthDropProbability
@@ -17872,7 +17872,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8909597500628395302, guid: 443ff0577e63c954d95d8534a65216bb, type: 3}
       propertyPath: _health
-      value: 20
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 8909597500628395302, guid: 443ff0577e63c954d95d8534a65216bb, type: 3}
       propertyPath: _healthDropProbability
@@ -18184,7 +18184,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8909597500628395302, guid: 443ff0577e63c954d95d8534a65216bb, type: 3}
       propertyPath: _health
-      value: 20
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 8909597500628395302, guid: 443ff0577e63c954d95d8534a65216bb, type: 3}
       propertyPath: _healthDropProbability
@@ -20609,7 +20609,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8909597500628395302, guid: 443ff0577e63c954d95d8534a65216bb, type: 3}
       propertyPath: _health
-      value: 20
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 8909597500628395302, guid: 443ff0577e63c954d95d8534a65216bb, type: 3}
       propertyPath: _healthDropProbability
@@ -20687,7 +20687,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8909597500628395302, guid: 443ff0577e63c954d95d8534a65216bb, type: 3}
       propertyPath: _health
-      value: 20
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 8909597500628395302, guid: 443ff0577e63c954d95d8534a65216bb, type: 3}
       propertyPath: _healthDropProbability
@@ -20929,7 +20929,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8909597500628395302, guid: 443ff0577e63c954d95d8534a65216bb, type: 3}
       propertyPath: _health
-      value: 20
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 8909597500628395302, guid: 443ff0577e63c954d95d8534a65216bb, type: 3}
       propertyPath: _healthDropProbability
@@ -21015,7 +21015,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8909597500628395302, guid: 443ff0577e63c954d95d8534a65216bb, type: 3}
       propertyPath: _health
-      value: 20
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 8909597500628395302, guid: 443ff0577e63c954d95d8534a65216bb, type: 3}
       propertyPath: _healthDropProbability
@@ -21781,7 +21781,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8909597500628395302, guid: 443ff0577e63c954d95d8534a65216bb, type: 3}
       propertyPath: _health
-      value: 20
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 8909597500628395302, guid: 443ff0577e63c954d95d8534a65216bb, type: 3}
       propertyPath: _healthDropProbability
@@ -33252,7 +33252,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8909597500628395302, guid: 443ff0577e63c954d95d8534a65216bb, type: 3}
       propertyPath: _health
-      value: 20
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 8909597500628395302, guid: 443ff0577e63c954d95d8534a65216bb, type: 3}
       propertyPath: _healthDropProbability
@@ -33666,7 +33666,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8909597500628395302, guid: 443ff0577e63c954d95d8534a65216bb, type: 3}
       propertyPath: _health
-      value: 20
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 8909597500628395302, guid: 443ff0577e63c954d95d8534a65216bb, type: 3}
       propertyPath: _healthDropProbability
@@ -34295,7 +34295,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8909597500628395302, guid: 443ff0577e63c954d95d8534a65216bb, type: 3}
       propertyPath: _health
-      value: 20
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 8909597500628395302, guid: 443ff0577e63c954d95d8534a65216bb, type: 3}
       propertyPath: _healthDropProbability
@@ -34686,7 +34686,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8909597500628395302, guid: 443ff0577e63c954d95d8534a65216bb, type: 3}
       propertyPath: _health
-      value: 20
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 8909597500628395302, guid: 443ff0577e63c954d95d8534a65216bb, type: 3}
       propertyPath: _healthDropProbability
@@ -36124,7 +36124,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8909597500628395302, guid: 443ff0577e63c954d95d8534a65216bb, type: 3}
       propertyPath: _health
-      value: 20
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 8909597500628395302, guid: 443ff0577e63c954d95d8534a65216bb, type: 3}
       propertyPath: _healthDropProbability
@@ -36580,7 +36580,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8909597500628395302, guid: 443ff0577e63c954d95d8534a65216bb, type: 3}
       propertyPath: _health
-      value: 20
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 8909597500628395302, guid: 443ff0577e63c954d95d8534a65216bb, type: 3}
       propertyPath: _healthDropProbability
@@ -36917,7 +36917,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8909597500628395302, guid: 443ff0577e63c954d95d8534a65216bb, type: 3}
       propertyPath: _health
-      value: 20
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 8909597500628395302, guid: 443ff0577e63c954d95d8534a65216bb, type: 3}
       propertyPath: _healthDropProbability
