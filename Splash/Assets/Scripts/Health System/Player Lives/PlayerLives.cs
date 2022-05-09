@@ -31,7 +31,7 @@ public class PlayerLives : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {  
-        LivesCount = GameObject.Find("LivesCountText").GetComponent<TextMeshProUGUI>();
+        //LivesCount = GameObject.Find("LivesCountText").GetComponent<TextMeshProUGUI>();
         gameOver.SetActive(false);
         
         _CurrentLives = PlayerPrefs.GetFloat("CurrentLives");

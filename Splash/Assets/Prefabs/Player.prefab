@@ -79,8 +79,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -489, y: 217}
-  m_SizeDelta: {x: -1042.45, y: -617.68256}
+  m_AnchoredPosition: {x: -391, y: 162}
+  m_SizeDelta: {x: -796.9, y: -400}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5477921907249707236
 CanvasRenderer:
@@ -137,8 +137,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 25
-  m_fontSizeBase: 25
+  m_fontSize: 20
+  m_fontSizeBase: 20
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -173,7 +173,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -0.0000571478, y: 0, z: 0, w: -1.0255394}
+  m_margin: {x: 2.1585197, y: 0, z: 0, w: -1.0255394}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -191,7 +191,7 @@ GameObject:
   - component: {fileID: 4873341093611893337}
   - component: {fileID: 5564641012024822002}
   m_Layer: 5
-  m_Name: CleanseNumber
+  m_Name: ToxicCount
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -213,8 +213,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -226.9, y: 260.1}
-  m_SizeDelta: {x: -794.12, y: -617.68256}
+  m_AnchoredPosition: {x: -163, y: 200.8}
+  m_SizeDelta: {x: 0, y: 0.000030517578}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4873341093611893337
 CanvasRenderer:
@@ -307,7 +307,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -0.0000571478, y: 0, z: 0, w: -1.0255394}
+  m_margin: {x: 442.9093, y: 228.08516, z: 425.6705, w: 242.97238}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -623,6 +623,7 @@ RectTransform:
   - {fileID: 5360041142408634800}
   - {fileID: 2825462419808493248}
   - {fileID: 4629767492399017008}
+  - {fileID: 2253306778697214232}
   m_Father: {fileID: 3300649008393559314}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -664,12 +665,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
   m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0
+  m_MatchWidthOrHeight: 0.5
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
@@ -692,6 +693,140 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!1 &2732892500681498247
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2253306778697214232}
+  - component: {fileID: 7954059216577483482}
+  - component: {fileID: 4260827852009643214}
+  m_Layer: 5
+  m_Name: ToxicCounterTxt
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &2253306778697214232
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2732892500681498247}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1.2817199, y: 1.2817199, z: 1.2817199}
+  m_Children: []
+  m_Father: {fileID: 8162831119113881958}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -307, y: 210.8}
+  m_SizeDelta: {x: -606.80005, y: -400}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &7954059216577483482
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2732892500681498247}
+  m_CullTransparentMesh: 1
+--- !u!114 &4260827852009643214
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2732892500681498247}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: 'TOXIC- FOUNTAINS:'
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 491bcfb4f7e4a6842a260b81a1a3e446, type: 2}
+  m_sharedMaterial: {fileID: 6456746014311239370, guid: 491bcfb4f7e4a6842a260b81a1a3e446, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4281073408
+  m_fontColor: {r: 0, g: 1, b: 0.16973758, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 20
+  m_fontSizeBase: 20
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 1
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_enableWordWrapping: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 1
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 2.1585197, y: 0, z: 0, w: -1.0255394}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!1 &2884433874734464079
 GameObject:
   m_ObjectHideFlags: 0
@@ -1649,7 +1784,7 @@ GameObject:
   - component: {fileID: 6762529518684790337}
   - component: {fileID: 8713329185063127962}
   m_Layer: 5
-  m_Name: LivesCountText
+  m_Name: LivesCount
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1671,8 +1806,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -415.1, y: 217.7}
-  m_SizeDelta: {x: -1042.45, y: -617.68256}
+  m_AnchoredPosition: {x: -304, y: 164}
+  m_SizeDelta: {x: -900, y: -466.84128}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6762529518684790337
 CanvasRenderer:
@@ -1765,7 +1900,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -0.0000571478, y: 0, z: 0, w: -1.0255394}
+  m_margin: {x: 0.6180268, y: 0, z: 0.9287567, w: -1.0255394}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -1862,12 +1997,12 @@ GameObject:
   - component: {fileID: 3752053101950345465}
   - component: {fileID: 130223723982577772}
   m_Layer: 5
-  m_Name: CleanseCounterTxt
+  m_Name: ToxicCounterTxt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &4629767492399017008
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1884,8 +2019,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -402, y: 261}
-  m_SizeDelta: {x: -794.12, y: -617.68256}
+  m_AnchoredPosition: {x: -289, y: 214}
+  m_SizeDelta: {x: 0, y: 0.000030517578}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3752053101950345465
 CanvasRenderer:
@@ -1978,7 +2113,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -0.0000571478, y: 0, z: 0, w: -1.0255394}
+  m_margin: {x: 325.44107, y: 223.1117, z: 325.44113, w: 227.11874}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -2018,8 +2153,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 423, y: 262}
-  m_SizeDelta: {x: -1042.45, y: -617.68256}
+  m_AnchoredPosition: {x: 322.1, y: 194}
+  m_SizeDelta: {x: 161.70004, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8919590814290318572
 CanvasRenderer:
@@ -2112,7 +2247,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -0.0000571478, y: 0, z: 0, w: -1.0255394}
+  m_margin: {x: 360.69257, y: 216.15047, z: 358.04053, w: 244.29846}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -2306,7 +2441,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 51.200012, y: 187}
+  m_AnchoredPosition: {x: 51.19995, y: 187}
   m_SizeDelta: {x: 210, y: 50}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!222 &4276729616585194860

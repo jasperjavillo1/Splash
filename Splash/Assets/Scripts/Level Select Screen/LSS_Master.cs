@@ -21,6 +21,7 @@ public class LSS_Master : MonoBehaviour
     void Start()
     {
         PlayerPrefs.SetInt("KeyCount", 0);
+        PlayerPrefs.SetInt("Current Checkpoint", 1);
 
         if (Lvl_1 == 1)
         {

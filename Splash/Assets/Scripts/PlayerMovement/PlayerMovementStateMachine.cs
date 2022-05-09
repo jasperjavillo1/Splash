@@ -118,7 +118,7 @@ public class PlayerMovementStateMachine : MonoBehaviour
         _handleMovement();
         _MovementAnimation();
 
-        keyCount = PlayerPrefs.GetInt("KeyCount", keyCount);
+        //keyCount = PlayerPrefs.GetInt("KeyCount", keyCount);
 
     }
 
