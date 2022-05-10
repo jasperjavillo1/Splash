@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class LockedHealthRecovery : MonoBehaviour
 {
@@ -30,6 +31,10 @@ public class LockedHealthRecovery : MonoBehaviour
 
     private void Start()
     {
+        if(PlayerPrefs.GetInt("PrevSceneIndex") != SceneManager.GetActiveScene().buildIndex)
+        {
+            PlayerPrefs.SetInt(gameObject.name, 0);
+        }
         if (PlayerPrefs.GetInt(gameObject.name) == 1)
         {
             GetComponent<Animator>().Play("CleansedFountain");

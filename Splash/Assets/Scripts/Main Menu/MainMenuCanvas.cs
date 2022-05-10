@@ -9,6 +9,7 @@ public class MainMenuCanvas : MonoBehaviour {
 
     //  buttons
     public void Play() {
+        PlayerPrefs.SetInt("PrevSceneIndex", SceneManager.GetActiveScene().buildIndex);
         SceneManager.LoadScene("Level_Select_Screen");
     }
 

@@ -97,6 +97,7 @@ public class PauseMenu : MonoBehaviour
     public void GoToMainMenu()
     {
         Time.timeScale = 1f;
+        PlayerPrefs.SetInt("PrevSceneIndex", SceneManager.GetActiveScene().buildIndex);
         SceneManager.LoadScene(0);
         if (OnLeaveScene != null) OnLeaveScene();
     }
