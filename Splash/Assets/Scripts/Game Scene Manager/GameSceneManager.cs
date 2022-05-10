@@ -24,6 +24,7 @@ public class GameSceneManager : MonoBehaviour
     {
         if(_playerHealth._currentHealth <= 0f && _playerLives._CurrentLives >= 1f)
         {
+            PlayerPrefs.SetInt("PrevSceneIndex", SceneManager.GetActiveScene().buildIndex);
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
     }
