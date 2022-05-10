@@ -55,22 +55,27 @@ public class LSS_Master : MonoBehaviour
 
     public void GoToLevel1()
     {
+        PlayerPrefs.SetInt("PrevSceneIndex", SceneManager.GetActiveScene().buildIndex);
         SceneManager.LoadScene(3);
     }
     public void GoToLevel2()
     {
+        PlayerPrefs.SetInt("PrevSceneIndex", SceneManager.GetActiveScene().buildIndex);
         SceneManager.LoadScene(4);
     }
     public void GoToLevel3()
     {
+        PlayerPrefs.SetInt("PrevSceneIndex", SceneManager.GetActiveScene().buildIndex);
         SceneManager.LoadScene(5);
     }
     public void GoToLevel4()
     {
+        PlayerPrefs.SetInt("PrevSceneIndex", SceneManager.GetActiveScene().buildIndex);
         SceneManager.LoadScene(6);
     }
     public void MainMenu()
     {
+        PlayerPrefs.SetInt("PrevSceneIndex", SceneManager.GetActiveScene().buildIndex);
         SceneManager.LoadScene(0);
     }
 
